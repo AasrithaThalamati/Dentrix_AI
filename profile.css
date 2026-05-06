@@ -1,0 +1,183 @@
+/* ============================================================
+   ObturaScore AI — Profile Page Styles
+   ============================================================ */
+
+   .profile-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  
+  .profile-left  { display: flex; flex-direction: column; gap: 20px; }
+  .profile-right { display: flex; flex-direction: column; gap: 20px; }
+  
+  /* ── Avatar Card ── */
+  .avatar-card { text-align: center; }
+  
+  .avatar-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--warm-gray-100);
+  }
+  
+  .avatar-circle {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: white;
+    border: 4px solid white;
+    box-shadow: 0 0 0 3px var(--accent-mid), var(--shadow-md);
+    position: relative;
+  }
+  
+  .avatar-change-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid var(--warm-gray-200);
+    border-radius: var(--radius-sm);
+    padding: 6px 14px;
+    font-family: var(--font-body);
+    font-size: .78rem;
+    color: var(--warm-gray-600);
+    cursor: pointer;
+    transition: all .18s;
+  }
+  .avatar-change-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .avatar-change-btn svg { width: 12px; height: 12px; }
+  
+  .avatar-info { margin-bottom: 16px; }
+  .avatar-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .avatar-role {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .08em;
+    color: var(--warm-gray-400);
+    margin-bottom: 12px;
+  }
+  .avatar-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  
+  .avatar-quick-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid var(--warm-gray-100);
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+  .aqs-item { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .aqs-num {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--dark);
+    line-height: 1;
+  }
+  .aqs-label { font-size: .72rem; color: var(--warm-gray-400); }
+  .aqs-divider { width: 1px; height: 32px; background: var(--warm-gray-200); }
+  
+  /* ── Performance Card ── */
+  .perf-list { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .perf-item {}
+  .perf-label {
+    display: flex; justify-content: space-between;
+    font-size: .82rem; color: var(--dark); margin-bottom: 6px;
+  }
+  .perf-val { font-family: var(--font-mono); font-size: .78rem; }
+  .perf-val.optimal    { color: var(--optimal); }
+  .perf-val.acceptable { color: var(--acceptable); }
+  .perf-val.suboptimal { color: var(--suboptimal); }
+  .perf-bar-track { height: 5px; background: var(--warm-gray-100); border-radius: 3px; overflow: hidden; }
+  .perf-bar { height: 100%; border-radius: 3px; }
+  
+  .bench-compare { margin-top: 4px; }
+  .bench-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px; font-size: .78rem; color: var(--warm-gray-600);
+  }
+  .bench-row span { width: 90px; flex-shrink: 0; }
+  .bench-bars { flex: 1; height: 20px; background: var(--warm-gray-100); border-radius: var(--radius-sm); overflow: hidden; }
+  .bench-bar {
+    height: 100%;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 8px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono); font-size: .68rem; color: white;
+    font-weight: 700;
+    transition: width 1.2s ease;
+  }
+  .bench-bar.you { background: var(--accent); }
+  .bench-bar.nat { background: var(--warm-gray-400); }
+  
+  /* ── Certs Card ── */
+  .cert-list { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
+  .cert-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid var(--warm-gray-100);
+  }
+  .cert-item:last-child { border-bottom: none; }
+  .cert-icon {
+    width: 32px; height: 32px; border-radius: var(--radius-sm);
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent); flex-shrink: 0;
+  }
+  .cert-icon svg { width: 16px; height: 16px; }
+  .cert-info { flex: 1; }
+  .cert-name   { font-size: .82rem; font-weight: 500; color: var(--dark); }
+  .cert-issuer { font-size: .72rem; color: var(--warm-gray-400); margin-top: 2px; }
+  
+  /* ── Profile Form Cards ── */
+  .profile-form-card { padding: 24px; }
+  .pf-section-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  
+  /* ── Activity Timeline ── */
+  .activity-timeline { display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
+  .at-item {
+    display: flex; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid var(--warm-gray-100);
+    position: relative;
+  }
+  .at-item:last-child { border-bottom: none; }
+  .at-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 5px;
+  }
+  .at-dot.blue   { background: var(--accent); }
+  .at-dot.green  { background: var(--optimal); }
+  .at-dot.red    { background: var(--poor); }
+  .at-dot.orange { background: var(--acceptable); }
+  .at-content { flex: 1; }
+  .at-title { font-size: .82rem; color: var(--dark); line-height: 1.4; }
+  .at-time  { font-size: .72rem; color: var(--warm-gray-400); font-family: var(--font-mono); margin-top: 3px; }
+  
+  /* ── Responsive ── */
+  @media (max-width: 1100px) {
+    .profile-layout { grid-template-columns: 280px 1fr; }
+  }
+  @media (max-width: 900px) {
+    .profile-layout { grid-template-columns: 1fr; }
+    .profile-left { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .profile-left { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }

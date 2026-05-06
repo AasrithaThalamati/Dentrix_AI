@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case History — ObturaScore AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="history.css"/>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="main-content">
+    <header class="topbar">
+      <button class="mobile-toggle" id="mobileToggle">
+        <svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">Case History</div>
+        <div class="topbar-subtitle">All radiographic analyses and clinical reports</div>
+      </div>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-search">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M10.5 10.5l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Search cases…" id="caseSearch"/>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost btn-sm" id="exportBtn">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 10V4M5 7l3 3 3-3M3 12h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Export CSV
+        </button>
+        <a class="topbar-avatar" href="profile.html">DS</a>
+      </div>
+    </header>
+
+    <main class="page-content">
+
+      <!-- Timeline + Detail split -->
+      <div class="history-layout fade-up">
+
+        <!-- LEFT: Timeline List -->
+        <div class="timeline-col">
+          <!-- Filters -->
+          <div class="history-filters">
+            <select class="form-input form-select filter-sel" id="scoreFilter">
+              <option value="">All Scores</option>
+              <option value="optimal">Optimal (8–10)</option>
+              <option value="acceptable">Acceptable (6–7.9)</option>
+              <option value="suboptimal">Suboptimal (4–5.9)</option>
+              <option value="poor">Poor (&lt;4)</option>
+            </select>
+            <select class="form-input form-select filter-sel" id="dateFilter">
+              <option value="">All Time</option>
+              <option value="7">Last 7 Days</option>
+              <option value="30">Last 30 Days</option>
+              <option value="90">Last 3 Months</option>
+            </select>
+            <select class="form-input form-select filter-sel" id="sortCaseFilter">
+              <option value="date">Newest First</option>
+              <option value="score-desc">Score: High→Low</option>
+              <option value="score-asc">Score: Low→High</option>
+            </select>
+          </div>
+
+          <div class="case-count" id="caseCount">Loading…</div>
+          <div class="timeline-list" id="timelineList"></div>
+        </div>
+
+        <!-- RIGHT: Case Detail Panel -->
+        <div class="detail-col">
+          <div class="detail-empty" id="detailEmpty">
+            <svg viewBox="0 0 80 80" fill="none">
+              <rect x="10" y="10" width="60" height="60" rx="8" stroke="var(--warm-gray-200)" stroke-width="1.5"/>
+              <path d="M25 35h30M25 45h20M25 55h25" stroke="var(--warm-gray-200)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="14" fill="var(--accent-light)" stroke="var(--accent-mid)" stroke-width="1.5"/>
+              <path d="M55 60l3.5 3.5L65 57" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Select a Case</h3>
+            <p>Click any case in the timeline to view its full analysis report.</p>
+          </div>
+          <div class="case-detail" id="caseDetail" style="display:none"></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<style>
+.toast{position:fixed;bottom:24px;right:24px;background:var(--dark);color:white;padding:12px 18px;border-radius:var(--radius-md);font-size:.875rem;display:flex;align-items:center;gap:8px;z-index:9999;transform:translateY(20px);opacity:0;transition:all .3s;box-shadow:var(--shadow-lg)}
+.toast.show{transform:translateY(0);opacity:1}
+.toast svg{width:14px;height:14px}
+</style>
+
+<script src="sidebar.js"></script>
+<script src="shared.js"></script>
+<script src="history.js"></script>
+</body>
+</html>

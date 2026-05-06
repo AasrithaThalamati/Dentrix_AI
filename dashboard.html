@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — ObturaScore AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main -->
+  <div class="main-content">
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="mobile-toggle" id="mobileToggle">
+        <svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">Dashboard</div>
+        <div class="topbar-subtitle">Monday, 4 May 2026</div>
+      </div>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-search">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M10.5 10.5l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Search patients, cases… ⌘K"/>
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-icon-btn" id="notifBtn" title="Notifications">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 00-6 6v3l-2 2v1h16v-1l-2-2V8a6 6 0 00-6-6zm0 16a2 2 0 004 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span class="notif-dot"></span>
+        </button>
+        <a class="topbar-avatar" href="profile.html" title="Profile">DS</a>
+      </div>
+    </header>
+
+    <main class="page-content">
+
+      <!-- Welcome Banner -->
+      <div class="welcome-banner fade-up">
+        <div class="welcome-text">
+          <p class="welcome-label">GOOD MORNING</p>
+          <h2 class="welcome-name">Dr. Disha Shah <span class="wave">👋</span></h2>
+          <p class="welcome-sub">You have <strong>3 pending analyses</strong> and <strong>2 patients</strong> scheduled today. AI model performance is optimal.</p>
+        </div>
+        <div class="welcome-actions">
+          <a href="analyze.html" class="btn btn-accent">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            New Analysis
+          </a>
+          <a href="patients.html" class="btn btn-ghost">View Patients</a>
+        </div>
+        <div class="welcome-deco"></div>
+      </div>
+
+      <!-- KPI Stats -->
+      <div class="stat-grid dash-stats fade-up" style="animation-delay:.1s">
+        <div class="stat-card">
+          <div class="stat-card-icon blue">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 4v4l2.5 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="stat-card-num" data-count="147">0</div>
+          <div class="stat-card-label">Total Analyses</div>
+          <div class="stat-card-delta">↑ +12 this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon green">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="stat-card-num" data-count="7.4" data-decimal="1">0</div>
+          <div class="stat-card-label">Avg Score / 10</div>
+          <div class="stat-card-delta">↑ +0.3 vs last month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon purple">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 17c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M15 8v6M12 11h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="stat-card-num" data-count="84">0</div>
+          <div class="stat-card-label">Active Patients</div>
+          <div class="stat-card-delta">↑ +5 this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon orange">
+            <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 2v4M13 2v4M3 9h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="stat-card-num" data-count="2">0</div>
+          <div class="stat-card-label">Today's Schedule</div>
+          <div class="stat-card-delta">Next: 11:00 AM</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon red">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v7m0 0l3-3m-3 3L7 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 13v2a2 2 0 002 2h8a2 2 0 002-2v-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="stat-card-num" data-count="18">0</div>
+          <div class="stat-card-label">Retreatments Flagged</div>
+          <div class="stat-card-delta neg">↑ +2 this week</div>
+        </div>
+      </div>
+
+      <!-- Middle Row -->
+      <div class="dash-mid fade-up" style="animation-delay:.2s">
+
+        <!-- Score Distribution Chart -->
+        <div class="card chart-card">
+          <div class="card-header-row">
+            <div>
+              <div class="section-label">SCORE DISTRIBUTION</div>
+              <div class="card-title">Obturation Quality Overview</div>
+            </div>
+            <select class="form-input form-select" style="width:120px;padding:6px 10px;font-size:.8rem">
+              <option>This Month</option>
+              <option>Last 3M</option>
+              <option>This Year</option>
+            </select>
+          </div>
+          <div class="chart-bars">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill optimal" style="--h:35%">
+                  <span class="chart-bar-tip">52</span>
+                </div>
+              </div>
+              <span class="chart-bar-label">Optimal<br/>8–10</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill acceptable" style="--h:55%">
+                  <span class="chart-bar-tip">81</span>
+                </div>
+              </div>
+              <span class="chart-bar-label">Acceptable<br/>6–7.9</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill suboptimal" style="--h:20%">
+                  <span class="chart-bar-tip">29</span>
+                </div>
+              </div>
+              <span class="chart-bar-label">Suboptimal<br/>4–5.9</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill poor" style="--h:10%">
+                  <span class="chart-bar-tip">15</span>
+                </div>
+              </div>
+              <span class="chart-bar-label">Poor<br/>&lt;4</span>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span><i class="leg-dot" style="background:var(--optimal)"></i> Optimal 35%</span>
+            <span><i class="leg-dot" style="background:var(--acceptable)"></i> Acceptable 55%</span>
+            <span><i class="leg-dot" style="background:var(--suboptimal)"></i> Suboptimal 20%</span>
+            <span><i class="leg-dot" style="background:var(--poor)"></i> Poor 10%</span>
+          </div>
+        </div>
+
+        <!-- Parameter Radar -->
+        <div class="card radar-card">
+          <div class="section-label">PARAMETER AVERAGES</div>
+          <div class="card-title">Clinical Quality Radar</div>
+          <div class="radar-wrap">
+            <svg viewBox="0 0 240 220" class="radar-svg">
+              <!-- Grid -->
+              <polygon points="120,20 210,80 180,180 60,180 30,80" fill="none" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <polygon points="120,44 193,91 168,164 72,164 47,91" fill="none" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <polygon points="120,68 176,102 156,148 84,148 64,102" fill="none" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <polygon points="120,92 159,113 144,132 96,132 81,113" fill="none" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <!-- Axes -->
+              <line x1="120" y1="20" x2="120" y2="180" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <line x1="120" y1="100" x2="210" y2="80" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <line x1="120" y1="100" x2="180" y2="180" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <line x1="120" y1="100" x2="60" y2="180" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <line x1="120" y1="100" x2="30" y2="80" stroke="var(--warm-gray-200)" stroke-width="1"/>
+              <!-- Data polygon (approx 74% length, 80% density, 70% taper) -->
+              <polygon points="120,38 195,83 162,166 78,166 49,88" fill="rgba(37,99,235,0.12)" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Data points -->
+              <circle cx="120" cy="38" r="4" fill="var(--accent)"/>
+              <circle cx="195" cy="83" r="4" fill="var(--accent)"/>
+              <circle cx="162" cy="166" r="4" fill="var(--accent)"/>
+              <circle cx="78" cy="166" r="4" fill="var(--accent)"/>
+              <circle cx="49" cy="88" r="4" fill="var(--accent)"/>
+              <!-- Labels -->
+              <text x="120" y="13" text-anchor="middle" fill="var(--warm-gray-600)" font-size="9" font-family="var(--font-mono)">LENGTH</text>
+              <text x="218" y="83" text-anchor="start" fill="var(--warm-gray-600)" font-size="9" font-family="var(--font-mono)">DENSITY</text>
+              <text x="185" y="192" text-anchor="middle" fill="var(--warm-gray-600)" font-size="9" font-family="var(--font-mono)">TAPER</text>
+              <text x="55" y="192" text-anchor="middle" fill="var(--warm-gray-600)" font-size="9" font-family="var(--font-mono)">RECALL</text>
+              <text x="18" y="88" text-anchor="end" fill="var(--warm-gray-600)" font-size="9" font-family="var(--font-mono)">RETREATMENT</text>
+            </svg>
+          </div>
+          <div class="radar-stats">
+            <div class="radar-stat"><span>Length Avg</span><strong>3.0/4</strong></div>
+            <div class="radar-stat"><span>Density Avg</span><strong>2.4/3</strong></div>
+            <div class="radar-stat"><span>Taper Avg</span><strong>2.1/3</strong></div>
+          </div>
+        </div>
+
+        <!-- AI Model Status -->
+        <div class="card model-card">
+          <div class="section-label">AI ENGINE</div>
+          <div class="card-title">Model Status</div>
+          <div class="model-status-row">
+            <div class="model-pulse"></div>
+            <span class="model-online">Online · v2.4.1</span>
+          </div>
+          <div class="model-metrics">
+            <div class="model-metric">
+              <span class="model-metric-label">Accuracy</span>
+              <div class="model-bar-wrap">
+                <div class="model-bar-fill" style="width:91%"></div>
+              </div>
+              <span class="model-metric-val">91.2%</span>
+            </div>
+            <div class="model-metric">
+              <span class="model-metric-label">Sensitivity</span>
+              <div class="model-bar-wrap">
+                <div class="model-bar-fill" style="width:88%"></div>
+              </div>
+              <span class="model-metric-val">88.7%</span>
+            </div>
+            <div class="model-metric">
+              <span class="model-metric-label">Specificity</span>
+              <div class="model-bar-wrap">
+                <div class="model-bar-fill" style="width:94%"></div>
+              </div>
+              <span class="model-metric-val">94.1%</span>
+            </div>
+            <div class="model-metric">
+              <span class="model-metric-label">Kappa (κ)</span>
+              <div class="model-bar-wrap">
+                <div class="model-bar-fill" style="width:82%"></div>
+              </div>
+              <span class="model-metric-val">0.82</span>
+            </div>
+          </div>
+          <div class="model-training">
+            <div class="training-label">Training Dataset</div>
+            <div class="training-val">1,247 annotated IOPA radiographs</div>
+          </div>
+          <a href="analyze.html" class="btn btn-accent btn-sm" style="margin-top:16px;width:100%;justify-content:center">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Run Analysis
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="dash-bottom fade-up" style="animation-delay:.3s">
+
+        <!-- Recent Cases Table -->
+        <div class="card recent-cases-card">
+          <div class="card-header-row">
+            <div>
+              <div class="section-label">RECENT ACTIVITY</div>
+              <div class="card-title">Latest Cases</div>
+            </div>
+            <a href="history.html" class="btn btn-ghost btn-sm">View All</a>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Patient</th>
+                <th>Tooth</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="pt-cell"><div class="pt-avatar">RA</div><div><div class="pt-name">Riya Arora</div><div class="pt-id">#PT-0081</div></div></div></td>
+                <td><span class="tooth-badge">26</span></td>
+                <td>03 May 2026</td>
+                <td><span class="score-chip optimal">8.4</span></td>
+                <td><span class="badge badge-optimal">Optimal</span></td>
+                <td><a href="history.html" class="tbl-link">View →</a></td>
+              </tr>
+              <tr>
+                <td><div class="pt-cell"><div class="pt-avatar">MK</div><div><div class="pt-name">Manav Khanna</div><div class="pt-id">#PT-0080</div></div></div></td>
+                <td><span class="tooth-badge">36</span></td>
+                <td>02 May 2026</td>
+                <td><span class="score-chip acceptable">6.7</span></td>
+                <td><span class="badge badge-acceptable">Acceptable</span></td>
+                <td><a href="history.html" class="tbl-link">View →</a></td>
+              </tr>
+              <tr>
+                <td><div class="pt-cell"><div class="pt-avatar">SP</div><div><div class="pt-name">Sonal Patel</div><div class="pt-id">#PT-0079</div></div></div></td>
+                <td><span class="tooth-badge">16</span></td>
+                <td>30 Apr 2026</td>
+                <td><span class="score-chip suboptimal">4.9</span></td>
+                <td><span class="badge badge-suboptimal">Suboptimal</span></td>
+                <td><a href="history.html" class="tbl-link">View →</a></td>
+              </tr>
+              <tr>
+                <td><div class="pt-cell"><div class="pt-avatar">AJ</div><div><div class="pt-name">Arjun Joshi</div><div class="pt-id">#PT-0078</div></div></div></td>
+                <td><span class="tooth-badge">46</span></td>
+                <td>29 Apr 2026</td>
+                <td><span class="score-chip optimal">9.1</span></td>
+                <td><span class="badge badge-optimal">Optimal</span></td>
+                <td><a href="history.html" class="tbl-link">View →</a></td>
+              </tr>
+              <tr>
+                <td><div class="pt-cell"><div class="pt-avatar">NM</div><div><div class="pt-name">Neha Mehta</div><div class="pt-id">#PT-0077</div></div></div></td>
+                <td><span class="tooth-badge">11</span></td>
+                <td>28 Apr 2026</td>
+                <td><span class="score-chip poor">3.2</span></td>
+                <td><span class="badge badge-poor">Poor</span></td>
+                <td><a href="history.html" class="tbl-link">View →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Today's Schedule + Alerts -->
+        <div class="dash-right-col">
+          <!-- Schedule -->
+          <div class="card schedule-card">
+            <div class="section-label">TODAY</div>
+            <div class="card-title">Schedule</div>
+            <div class="schedule-list">
+              <div class="schedule-item done">
+                <div class="sch-time">09:00</div>
+                <div class="sch-line"><div class="sch-dot"></div></div>
+                <div class="sch-info">
+                  <div class="sch-name">Priya Desai</div>
+                  <div class="sch-proc">RCT Follow-up · Tooth 36</div>
+                </div>
+                <span class="badge badge-optimal">Done</span>
+              </div>
+              <div class="schedule-item upcoming">
+                <div class="sch-time">11:00</div>
+                <div class="sch-line"><div class="sch-dot"></div></div>
+                <div class="sch-info">
+                  <div class="sch-name">Raju Nair</div>
+                  <div class="sch-proc">Obturation · Tooth 46</div>
+                </div>
+                <span class="badge badge-blue">Next</span>
+              </div>
+              <div class="schedule-item">
+                <div class="sch-time">14:30</div>
+                <div class="sch-line"><div class="sch-dot"></div></div>
+                <div class="sch-info">
+                  <div class="sch-name">Kavita Singh</div>
+                  <div class="sch-proc">IOPA Review · Tooth 16</div>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <div class="sch-time">16:00</div>
+                <div class="sch-line"><div class="sch-dot"></div></div>
+                <div class="sch-info">
+                  <div class="sch-name">Farhan Sheikh</div>
+                  <div class="sch-proc">Retreatment Planning</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alerts -->
+          <div class="card alerts-card">
+            <div class="section-label">ALERTS</div>
+            <div class="card-title">Action Items</div>
+            <div class="alert-list">
+              <div class="alert-item alert-red">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 4v3m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                <div>
+                  <div class="alert-title">Retreatment Required</div>
+                  <div class="alert-sub">Neha Mehta · Score 3.2/10</div>
+                </div>
+              </div>
+              <div class="alert-item alert-orange">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 4v3m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                <div>
+                  <div class="alert-title">Recall Overdue</div>
+                  <div class="alert-sub">Sonal Patel · 8 months</div>
+                </div>
+              </div>
+              <div class="alert-item alert-blue">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 4v4M8 11v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                <div>
+                  <div class="alert-title">3 Pending Analyses</div>
+                  <div class="alert-sub">Awaiting radiograph upload</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<style>
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--dark);color:white;padding:12px 18px;border-radius:var(--radius-md);font-size:.875rem;display:flex;align-items:center;gap:8px;z-index:999;transform:translateY(20px);opacity:0;transition:all .3s;box-shadow:var(--shadow-lg)}
+.toast.show{transform:translateY(0);opacity:1}
+.toast svg{width:14px;height:14px;flex-shrink:0}
+.toast-error{background:var(--poor)}
+</style>
+
+<script src="sidebar.js"></script>
+<script src="shared.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

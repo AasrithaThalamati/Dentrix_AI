@@ -1,0 +1,209 @@
+/* ============================================================
+   ObturaScore AI — Patients Page Styles
+   ============================================================ */
+
+   .pt-stats {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 24px;
+  }
+  
+  /* Toolbar */
+  .pt-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--warm-gray-100);
+    flex-wrap: wrap;
+  }
+  .pt-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--warm-gray-50);
+    border: 1px solid var(--warm-gray-200);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    flex: 1;
+    min-width: 180px;
+  }
+  .pt-search svg { width: 14px; height: 14px; color: var(--warm-gray-400); flex-shrink: 0; }
+  .pt-search input {
+    flex: 1; border: none; outline: none; background: none;
+    font-family: var(--font-body); font-size: .875rem; color: var(--dark);
+  }
+  .pt-search input::placeholder { color: var(--warm-gray-400); }
+  
+  .pt-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-sel { width: auto; font-size: .82rem; padding: 8px 32px 8px 12px; }
+  
+  /* Table enhancements */
+  .data-table { margin-top: 0; }
+  .pt-name-cell { display: flex; align-items: center; gap: 10px; }
+  .pt-av {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .65rem; font-weight: 600; color: white; flex-shrink: 0;
+  }
+  .pt-av.female { background: linear-gradient(135deg, #ec4899, #8b5cf6); }
+  .pt-av.male   { background: linear-gradient(135deg, var(--accent), #0ea5e9); }
+  .pt-fullname  { font-size: .875rem; font-weight: 500; color: var(--dark); }
+  .pt-email     { font-size: .72rem; color: var(--warm-gray-400); }
+  
+  .tooth-tag {
+    display: inline-block;
+    background: var(--dark); color: white;
+    font-family: var(--font-mono); font-size: .72rem;
+    padding: 2px 8px; border-radius: var(--radius-sm);
+  }
+  
+  .score-num-display {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .score-num-display.optimal   { color: var(--optimal); }
+  .score-num-display.acceptable{ color: var(--acceptable); }
+  .score-num-display.suboptimal{ color: var(--suboptimal); }
+  .score-num-display.poor      { color: var(--poor); }
+  
+  .tbl-actions { display: flex; gap: 6px; }
+  .tbl-icon-btn {
+    width: 28px; height: 28px; border-radius: var(--radius-sm);
+    border: 1px solid var(--warm-gray-200); background: white;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--warm-gray-600);
+    transition: all .18s;
+  }
+  .tbl-icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .tbl-icon-btn.del:hover { border-color: var(--poor); color: var(--poor); }
+  .tbl-icon-btn svg { width: 13px; height: 13px; }
+  
+  /* Grid View */
+  .pt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    padding-top: 16px;
+  }
+  .pt-grid-card {
+    border: 1px solid var(--warm-gray-200);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    background: var(--warm-gray-50);
+    transition: box-shadow .2s, transform .2s;
+    cursor: pointer;
+  }
+  .pt-grid-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .pgc-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .pgc-av {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: .85rem; color: white;
+  }
+  .pgc-av.female { background: linear-gradient(135deg, #ec4899, #8b5cf6); }
+  .pgc-av.male   { background: linear-gradient(135deg, var(--accent), #0ea5e9); }
+  .pgc-name { font-size: .9rem; font-weight: 600; color: var(--dark); }
+  .pgc-id   { font-size: .72rem; color: var(--warm-gray-400); font-family: var(--font-mono); }
+  .pgc-score-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .pgc-score {
+    font-family: var(--font-display); font-size: 1.6rem;
+  }
+  .pgc-score.optimal   { color: var(--optimal); }
+  .pgc-score.acceptable{ color: var(--acceptable); }
+  .pgc-score.suboptimal{ color: var(--suboptimal); }
+  .pgc-score.poor      { color: var(--poor); }
+  .pgc-date { font-size: .72rem; color: var(--warm-gray-400); }
+  .pgc-bar-track { height: 4px; background: var(--warm-gray-200); border-radius: 2px; overflow: hidden; margin-bottom: 12px; }
+  .pgc-bar-fill { height: 100%; border-radius: 2px; }
+  .pgc-bar-fill.optimal   { background: var(--optimal); }
+  .pgc-bar-fill.acceptable{ background: var(--acceptable); }
+  .pgc-bar-fill.suboptimal{ background: var(--suboptimal); }
+  .pgc-bar-fill.poor      { background: var(--poor); }
+  .pgc-actions { display: flex; gap: 6px; }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--warm-gray-100);
+    margin-top: 8px;
+    font-size: .82rem;
+    color: var(--warm-gray-400);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .page-btns { display: flex; gap: 4px; }
+  .page-btn {
+    width: 32px; height: 32px; border-radius: var(--radius-sm);
+    border: 1px solid var(--warm-gray-200); background: white;
+    font-size: .82rem; cursor: pointer; color: var(--dark);
+    display: flex; align-items: center; justify-content: center;
+    transition: all .18s;
+  }
+  .page-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .page-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
+  .page-btn:disabled { opacity: .4; cursor: default; }
+  
+  /* Modal */
+  .pt-modal-card { max-width: 560px; }
+  .pt-detail-card { max-width: 600px; }
+  .modal-body { padding: 20px 24px; }
+  .modal-footer {
+    display: flex; gap: 10px; justify-content: flex-end;
+    padding: 16px 24px; border-top: 1px solid var(--warm-gray-100);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  
+  /* Detail modal body */
+  .detail-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px 24px 16px; border-bottom: 1px solid var(--warm-gray-100);
+  }
+  .detail-av {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.2rem; color: white; flex-shrink: 0;
+  }
+  .detail-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--dark); }
+  .detail-sub  { font-size: .78rem; color: var(--warm-gray-400); font-family: var(--font-mono); }
+  .detail-section { padding: 16px 24px; border-bottom: 1px solid var(--warm-gray-100); }
+  .detail-section-title {
+    font-family: var(--font-mono); font-size: .65rem; letter-spacing: .14em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .detail-item .di-label { font-size: .72rem; color: var(--warm-gray-400); margin-bottom: 3px; }
+  .detail-item .di-val   { font-size: .875rem; color: var(--dark); font-weight: 500; }
+  .detail-actions { display: flex; gap: 10px; padding: 16px 24px; }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .pt-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .pt-stats { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .detail-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .pt-stats { grid-template-columns: 1fr 1fr; }
+    .data-table th:nth-child(3),
+    .data-table td:nth-child(3),
+    .data-table th:nth-child(4),
+    .data-table td:nth-child(4) { display: none; }
+  }

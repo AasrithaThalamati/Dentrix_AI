@@ -1,0 +1,212 @@
+/* ============================================================
+   ObturaScore AI — Research Page Styles
+   ============================================================ */
+
+/* Study Banner */
+.study-banner {
+    background: linear-gradient(135deg, var(--dark) 0%, #1e3a8a 100%);
+    border-radius: var(--radius-xl);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .study-banner::before {
+    content: '';
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(37,99,235,.3), transparent 70%);
+    pointer-events: none;
+  }
+  
+  .study-banner-text .section-label { color: var(--accent-mid); }
+  .study-banner-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: white;
+    line-height: 1.2;
+    margin: 8px 0 14px;
+  }
+  .study-banner-text p {
+    font-size: .875rem;
+    color: rgba(255,255,255,.6);
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 20px;
+  }
+  .study-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .study-tags span {
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    background: rgba(37,99,235,.25);
+    color: var(--accent-mid);
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(37,99,235,.35);
+  }
+  
+  .study-banner-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .sbs-item { text-align: right; }
+  .sbs-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: white;
+    line-height: 1;
+  }
+  .sbs-label {
+    font-size: .72rem;
+    color: rgba(255,255,255,.45);
+    font-family: var(--font-mono);
+    margin-top: 2px;
+  }
+  
+  /* Main grid */
+  .research-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+    align-items: start;
+  }
+  .research-main { display: flex; flex-direction: column; gap: 20px; }
+  .research-side  { display: flex; flex-direction: column; gap: 20px; }
+  
+  .rsc-card { padding: 24px; }
+  
+  /* Methodology steps */
+  .method-steps { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
+  .ms-item {
+    display: flex; gap: 20px;
+    padding: 20px 0; border-bottom: 1px solid var(--warm-gray-100);
+  }
+  .ms-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ms-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--warm-gray-200);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+  }
+  .ms-content { flex: 1; }
+  .ms-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .ms-content p { font-size: .875rem; color: var(--warm-gray-600); line-height: 1.7; }
+  
+  /* Criteria table */
+  .crit-table { margin-top: 16px; }
+  .crit-table .param-cell {
+    font-weight: 600; font-size: .82rem; color: var(--dark);
+    vertical-align: middle; border-right: 2px solid var(--warm-gray-100);
+  }
+  .param-weight { font-family: var(--font-mono); font-size: .68rem; color: var(--warm-gray-400); font-weight: 400; display: block; margin-top: 4px; }
+  .row-sep td { border-top: 2px solid var(--warm-gray-100) !important; }
+  .score-chip-sm {
+    display: inline-block; font-family: var(--font-mono);
+    font-size: .72rem; font-weight: 700;
+    padding: 2px 8px; border-radius: var(--radius-sm);
+  }
+  .score-chip-sm.optimal   { background: var(--optimal-bg);   color: var(--optimal); }
+  .score-chip-sm.acceptable{ background: var(--acceptable-bg); color: var(--acceptable); }
+  .score-chip-sm.poor      { background: var(--poor-bg);       color: var(--poor); }
+  
+  /* Publications */
+  .pub-list { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .pub-item {
+    border: 1px solid var(--warm-gray-200);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    transition: box-shadow .2s;
+  }
+  .pub-item:hover { box-shadow: var(--shadow-md); }
+  .pub-item.featured { border-color: var(--accent-mid); background: var(--accent-light); }
+  .pub-badge {
+    display: inline-block;
+    font-family: var(--font-mono); font-size: .65rem;
+    background: var(--accent); color: white;
+    padding: 2px 8px; border-radius: 100px; margin-bottom: 10px;
+  }
+  .pub-title { font-weight: 600; font-size: .9rem; color: var(--dark); margin-bottom: 6px; line-height: 1.4; }
+  .pub-authors { font-size: .78rem; color: var(--warm-gray-600); margin-bottom: 3px; }
+  .pub-year { font-family: var(--font-mono); font-size: .72rem; color: var(--accent); }
+  .pub-journal { font-size: .75rem; color: var(--warm-gray-400); font-style: italic; margin-bottom: 10px; }
+  .pub-abstract { font-size: .82rem; color: var(--warm-gray-600); line-height: 1.6; margin-bottom: 12px; }
+  .pub-actions { display: flex; gap: 8px; }
+  
+  /* Performance metrics (side) */
+  .perf-metrics { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+  .pm-item { display: flex; align-items: center; gap: 10px; }
+  .pm-label { font-size: .78rem; color: var(--warm-gray-600); width: 160px; flex-shrink: 0; }
+  .pm-bar-wrap { flex: 1; height: 5px; background: var(--warm-gray-100); border-radius: 3px; overflow: hidden; }
+  .pm-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-mid)); border-radius: 3px; }
+  .pm-val { font-family: var(--font-mono); font-size: .75rem; color: var(--dark); width: 40px; text-align: right; flex-shrink: 0; }
+  .pm-note { font-size: .72rem; color: var(--warm-gray-400); font-family: var(--font-mono); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--warm-gray-100); }
+  
+  /* Comparison table */
+  .comparison-table-rsc { margin-top: 14px; font-size: .82rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--warm-gray-200); }
+  .ctr-head {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    background: var(--dark); color: white;
+    padding: 10px 14px; font-size: .72rem; font-weight: 600; text-align: center;
+  }
+  .ctr-head > div:first-child { text-align: left; }
+  .ctr-hl { background: var(--accent) !important; color: white !important; }
+  .ctr-row {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    padding: 10px 14px; border-bottom: 1px solid var(--warm-gray-100);
+    text-align: center; align-items: center; font-size: .78rem;
+  }
+  .ctr-row:last-child { border-bottom: none; }
+  .ctr-label { text-align: left; font-weight: 500; color: var(--dark); }
+  .ctr-good  { color: var(--optimal); font-weight: 600; }
+  .ctr-bad   { color: var(--poor); }
+  .ctr-mid   { color: var(--acceptable); }
+  
+  /* Ethics */
+  .ethics-list { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .eth-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: .82rem; line-height: 1.4;
+    padding: 8px 10px; border-radius: var(--radius-sm);
+  }
+  .eth-item svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px; }
+  .eth-item.green { background: var(--optimal-bg); color: #065f46; }
+  .eth-item.orange{ background: var(--acceptable-bg); color: #92400e; }
+  
+  /* Dataset stats */
+  .dataset-stats { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
+  .ds-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 0; border-bottom: 1px solid var(--warm-gray-100);
+    font-size: .82rem;
+  }
+  .ds-row:last-child { border-bottom: none; }
+  .ds-row span { color: var(--warm-gray-600); }
+  .ds-row strong { font-family: var(--font-mono); font-size: .78rem; color: var(--dark); }
+  
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .research-grid { grid-template-columns: 1fr; }
+    .study-banner  { grid-template-columns: 1fr; }
+    .study-banner-stats { flex-direction: row; flex-wrap: wrap; gap: 20px; }
+    .sbs-item { text-align: left; }
+  }
+  @media (max-width: 640px) {
+    .study-banner { padding: 24px; }
+    .ms-item { flex-direction: column; gap: 8px; }
+  }
