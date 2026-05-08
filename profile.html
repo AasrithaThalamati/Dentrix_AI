@@ -21,7 +21,7 @@
       </button>
       <div>
         <div class="topbar-title">My Profile</div>
-        <div class="topbar-subtitle">Dr. Disha Shah · MDS Endodontology</div>
+        <div class="topbar-subtitle" id="topbarSubtitle"></div>
       </div>
       <div class="topbar-spacer"></div>
       <div class="topbar-actions">
@@ -49,8 +49,8 @@
               </button>
             </div>
             <div class="avatar-info">
-              <h2 class="avatar-name">Dr. Disha Shah</h2>
-              <p class="avatar-role">MDS · Endodontology</p>
+              <h2 class="avatar-name" id="profileName"></h2>
+              <p class="avatar-role" id="profileRole"></p>
               <div class="avatar-tags">
                 <span class="badge badge-blue">Endodontist</span>
                 <span class="badge badge-optimal">Active</span>
@@ -199,7 +199,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">Date of Birth</label>
-                <input type="date" class="form-input" value="1992-07-14" id="pfDob"/>
+                <input type="date" class="form-input" id="pfDob"/>
               </div>
               <div class="form-group">
                 <label class="form-label">Gender</label>
@@ -208,10 +208,10 @@
                 </select>
               </div>
             </div>
-            <div class="form-group">
-              <label class="form-label">Professional Bio</label>
-              <textarea class="form-input form-textarea" id="pfBio">MDS Endodontologist with 8 years of clinical experience. Specialising in complex root canal treatments, microsurgery, and regenerative endodontics. Passionate about integrating AI diagnostics into daily clinical practice to improve patient outcomes.</textarea>
-            </div>
+            <textarea
+            class="form-input form-textarea"
+            id="pfBio">
+          </textarea>
           </div>
 
           <!-- Contact -->
@@ -233,10 +233,10 @@
                 <label class="form-label">Clinic / Hospital</label>
                 <input type="text" class="form-input" value="SmileCare Dental Clinic, Bangalore" id="pfClinic"/>
               </div>
-              <div class="form-group">
-                <label class="form-label">City</label>
-                <input type="text" class="form-input" value="Bangalore, Karnataka" id="pfCity"/>
-              </div>
+              <input
+  type="text"
+  class="form-input"
+  id="pfCity"/>
             </div>
           </div>
 
@@ -256,10 +256,12 @@
                   <option>Paediatric Dentistry</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label">Years of Experience</label>
-                <input type="number" class="form-input" value="8" id="pfExp" min="0" max="60"/>
-              </div>
+              <input
+  type="number"
+  class="form-input"
+  id="pfExp"
+  min="0"
+  max="60"/>
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -336,5 +338,140 @@ Member: Endodontic Society of India · Indian Dental Association</textarea>
 <script src="sidebar.js"></script>
 <script src="shared.js"></script>
 <script src="profile.js"></script>
-</body>
+<script>
+
+  (function () {
+  
+    const user =
+      JSON.parse(sessionStorage.getItem('obturaAuth')) ||
+      JSON.parse(localStorage.getItem('obturaCurrentUser'));
+  
+    if (!user) {
+      window.location.href = 'signup.html';
+      return;
+    }
+  
+    sessionStorage.setItem(
+      'obturaAuth',
+      JSON.stringify(user)
+    );
+  
+    document.getElementById('profileName').textContent =
+      user.name || 'User';
+  
+    document.getElementById('profileRole').textContent =
+      user.specialization || 'Dental Professional';
+  
+    document.getElementById('topbarSubtitle').textContent =
+      `${user.name} · ${user.specialization || 'Dental Professional'}`;
+  
+    const initials = user.name
+      .split(' ')
+      .map(w => w[0])
+      .slice(0, 2)
+      .join('')
+      .toUpperCase();
+  
+    document.getElementById('avatarCircle').textContent =
+      initials;
+  
+    document.getElementById('pfFirstName').value =
+      user.firstName || '';
+  
+    document.getElementById('pfLastName').value =
+      user.lastName || '';
+  
+    document.getElementById('pfEmail').value =
+      user.email || '';
+  
+    document.getElementById('pfPhone').value =
+      user.phone || '';
+      document.getElementById('pfDob').value =
+  user.dob || '';
+
+document.getElementById('pfGender').value =
+  user.gender || '';
+
+document.getElementById('pfCity').value =
+  user.city || '';
+
+document.getElementById('pfExp').value =
+  user.experience || '';
+
+document.getElementById('pfBio').value =
+  user.bio || '';
+  
+    if (document.getElementById('pfSpec')) {
+      document.getElementById('pfSpec').value =
+        user.specialization || 'Endodontology';
+    }
+  
+  })();
+  
+  const saveBtn = document.getElementById('saveProfileBtn');
+  
+  if (saveBtn) {
+  
+    saveBtn.addEventListener('click', function () {
+  
+      const oldData =
+        JSON.parse(localStorage.getItem('obturaCurrentUser')) || {};
+  
+      const updatedUser = {
+        ...oldData,
+  
+        firstName:
+          document.getElementById('pfFirstName').value,
+  
+        lastName:
+          document.getElementById('pfLastName').value,
+  
+        email:
+          document.getElementById('pfEmail').value,
+  
+        phone:
+          document.getElementById('pfPhone').value,
+
+          dob:
+  document.getElementById('pfDob').value,
+
+gender:
+  document.getElementById('pfGender').value,
+
+city:
+  document.getElementById('pfCity').value,
+
+experience:
+  document.getElementById('pfExp').value,
+
+bio:
+  document.getElementById('pfBio').value,
+  
+        specialization:
+          document.getElementById('pfSpec').value
+      };
+  
+      updatedUser.name =
+        `${updatedUser.firstName} ${updatedUser.lastName}`;
+  
+      localStorage.setItem(
+        'obturaCurrentUser',
+        JSON.stringify(updatedUser)
+      );
+  
+      sessionStorage.setItem(
+        'obturaAuth',
+        JSON.stringify(updatedUser)
+      );
+  
+      alert('Profile updated successfully!');
+  
+      location.reload();
+  
+    });
+  
+  }
+  
+  </script>
+  </body>
 </html>

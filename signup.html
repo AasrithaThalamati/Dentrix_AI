@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ObturaScore AI · Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f4f3f0;
+    --grid-line: rgba(0,0,0,0.055);
+    --text-primary: #1a1916;
+    --text-muted: #6b6760;
+    --accent-blue: #2563eb;
+    --green-pill: #16a34a;
+    --border: rgba(0,0,0,0.09);
+    --input-bg: #ffffff;
+    --card-shadow: 0 4px 32px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    --radius: 16px;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'Syne Mono', monospace;
+  }
+
+  html, body { height: 100%; }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--off-white);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: -10%; right: -5%;
+    width: 55vw; height: 70vh;
+    background: radial-gradient(ellipse at 70% 20%, rgba(219,234,254,0.65) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .topbar {
+    position: relative;
+    z-index: 20;
+    background: #1a1916;
+    height: 8px;
+    width: 100%;
+  }
+
+  nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 60px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(244,243,240,0.90);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .brand-icon {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--text-primary);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-primary);
+  }
+
+  .brand-icon svg { width: 20px; height: 20px; }
+
+  .brand-name {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .brand-name sup {
+    font-size: 9px;
+    color: var(--accent-blue);
+    vertical-align: super;
+    font-weight: 500;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 52px 24px 60px;
+  }
+
+  .auth-wrapper {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 11.5px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .pill-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-pill);
+    box-shadow: 0 0 0 2px rgba(22,163,74,0.25);
+  }
+
+  .auth-heading {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 5.5vw, 46px);
+    line-height: 1.06;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .auth-heading em {
+    font-style: italic;
+    color: var(--accent-blue);
+    display: block;
+  }
+
+  .auth-sub {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 32px;
+    max-width: 420px;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+  }
+
+  .tab-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tab-btn {
+    padding: 16px;
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color .2s, background .2s, border-color .2s;
+    letter-spacing: 0.01em;
+  }
+
+  .tab-btn.active {
+    color: var(--text-primary);
+    background: var(--off-white);
+    border-bottom-color: var(--text-primary);
+  }
+
+  .tab-btn:hover:not(.active) { color: var(--text-primary); background: rgba(0,0,0,0.02); }
+
+  .panel {
+    display: none;
+    padding: 32px 36px 28px;
+    animation: fadeUp .22s ease;
+  }
+
+  .panel.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .field-group { margin-bottom: 20px; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 7px;
+    font-family: var(--font-mono);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--input-bg);
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  input::placeholder { color: #c0bdb8; }
+
+  input:focus, select:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+  }
+
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '↓';
+    position: absolute;
+    right: 13px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+  .select-wrap select { padding-right: 36px; cursor: pointer; }
+
+  .password-wrap { position: relative; }
+  .password-wrap input { padding-right: 44px; }
+
+  .eye-btn {
+    position: absolute;
+    right: 12px; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none; cursor: pointer;
+    color: var(--text-muted); padding: 4px;
+    display: flex; align-items: center;
+    transition: color .2s;
+  }
+
+  .eye-btn:hover { color: var(--text-primary); }
+
+  .forgot-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -12px;
+    margin-bottom: 20px;
+  }
+
+  .forgot-link {
+    font-size: 12px;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-family: var(--font-mono);
+  }
+
+  .forgot-link:hover { text-decoration: underline; }
+
+  .field-label-standalone {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: block;
+    font-family: var(--font-mono);
+  }
+
+  .role-chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .role-chip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s, color .2s;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    user-select: none;
+  }
+
+  .role-chip.selected {
+    border-color: var(--accent-blue);
+    background: rgba(37,99,235,0.06);
+    color: var(--accent-blue);
+  }
+
+  .role-chip:hover:not(.selected) { border-color: rgba(0,0,0,0.18); background: rgba(0,0,0,0.02); }
+  .role-chip input { display: none; }
+  .role-icon { font-size: 17px; line-height: 1; }
+
+  .institution-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .section-sep-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 24px 0 22px;
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-sep-label::before,
+  .section-sep-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .strength-wrap { margin-top: 8px; }
+
+  .strength-bars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 5px;
+  }
+
+  .strength-bar {
+    flex: 1; height: 3px;
+    border-radius: 999px;
+    background: var(--border);
+    transition: background .3s;
+  }
+
+  .strength-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .match-indicator {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    margin-top: 6px;
+    display: none;
+  }
+
+  .match-indicator.ok { color: #16a34a; display: block; }
+  .match-indicator.fail { color: #ef4444; display: block; }
+
+  .terms-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 22px;
+  }
+
+  .terms-row input[type="checkbox"] {
+    width: 16px; height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--accent-blue);
+    cursor: pointer;
+  }
+
+  .terms-row span {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .terms-row a { color: var(--accent-blue); text-decoration: none; }
+  .terms-row a:hover { text-decoration: underline; }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 50px;
+    background: var(--text-primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    transition: background .2s, transform .1s, box-shadow .2s;
+  }
+
+  .btn-primary:hover { background: #000; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+  .btn-primary:active { transform: scale(0.99); }
+
+  .btn-arrow { transition: transform .2s; }
+  .btn-primary:hover .btn-arrow { transform: translateX(4px); }
+
+  .error-msg {
+    display: none;
+    font-size: 11px;
+    color: #ef4444;
+    margin-top: 5px;
+    font-family: var(--font-mono);
+  }
+
+  input.error { border-color: #ef4444 !important; box-shadow: 0 0 0 3px rgba(239,68,68,0.08) !important; }
+
+  .card-footer {
+    padding: 16px 36px;
+    border-top: 1px solid var(--border);
+    background: var(--off-white);
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .card-footer a { color: var(--accent-blue); text-decoration: none; font-weight: 500; }
+  .card-footer a:hover { text-decoration: underline; }
+
+  .success-panel {
+    display: none;
+    padding: 52px 36px;
+    text-align: center;
+    animation: fadeUp .3s ease;
+  }
+
+  .success-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(22,163,74,0.10);
+    border: 2px solid rgba(22,163,74,0.28);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 22px;
+    font-size: 26px;
+    color: #16a34a;
+  }
+
+  .success-panel h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .success-panel p { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
+
+  .success-redirect-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  .success-redirect-fill {
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: 999px;
+    animation: fillBar 2s linear forwards;
+  }
+
+  @keyframes fillBar { from { width: 0%; } to { width: 100%; } }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 18px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(244,243,240,0.7);
+  }
+
+  .footer-note {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.01em;
+  }
+
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 11.5px; color: var(--text-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--text-primary); }
+
+  @media (max-width: 560px) {
+    nav { padding: 0 20px; }
+    main { padding: 36px 16px 48px; }
+    .panel { padding: 24px 20px 20px; }
+    .card-footer { padding: 14px 20px; }
+    .field-row,
+    .institution-row { grid-template-columns: 1fr; }
+    .role-chips { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 8px; padding: 16px 20px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<nav>
+  <a class="nav-brand" href="signup.html">
+    <div class="brand-icon">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="16" cy="16" r="2" fill="currentColor"/>
+      </svg>
+    </div>
+    <span class="brand-name">ObturaScore<sup>AI</sup></span>
+  </a>
+</nav>
+
+<main>
+  <div class="auth-wrapper">
+
+    <div class="pill">
+      <span class="pill-dot"></span>
+      AI-Powered Endodontic Intelligence · Secure Access
+    </div>
+
+    <h1 class="auth-heading">
+      Radiographic
+      <em>Intelligence,</em>
+      Awaits.
+    </h1>
+    <p class="auth-sub">Sign in to access your obturation scoring dashboard, or create an account to get started in seconds.</p>
+
+    <div class="card">
+
+      <div class="tab-bar" id="tabBar">
+        <button class="tab-btn active" data-tab="login" onclick="switchTab('login')">Sign In</button>
+        <button class="tab-btn" data-tab="signup" onclick="switchTab('signup')">Create Account</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div id="panel-login" class="panel active">
+
+        <div class="field-group">
+          <label>Email Address</label>
+          <input type="email" id="login-email" placeholder="you@clinic.com" autocomplete="email" />
+          <span class="error-msg" id="login-email-err">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field-group">
+          <label>Password</label>
+          <div class="password-wrap">
+            <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+            <button class="eye-btn" onclick="togglePwd('login-password', this)" type="button" aria-label="Toggle password">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <span class="error-msg" id="login-pass-err">Password is required.</span>
+        </div>
+
+        <div class="forgot-row">
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button class="btn-primary" onclick="handleLogin()">
+          Sign In <span class="btn-arrow">→</span>
+        </button>
+
+      </div>
+
+      <!-- SIGNUP PANEL -->
+      <div id="panel-signup" class="panel">
+
+        <div class="field-row">
+          <div>
+            <label>First Name</label>
+            <input type="text" id="su-first" placeholder="Jane" autocomplete="given-name" />
+            <span class="error-msg" id="su-first-err">First name is required.</span>
+          </div>
+          <div>
+            <label>Last Name</label>
+            <input type="text" id="su-last" placeholder="Smith" autocomplete="family-name" />
+            <span class="error-msg" id="su-last-err">Last name is required.</span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Email Address</label>
+          <input type="email" id="su-email" placeholder="you@clinic.com" autocomplete="email" />
+          <span class="error-msg" id="su-email-err">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field-group">
+          <label>Phone Number <span style="font-weight:400;letter-spacing:0;text-transform:none;font-family:var(--font-body);font-size:11px;color:#9ca3af">(optional)</span></label>
+          <input type="tel" id="su-phone" placeholder="+91 98765 43210" autocomplete="tel" />
+        </div>
+
+        <div class="section-sep-label">Personal Details</div>
+
+        <div class="field-row">
+          <div>
+            <label>Date of Birth</label>
+            <input type="date" id="su-dob" />
+          </div>
+          <div>
+            <label>Gender</label>
+            <div class="select-wrap">
+              <select id="su-gender">
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <label>City</label>
+            <input type="text" id="su-city" placeholder="Chennai" />
+          </div>
+          <div>
+            <label>Years of Experience</label>
+            <input type="number" id="su-exp" placeholder="5" min="0" max="60" />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Professional Bio</label>
+          <textarea id="su-bio" rows="4" style="width:100%;border:1px solid var(--border);border-radius:10px;padding:12px;font-family:var(--font-body);resize:none;" placeholder="Tell us about your professional background..."></textarea>
+        </div>
+
+        <div class="section-sep-label">Professional Details</div>
+
+        <span class="field-label-standalone">Role</span>
+        <div class="role-chips">
+          <label class="role-chip selected" id="chip-dentist" onclick="selectRole('dentist')">
+            <input type="radio" name="role" value="dentist" checked />
+            <span class="role-icon">🦷</span> Dentist
+          </label>
+          <label class="role-chip" id="chip-endodontist" onclick="selectRole('endodontist')">
+            <input type="radio" name="role" value="endodontist" />
+            <span class="role-icon">🔬</span> Endodontist
+          </label>
+          <label class="role-chip" id="chip-student" onclick="selectRole('student')">
+            <input type="radio" name="role" value="student" />
+            <span class="role-icon">🎓</span> Student
+          </label>
+          <label class="role-chip" id="chip-researcher" onclick="selectRole('researcher')">
+            <input type="radio" name="role" value="researcher" />
+            <span class="role-icon">📊</span> Researcher
+          </label>
+        </div>
+
+        <div class="institution-row">
+          <div>
+            <label>Institution / Clinic</label>
+            <input type="text" id="su-institution" placeholder="City Dental Clinic" />
+          </div>
+          <div>
+            <label>Specialisation</label>
+            <div class="select-wrap">
+              <select id="su-specialty">
+                <option value="" disabled selected>Select…</option>
+                <option>General Dentistry</option>
+                <option>Endodontics</option>
+                <option>Periodontics</option>
+                <option>Oral Surgery</option>
+                <option>Orthodontics</option>
+                <option>Prosthodontics</option>
+                <option>Oral Pathology</option>
+                <option>Dental Research</option>
+                <option>Undergraduate Student</option>
+                <option>Postgraduate Student</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-sep-label">Set Password</div>
+
+        <div class="field-group">
+          <label>Password</label>
+          <div class="password-wrap">
+            <input type="password" id="su-password" placeholder="Min. 8 characters" oninput="checkStrength(this.value); checkMatch()" autocomplete="new-password" />
+            <button class="eye-btn" onclick="togglePwd('su-password', this)" type="button" aria-label="Toggle password">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <div class="strength-wrap">
+            <div class="strength-bars">
+              <div class="strength-bar" id="sb1"></div>
+              <div class="strength-bar" id="sb2"></div>
+              <div class="strength-bar" id="sb3"></div>
+              <div class="strength-bar" id="sb4"></div>
+            </div>
+            <span class="strength-label" id="strength-label"></span>
+          </div>
+          <span class="error-msg" id="su-pass-err">Password must be at least 8 characters.</span>
+        </div>
+
+        <div class="field-group">
+          <label>Confirm Password</label>
+          <div class="password-wrap">
+            <input type="password" id="su-confirm" placeholder="Re-enter password" oninput="checkMatch()" autocomplete="new-password" />
+            <button class="eye-btn" onclick="togglePwd('su-confirm', this)" type="button" aria-label="Toggle password">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <div class="match-indicator" id="match-indicator"></div>
+          <span class="error-msg" id="su-confirm-err">Passwords do not match.</span>
+        </div>
+
+        <div class="terms-row">
+          <input type="checkbox" id="terms" />
+          <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I understand ObturaScore AI is for research &amp; educational use only — not a substitute for clinical judgment.</span>
+        </div>
+
+        <button class="btn-primary" onclick="handleSignup()">
+          Create Account <span class="btn-arrow">→</span>
+        </button>
+
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div id="success-panel" class="success-panel">
+        <div class="success-icon">✓</div>
+        <h3 id="success-title">Welcome!</h3>
+        <p id="success-msg">Taking you to your dashboard…</p>
+        <div class="success-redirect-bar">
+          <div class="success-redirect-fill"></div>
+        </div>
+      </div>
+
+      <div class="card-footer" id="card-footer">
+        New to ObturaScore? <a href="#" onclick="switchTab('signup'); return false;">Create a free account →</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-note">For research &amp; educational use only · De-identified data only</span>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const API_BASE = 'http://localhost:5001/api';
+
+  /* ── Tab switching ── */
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+    document.getElementById(`panel-${tab}`).classList.add('active');
+
+    const footer = document.getElementById('card-footer');
+    if (tab === 'login') {
+      footer.innerHTML = 'New to ObturaScore? <a href="#" onclick="switchTab(\'signup\'); return false;">Create a free account →</a>';
+    } else {
+      footer.innerHTML = 'Already have an account? <a href="#" onclick="switchTab(\'login\'); return false;">Sign in →</a>';
+    }
+  }
+
+  /* ── Password toggle ── */
+  function togglePwd(id) {
+    const input = document.getElementById(id);
+    input.type = input.type === 'password' ? 'text' : 'password';
+  }
+
+  /* ── Role select ── */
+  function selectRole(role) {
+    document.querySelectorAll('.role-chip').forEach(chip => chip.classList.remove('selected'));
+    document.getElementById(`chip-${role}`).classList.add('selected');
+  }
+
+  /* ══════════════════════════════
+     SIGN UP — saves to sessionStorage, redirects to index.html
+  ══════════════════════════════ */
+  async function handleSignup() {
+    const firstName       = document.getElementById('su-first').value.trim();
+    const lastName        = document.getElementById('su-last').value.trim();
+    const email           = document.getElementById('su-email').value.trim();
+    const phone           = document.getElementById('su-phone').value.trim();
+    const password        = document.getElementById('su-password').value;
+    const confirmPassword = document.getElementById('su-confirm').value;
+    const institution     = document.getElementById('su-institution').value;
+    const specialization  = document.getElementById('su-specialty').value;
+    const dob             = document.getElementById('su-dob').value;
+    const gender          = document.getElementById('su-gender').value;
+    const city            = document.getElementById('su-city').value;
+    const experience      = document.getElementById('su-exp').value;
+    const bio             = document.getElementById('su-bio').value;
+    const selectedRole    = document.querySelector('.role-chip.selected input');
+    const role            = selectedRole ? selectedRole.value : 'dentist';
+
+    if (!firstName || !lastName || !email || !password) {
+      alert('Please fill all required fields'); return;
+    }
+    if (password.length < 6) {
+      alert('Password should be at least 6 characters'); return;
+    }
+    if (password !== confirmPassword) {
+      alert('Passwords do not match'); return;
+    }
+    if (!document.getElementById('terms').checked) {
+      alert('Please accept Terms & Conditions'); return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`,
+          email, password, phone,
+          clinic: institution, role, specialization,
+          dob, gender, city, experience, bio
+        })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || 'Signup failed');
+        return;
+      }
+
+      /* ✅ Save auth to BOTH storages for compatibility */
+      localStorage.setItem('dentrix_token', data.token);
+      localStorage.setItem('dentrix_user', JSON.stringify(data.user));
+      sessionStorage.setItem('obturaAuth', JSON.stringify(data.user));
+
+      showSuccess('Account Created!', 'Taking you to the home page…');
+      /* ✅ Redirect to index.html (home), NOT dashboard */
+      setTimeout(() => { window.location.href = 'home.html'; }, 2000);
+
+    } catch (err) {
+      alert('Could not connect to server. Make sure backend is running.');
+      console.error(err);
+    }
+  }
+
+  /* ══════════════════════════════
+     LOGIN — saves to sessionStorage, redirects to index.html
+  ══════════════════════════════ */
+  async function handleLogin() {
+    const email    = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+
+    if (!email || !password) {
+      alert('Please enter email and password'); return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || 'Invalid email or password');
+        return;
+      }
+
+      /* ✅ Save auth to BOTH storages for compatibility */
+      localStorage.setItem('dentrix_token', data.token);
+      localStorage.setItem('dentrix_user', JSON.stringify(data.user));
+      sessionStorage.setItem('obturaAuth', JSON.stringify(data.user));
+
+      showSuccess('Welcome Back!', 'Taking you to the home page…');
+      /* ✅ Redirect to index.html (home), NOT dashboard */
+      setTimeout(() => { window.location.href = 'home.html'; }, 1500);
+
+    } catch (err) {
+      alert('Could not connect to server. Make sure backend is running.');
+      console.error(err);
+    }
+  }
+
+  /* ── Success screen ── */
+  function showSuccess(title, message) {
+    document.getElementById('panel-login').style.display = 'none';
+    document.getElementById('panel-signup').style.display = 'none';
+    document.getElementById('tabBar').style.display = 'none';
+    document.getElementById('card-footer').style.display = 'none';
+    const successPanel = document.getElementById('success-panel');
+    successPanel.style.display = 'block';
+    document.getElementById('success-title').textContent = title;
+    document.getElementById('success-msg').textContent = message;
+  }
+
+  /* ── Password strength ── */
+  function checkStrength(password) {
+    const bars = ['sb1','sb2','sb3','sb4'].map(id => document.getElementById(id));
+    bars.forEach(bar => bar.style.background = '#e5e7eb');
+    let strength = 0;
+    if (password.length >= 6) strength++;
+    if (password.match(/[A-Z]/)) strength++;
+    if (password.match(/[0-9]/)) strength++;
+    if (password.match(/[^A-Za-z0-9]/)) strength++;
+    for (let i = 0; i < strength; i++) bars[i].style.background = '#2563eb';
+    const texts = ['', 'Weak', 'Medium', 'Good', 'Strong'];
+    document.getElementById('strength-label').textContent = texts[strength];
+  }
+
+  /* ── Password match ── */
+  function checkMatch() {
+    const pass    = document.getElementById('su-password').value;
+    const confirm = document.getElementById('su-confirm').value;
+    const indicator = document.getElementById('match-indicator');
+    if (!confirm) { indicator.style.display = 'none'; return; }
+    indicator.style.display = 'block';
+    if (pass === confirm) {
+      indicator.textContent = '✓ Passwords match';
+      indicator.className = 'match-indicator ok';
+    } else {
+      indicator.textContent = '✕ Passwords do not match';
+      indicator.className = 'match-indicator fail';
+    }
+  }
+</script>
+</body>
+</html>

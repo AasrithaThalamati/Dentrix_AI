@@ -197,6 +197,23 @@
     border-radius: var(--radius-sm);
   }
   .mobile-menu.open { display: flex; }
+
+  .nav-user-name {
+    font-size: 13px;
+    color: var(--text-muted, #6b6760);
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+  
+  .nav-user-name:hover {
+    color: #1a1916;
+  }
   
   /* ── Sections ── */
   section {

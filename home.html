@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ObturaScore AI — Radiographic Obturation Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet" />
+
+  <style>
+    #auth-guard {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #f4f3f0;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 14px;
+      color: #6b6760;
+    }
+
+    .nav-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 24px;
+    }
+
+    .nav-user-name {
+      font-size: 13px;
+      color: var(--text-muted, #6b6760);
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .nav-logout-btn {
+      font-size: 12px;
+      font-family: 'Syne Mono', monospace;
+      color: #6b6760;
+      background: none;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 6px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logout-btn:hover {
+      background: rgba(0,0,0,0.05);
+      color: #1a1916;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Auth redirect splash -->
+  <div id="auth-guard" style="display:flex">Redirecting to sign in…</div>
+
+  <!-- Background Grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="brand-name">ObturaScore<sup>AI</sup></span>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html#scoring">Scoring</a>
+        <a href="research.html">Research</a>
+        <a href="analyze.html">Analyze X-Ray</a>
+        <a href="settings.html">Settings</a>
+        <div class="nav-user" id="nav-user-area">
+          <a href="profile.html" class="nav-user-name" id="nav-user-name" style="text-decoration:none;cursor:pointer;"></a>
+          <button class="nav-logout-btn" onclick="logout()">Sign Out</button>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#scoring">Scoring</a>
+      <a href="research.html">Research</a>
+      <a href="analyze.html" class="nav-cta">Analyze X-Ray</a>
+      <a href="signup.html" onclick="logout()">Sign Out</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      AI-Powered Endodontic Intelligence · Cross-Sectional Observational Study
+    </div>
+    <h1 class="hero-title">
+      Radiographic<br />
+      <em>Obturation</em><br />
+      Scored by AI
+    </h1>
+    <p class="hero-subtitle">
+      Upload a root canal IOPA radiograph. Receive a standardized, objective obturation quality score — evaluated across length, density, and taper — in seconds.
+    </p>
+    <div class="hero-actions">
+      <a href="#analyze" class="btn-primary">
+        <span>Upload & Analyze</span>
+        <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#how-it-works" class="btn-ghost">See Methodology</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">10</span>
+        <span class="stat-label">Point Scoring Index</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Clinical Parameters</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">1500+</span>
+        <span class="stat-label">Radiograph Dataset</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ANATOMY DIAGRAM SECTION
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="anatomy-section" id="anatomy">
+    <div class="section-label">INTERACTIVE ANATOMY</div>
+    <h2 class="section-title">Understanding the<br /><em>Root Canal</em></h2>
+    <p class="anatomy-intro">Hover over each labelled structure to understand what ObturaScore AI evaluates. Click a label to learn more.</p>
+
+    <div class="anatomy-layout">
+      <div class="anatomy-diagram-wrap">
+        <svg class="anatomy-svg" viewBox="0 0 340 560" fill="none" xmlns="http://www.w3.org/2000/svg" id="anatomySvg">
+          <path class="tooth-crown" d="M90 40 Q100 20 130 18 Q170 14 210 18 Q240 20 250 40 Q260 70 255 110 Q250 140 240 160 L200 180 L170 185 L140 180 L100 160 Q90 140 85 110 Q80 70 90 40Z" stroke="#c8c4bb" stroke-width="1.5" fill="#f8f7f4"/>
+          <path class="tooth-enamel" d="M110 35 Q130 22 170 20 Q200 19 225 30" stroke="#e8e6e1" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path class="pulp-chamber" id="pulpChamber" d="M140 80 Q145 65 170 63 Q195 65 200 80 Q205 100 200 130 L190 145 L170 148 L150 145 L140 130 Q135 100 140 80Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path class="tooth-root" d="M140 145 L130 155 Q120 180 118 230 Q115 290 118 360 Q119 400 124 430 Q128 455 135 465 Q142 472 150 465 Q157 458 158 430 Q160 400 158 360 Q155 290 152 230 Q148 180 145 155 Z" fill="#f4f3f0" stroke="#a8a49d" stroke-width="1.5"/>
+          <path class="tooth-root" d="M195 145 L205 155 Q215 180 217 230 Q220 290 217 360 Q216 400 211 430 Q207 455 200 465 Q193 472 185 465 Q178 458 177 430 Q175 400 177 360 Q180 290 183 230 Q187 180 190 155 Z" fill="#f4f3f0" stroke="#a8a49d" stroke-width="1.5"/>
+          <path class="canal-fill gutta-mesial" id="canalMesial" d="M143 155 L137 165 Q128 190 127 240 Q125 300 128 365 Q130 400 133 425 Q136 445 140 455 Q144 462 148 455 Q152 445 153 425 Q155 400 153 365 Q150 300 148 240 Q146 190 143 165 Z" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="1"/>
+          <path class="canal-fill gutta-distal" id="canalDistal" d="M197 155 L203 165 Q212 190 213 240 Q215 300 212 365 Q210 400 207 425 Q204 445 200 455 Q196 462 192 455 Q188 445 187 425 Q185 400 187 365 Q190 300 192 240 Q194 190 197 165 Z" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="1"/>
+          <ellipse class="apex-seal" cx="144" cy="460" rx="7" ry="5" fill="#059669" opacity="0.7"/>
+          <ellipse class="apex-seal" cx="196" cy="460" rx="7" ry="5" fill="#059669" opacity="0.7"/>
+          <path class="pdl-line" d="M117 230 Q113 230 110 260 Q108 300 111 360" stroke="#e8c975" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <path class="pdl-line" d="M223 230 Q227 230 230 260 Q232 300 229 360" stroke="#e8c975" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <rect class="alveolar-bone" x="60" y="190" width="220" height="12" rx="4" fill="#f0ede6" stroke="#c8c4bb" stroke-width="1"/>
+          <text x="170" y="200" text-anchor="middle" font-size="8" fill="#a8a49d" font-family="monospace">ALVEOLAR CREST</text>
+          <line class="measure-line length-line" x1="100" y1="155" x2="100" y2="460" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          <line x1="95" y1="155" x2="105" y2="155" stroke="#2563eb" stroke-width="1.5"/>
+          <line x1="95" y1="460" x2="105" y2="460" stroke="#2563eb" stroke-width="1.5"/>
+          <line class="measure-line" x1="95" y1="435" x2="115" y2="435" stroke="#059669" stroke-width="1.5" stroke-dasharray="none"/>
+          <text x="75" y="447" font-size="7.5" fill="#059669" font-family="monospace" text-anchor="middle">0–2mm</text>
+          <text x="75" y="456" font-size="7" fill="#059669" font-family="monospace" text-anchor="middle">optimal</text>
+          <line class="label-line" x1="200" y1="100" x2="270" y2="80" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="200" cy="100" r="3" fill="#2563eb"/>
+          <g class="anatomy-label" data-key="pulp" transform="translate(272, 68)">
+            <rect x="0" y="0" width="120" height="28" rx="6" fill="#2563eb"/>
+            <text x="10" y="12" font-size="9" fill="white" font-family="monospace" font-weight="bold">① PULP CHAMBER</text>
+            <text x="10" y="23" font-size="7.5" fill="rgba(255,255,255,0.75)" font-family="monospace">Coronal nerve tissue</text>
+          </g>
+          <line class="label-line" x1="147" y1="300" x2="60" y2="290" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="147" cy="300" r="3" fill="#2563eb"/>
+          <g class="anatomy-label" data-key="gp" transform="translate(-80, 276)">
+            <rect x="0" y="0" width="138" height="28" rx="6" fill="#1a1916"/>
+            <text x="10" y="12" font-size="9" fill="white" font-family="monospace" font-weight="bold">② GUTTA PERCHA</text>
+            <text x="10" y="23" font-size="7.5" fill="rgba(255,255,255,0.6)" font-family="monospace">Obturating material</text>
+          </g>
+          <line class="label-line" x1="196" y1="462" x2="270" y2="490" stroke="#059669" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="196" cy="462" r="3" fill="#059669"/>
+          <g class="anatomy-label" data-key="apex" transform="translate(272, 478)">
+            <rect x="0" y="0" width="130" height="28" rx="6" fill="#059669"/>
+            <text x="10" y="12" font-size="9" fill="white" font-family="monospace" font-weight="bold">③ APICAL SEAL</text>
+            <text x="10" y="23" font-size="7.5" fill="rgba(255,255,255,0.75)" font-family="monospace">0–2mm from foramen</text>
+          </g>
+          <line class="label-line" x1="111" y1="290" x2="60" y2="340" stroke="#e8c975" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="111" cy="290" r="3" fill="#e8c975"/>
+          <g class="anatomy-label" data-key="pdl" transform="translate(-80, 328)">
+            <rect x="0" y="0" width="138" height="28" rx="6" fill="#92400e"/>
+            <text x="10" y="12" font-size="9" fill="white" font-family="monospace" font-weight="bold">④ PDL SPACE</text>
+            <text x="10" y="23" font-size="7.5" fill="rgba(255,255,255,0.6)" font-family="monospace">Periodontal ligament</text>
+          </g>
+          <line class="label-line" x1="210" y1="35" x2="272" y2="35" stroke="#6b6760" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="210" cy="35" r="3" fill="#6b6760"/>
+          <g class="anatomy-label" data-key="crown" transform="translate(272, 23)">
+            <rect x="0" y="0" width="120" height="28" rx="6" fill="#2d2b28"/>
+            <text x="10" y="12" font-size="9" fill="white" font-family="monospace" font-weight="bold">⑤ CROWN</text>
+            <text x="10" y="23" font-size="7.5" fill="rgba(255,255,255,0.6)" font-family="monospace">Enamel + dentin</text>
+          </g>
+          <path class="taper-arrow" d="M220 165 Q228 250 225 400" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" opacity="0.7"/>
+          <polygon points="222,400 228,410 218,410" fill="#ea580c" opacity="0.7"/>
+          <text x="232" y="290" font-size="8" fill="#ea580c" font-family="monospace" writing-mode="tb" opacity="0.7">TAPER</text>
+        </svg>
+        <div class="anatomy-scan"></div>
+      </div>
+
+      <div class="anatomy-info-panel">
+        <div class="anatomy-legend">
+          <h3>Anatomy Legend</h3>
+          <div class="legend-entries">
+            <div class="legend-entry" data-key="pulp">
+              <div class="legend-dot" style="background:#2563eb"></div>
+              <div class="legend-entry-text">
+                <strong>① Pulp Chamber</strong>
+                <p>The coronal portion of the root canal system containing nerve tissue, blood vessels, and pulpal stroma. AI evaluates the orifice width as a reference for coronal third density.</p>
+              </div>
+            </div>
+            <div class="legend-entry" data-key="gp">
+              <div class="legend-dot" style="background:#1a1916"></div>
+              <div class="legend-entry-text">
+                <strong>② Gutta-Percha Fill</strong>
+                <p>The radiopaque obturating material visible as a dense white column on IOPA. ObturaScore AI analyzes homogeneity, void presence, and taper continuity throughout this column.</p>
+              </div>
+            </div>
+            <div class="legend-entry" data-key="apex">
+              <div class="legend-dot" style="background:#059669"></div>
+              <div class="legend-entry-text">
+                <strong>③ Apical Seal</strong>
+                <p>The terminus of the obturation relative to the radiographic apex. Optimal termination: 0–2mm short. Short fill &gt;2mm scores penalty. Overextension receives lowest length score.</p>
+              </div>
+            </div>
+            <div class="legend-entry" data-key="pdl">
+              <div class="legend-dot" style="background:#e8c975"></div>
+              <div class="legend-entry-text">
+                <strong>④ PDL Space</strong>
+                <p>The periodontal ligament space appears as a thin radiolucent line around the root. Widening may indicate periapical pathology — a context flag in the clinical interpretation output.</p>
+              </div>
+            </div>
+            <div class="legend-entry" data-key="taper">
+              <div class="legend-dot" style="background:#ea580c"></div>
+              <div class="legend-entry-text">
+                <strong>⑤ Taper Continuity</strong>
+                <p>The gradual narrowing from the orifice to apex. AI uses geometric edge detection to measure taper angle deviation. Abrupt changes, ledges, or transportation are flagged as irregularities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="quality-indicators">
+          <h4>Radiographic Quality Markers</h4>
+          <div class="quality-grid">
+            <div class="quality-marker optimal">
+              <div class="qm-icon">✓</div>
+              <div class="qm-text">
+                <strong>Adequate Fill</strong>
+                <span>0–2mm from apex, homogeneous density</span>
+              </div>
+            </div>
+            <div class="quality-marker warn">
+              <div class="qm-icon">△</div>
+              <div class="qm-text">
+                <strong>Short Fill</strong>
+                <span>&gt;2mm from apex, minor voids present</span>
+              </div>
+            </div>
+            <div class="quality-marker poor">
+              <div class="qm-icon">✕</div>
+              <div class="qm-text">
+                <strong>Overextension</strong>
+                <span>Material beyond radiographic apex</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA SECTION -->
+  <section class="media-section" id="media">
+    <div class="section-label">EDUCATIONAL MEDIA</div>
+    <h2 class="section-title">See It in<br /><em>Action</em></h2>
+    <p class="media-intro">Understanding the radiographic anatomy behind obturation scoring helps clinicians correlate AI output with clinical findings.</p>
+    <div class="media-grid">
+      <div class="media-card featured-media">
+        <div class="video-embed-wrap">
+          <iframe class="video-iframe" src="https://www.youtube.com/embed/CbFuuHlZCas?rel=0&modestbranding=1" title="Root Canal Obturation — How to Read IOPA Radiographs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="media-card-body">
+          <div class="media-tag">TECHNIQUE</div>
+          <h3>Reading Obturation on IOPA</h3>
+          <p>How endodontists evaluate radiographic obturation quality — the same criteria our AI has been trained on using consensus-annotated datasets.</p>
+        </div>
+      </div>
+      <div class="media-card">
+        <div class="video-embed-wrap compact">
+          <iframe class="video-iframe" src="https://www.youtube.com/embed/SdoMTdJlteo?rel=0&modestbranding=1" title="Gutta Percha Obturation Technique" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="media-card-body">
+          <div class="media-tag">PROCEDURE</div>
+          <h3>Gutta-Percha Condensation</h3>
+          <p>Lateral vs vertical condensation techniques and their radiographic signatures — understanding how technique affects density scores.</p>
+        </div>
+      </div>
+      <div class="media-card">
+        <div class="video-embed-wrap compact">
+          <iframe class="video-iframe" src="https://www.youtube.com/embed/WFoTGGkgzfI?rel=0&modestbranding=1" title="Periapical Radiograph Interpretation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="media-card-body">
+          <div class="media-tag">INTERPRETATION</div>
+          <h3>Periapical Radiograph Reading</h3>
+          <p>Systematic approach to periapical radiograph interpretation — structures, pathology, and how obturation quality relates to outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="workflow-section" id="workflow">
+    <div class="section-label">AI WORKFLOW</div>
+    <h2 class="section-title">How the AI<br /><em>Scores Your X-Ray</em></h2>
+    <div class="workflow-steps">
+      <div class="workflow-step">
+        <div class="step-number">01</div>
+        <div class="step-visual">
+          <svg viewBox="0 0 120 120" fill="none" class="step-svg">
+            <rect x="20" y="15" width="80" height="90" rx="8" fill="#f4f3f0" stroke="#e8e6e1" stroke-width="1.5"/>
+            <rect x="32" y="30" width="56" height="40" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+            <path d="M44 50 Q52 38 60 50 Q68 62 76 50" stroke="#2563eb" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="60" cy="50" r="3" fill="#2563eb" opacity="0.5"/>
+            <path d="M60 85 L60 100" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+            <path d="M54 91 L60 85 L66 91" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="60" y="112" text-anchor="middle" font-size="9" fill="#6b6760" font-family="monospace">UPLOAD</text>
+          </svg>
+        </div>
+        <div class="step-content">
+          <h3>Upload IOPA Radiograph</h3>
+          <p>Drag and drop or select your de-identified periapical radiograph. Accepts JPEG, PNG, or DICOM formats up to 20MB. The image is encrypted in transit and never stored.</p>
+          <div class="step-tags"><span>JPEG · PNG · DICOM</span><span>Max 20MB</span><span>Encrypted</span></div>
+        </div>
+      </div>
+      <div class="workflow-connector"><div class="connector-line"></div><div class="connector-arrow">↓</div></div>
+      <div class="workflow-step reverse">
+        <div class="step-number">02</div>
+        <div class="step-visual">
+          <svg viewBox="0 0 120 120" fill="none" class="step-svg">
+            <rect x="10" y="30" width="20" height="60" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+            <rect x="37" y="20" width="20" height="80" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+            <rect x="64" y="25" width="20" height="70" rx="4" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+            <rect x="91" y="35" width="20" height="50" rx="4" fill="#60a5fa" stroke="#2563eb" stroke-width="1.5"/>
+            <text x="60" y="112" text-anchor="middle" font-size="9" fill="#6b6760" font-family="monospace">CNN LAYERS</text>
+          </svg>
+        </div>
+        <div class="step-content">
+          <h3>CNN Feature Extraction</h3>
+          <p>Our convolutional neural network analyzes the radiograph pixel-by-pixel, extracting features corresponding to the three scoring parameters: fill extent, homogeneity, and taper geometry.</p>
+          <div class="step-tags"><span>Edge Detection</span><span>Density Mapping</span><span>Geometric Analysis</span></div>
+        </div>
+      </div>
+      <div class="workflow-connector"><div class="connector-line"></div><div class="connector-arrow">↓</div></div>
+      <div class="workflow-step">
+        <div class="step-number">03</div>
+        <div class="step-visual">
+          <svg viewBox="0 0 120 120" fill="none" class="step-svg">
+            <circle cx="40" cy="45" r="22" fill="none" stroke="#e8e6e1" stroke-width="4"/>
+            <path d="M40 23 A22 22 0 0 1 62 45" stroke="#059669" stroke-width="4" stroke-linecap="round"/>
+            <text x="40" y="49" text-anchor="middle" font-size="10" fill="#059669" font-weight="bold" font-family="monospace">4/4</text>
+            <circle cx="80" cy="45" r="18" fill="none" stroke="#e8e6e1" stroke-width="3.5"/>
+            <path d="M80 27 A18 18 0 0 1 96 54" stroke="#d97706" stroke-width="3.5" stroke-linecap="round"/>
+            <text x="80" y="49" text-anchor="middle" font-size="9" fill="#d97706" font-weight="bold" font-family="monospace">2/3</text>
+            <rect x="25" y="80" width="70" height="28" rx="6" fill="#1a1916"/>
+            <text x="60" y="97" text-anchor="middle" font-size="14" fill="white" font-family="serif" font-weight="bold">8.0/10</text>
+            <text x="60" y="112" text-anchor="middle" font-size="8" fill="#6b6760" font-family="monospace">COMPOSITE SCORE</text>
+          </svg>
+        </div>
+        <div class="step-content">
+          <h3>Composite Score Generation</h3>
+          <p>Individual parameter scores are weighted and combined: Length (4pts) + Density (3pts) + Taper (3pts) = Total out of 10.</p>
+          <div class="step-tags"><span>Length: 4 pts</span><span>Density: 3 pts</span><span>Taper: 3 pts</span></div>
+        </div>
+      </div>
+      <div class="workflow-connector"><div class="connector-line"></div><div class="connector-arrow">↓</div></div>
+      <div class="workflow-step reverse">
+        <div class="step-number">04</div>
+        <div class="step-visual">
+          <svg viewBox="0 0 120 120" fill="none" class="step-svg">
+            <rect x="20" y="10" width="80" height="100" rx="8" fill="white" stroke="#e8e6e1" stroke-width="1.5"/>
+            <rect x="30" y="22" width="60" height="18" rx="4" fill="#1a1916"/>
+            <text x="60" y="34" text-anchor="middle" font-size="9" fill="white" font-family="serif">8.2 / 10</text>
+            <rect x="30" y="46" width="40" height="4" rx="2" fill="#e8e6e1"/>
+            <rect x="30" y="56" width="50" height="3" rx="1.5" fill="#e8e6e1"/>
+            <rect x="30" y="64" width="44" height="3" rx="1.5" fill="#e8e6e1"/>
+            <rect x="30" y="72" width="48" height="3" rx="1.5" fill="#e8e6e1"/>
+            <text x="60" y="112" text-anchor="middle" font-size="9" fill="#6b6760" font-family="monospace">REPORT</text>
+          </svg>
+        </div>
+        <div class="step-content">
+          <h3>Clinical Report & Recommendations</h3>
+          <p>Receive a full clinical interpretation with parameter breakdown, score classification, and actionable clinical recommendations — downloadable as a report.</p>
+          <div class="step-tags"><span>PDF Report</span><span>Clinical Guidance</span><span>Shareable</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parameters Section -->
+  <section class="parameters" id="how-it-works">
+    <div class="section-label">EVALUATION FRAMEWORK</div>
+    <h2 class="section-title">Three Parameters.<br /><em>One Score.</em></h2>
+    <div class="params-grid">
+      <div class="param-card" data-weight="40">
+        <div class="param-header">
+          <div class="param-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+              <path d="M12 36 L24 44 L36 36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24" cy="44" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="param-badge">4 / 10</div>
+        </div>
+        <h3>Length Adequacy</h3>
+        <p>Assessment of gutta-percha termination relative to the radiographic apex.</p>
+        <div class="param-criteria">
+          <div class="criterion optimal">Adequate fill (0–2mm from apex)</div>
+          <div class="criterion warn">Short fill (>2mm from apex)</div>
+          <div class="criterion poor">Overextension beyond apex</div>
+        </div>
+      </div>
+      <div class="param-card featured" data-weight="30">
+        <div class="param-header">
+          <div class="param-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="16" y="8" width="16" height="32" rx="8" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 16 Q24 20 28 16 M20 24 Q24 28 28 24 M20 32 Q24 36 28 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="param-badge">3 / 10</div>
+        </div>
+        <h3>Density Uniformity</h3>
+        <p>Radiographic assessment of homogeneity within the obturation.</p>
+        <div class="param-criteria">
+          <div class="criterion optimal">Homogeneous fill, no voids</div>
+          <div class="criterion warn">Minor voids (&lt;1mm)</div>
+          <div class="criterion poor">Significant voids present</div>
+        </div>
+      </div>
+      <div class="param-card" data-weight="30">
+        <div class="param-header">
+          <div class="param-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 6 L30 42 M24 6 L18 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 42 Q24 38 30 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="param-badge">3 / 10</div>
+        </div>
+        <h3>Taper Continuity</h3>
+        <p>Geometric evaluation of canal taper from orifice to apex.</p>
+        <div class="param-criteria">
+          <div class="criterion optimal">Smooth, continuous taper</div>
+          <div class="criterion warn">Minor irregularities</div>
+          <div class="criterion poor">Irregular or broken taper</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload & Analyze Section -->
+  <section class="analyze-section" id="analyze">
+    <div class="section-label">AI ANALYSIS ENGINE</div>
+    <h2 class="section-title">Upload Your<br /><em>Radiograph</em></h2>
+    <div class="analyzer-layout">
+      <div class="upload-panel" id="uploadPanel">
+        <div class="upload-zone" id="dropZone">
+          <div class="upload-visual">
+            <div class="upload-rings">
+              <div class="ring r1"></div>
+              <div class="ring r2"></div>
+              <div class="ring r3"></div>
+            </div>
+            <div class="upload-icon-wrap">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 32V16M17 23l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 34v4a2 2 0 002 2h28a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="upload-text">
+            <h3>Drop IOPA Radiograph Here</h3>
+            <p>Supports JPEG, PNG, DICOM · Max 20MB</p>
+          </div>
+          <label class="upload-btn">
+            <input type="file" id="fileInput" accept="image/*" hidden />
+            Choose File
+          </label>
+          <p class="upload-note">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zM8 5v4M8 11v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            De-identified radiographs only · Data encrypted in transit
+          </p>
+        </div>
+        <div class="preview-state" id="previewState" style="display:none">
+          <div class="preview-img-wrap">
+            <img id="previewImg" src="" alt="Uploaded radiograph" />
+            <div class="preview-overlay"><div class="scan-line"></div></div>
+            <button class="remove-btn" id="removeBtn">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="preview-meta" id="previewMeta"></div>
+          <button class="analyze-btn" id="analyzeBtn">
+            <span class="btn-text">Analyze Radiograph</span>
+            <span class="btn-loader" style="display:none">
+              <span class="loader-dot"></span><span class="loader-dot"></span><span class="loader-dot"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="results-panel" id="resultsPanel" style="display:none">
+        <div class="results-header">
+          <div class="results-badge">ANALYSIS COMPLETE</div>
+          <div class="results-timestamp" id="resultsTimestamp"></div>
+        </div>
+        <div class="score-display">
+          <div class="score-ring-wrap">
+            <svg class="score-ring" viewBox="0 0 160 160">
+              <circle class="ring-bg" cx="80" cy="80" r="68" />
+              <circle class="ring-fill" id="ringFill" cx="80" cy="80" r="68" />
+            </svg>
+            <div class="score-center">
+              <div class="score-num" id="scoreNum">—</div>
+              <div class="score-denom">/10</div>
+            </div>
+          </div>
+          <div class="score-meta">
+            <div class="score-label" id="scoreLabel">—</div>
+            <div class="score-desc" id="scoreDesc">—</div>
+          </div>
+        </div>
+        <div class="param-breakdown">
+          <h4>Parameter Breakdown</h4>
+          <div class="breakdown-item">
+            <div class="breakdown-label"><span>Length Adequacy</span><span class="breakdown-score" id="lengthScore">—/4</span></div>
+            <div class="breakdown-bar"><div class="breakdown-fill" id="lengthBar" style="width:0%"></div></div>
+          </div>
+          <div class="breakdown-item">
+            <div class="breakdown-label"><span>Density Uniformity</span><span class="breakdown-score" id="densityScore">—/3</span></div>
+            <div class="breakdown-bar"><div class="breakdown-fill" id="densityBar" style="width:0%"></div></div>
+          </div>
+          <div class="breakdown-item">
+            <div class="breakdown-label"><span>Taper Continuity</span><span class="breakdown-score" id="taperScore">—/3</span></div>
+            <div class="breakdown-bar"><div class="breakdown-fill" id="taperBar" style="width:0%"></div></div>
+          </div>
+        </div>
+        <div class="clinical-card" id="clinicalCard">
+          <div class="clinical-header">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 4v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Clinical Interpretation
+          </div>
+          <div class="clinical-body" id="clinicalBody">—</div>
+        </div>
+        <div class="suggestions-card" id="suggestionsCard" style="display:none">
+          <div class="suggestions-header">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.6 1.8 5.6L10 13.2 5.1 16.8l1.8-5.6L2 7.6h6.2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            Clinical Recommendations
+          </div>
+          <ul class="suggestions-list" id="suggestionsList"></ul>
+        </div>
+        <div class="result-actions">
+          <button class="action-btn share-btn" id="shareBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M15 7a2 2 0 100-4 2 2 0 000 4zm-8 4a2 2 0 100-4 2 2 0 000 4zm8 4a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.3"/><path d="M13.1 8.6l-4.2 2.4M8.9 9l4.2 2.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Share Result
+          </button>
+          <button class="action-btn download-btn" id="downloadBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download Report
+          </button>
+          <button class="action-btn reset-btn" id="resetBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10a6 6 0 1112 0 6 6 0 01-12 0zm3-3l-3 3 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            New Analysis
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Share Modal -->
+  <div class="modal-overlay" id="shareModal" style="display:none">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-title">Share Your Result</div>
+      <div class="share-preview-card" id="shareCard">
+        <div class="share-brand">ObturaScore<sup>AI</sup></div>
+        <div class="share-score-big" id="shareScoreDisplay">—/10</div>
+        <div class="share-label-big" id="shareLabelDisplay">—</div>
+        <div class="share-params" id="shareParams"></div>
+        <div class="share-footer">Radiographic Obturation Quality Analysis · obturaScore.ai</div>
+      </div>
+      <div class="share-platforms">
+        <button class="platform-btn twitter" id="twitterBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Post on X
+        </button>
+        <button class="platform-btn linkedin" id="linkedinBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Share on LinkedIn
+        </button>
+        <button class="platform-btn copy" id="copyLinkBtn">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 012-2h4a2 2 0 012 2v1M8 5a2 2 0 002 2h4a2 2 0 002-2M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Copy Result Link
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scoring Legend -->
+  <section class="scoring-section" id="scoring">
+    <div class="section-label">INTERPRETATION GUIDE</div>
+    <h2 class="section-title">Score<br /><em>Reference</em></h2>
+    <div class="score-legend">
+      <div class="legend-item optimal">
+        <div class="legend-range">8–10</div>
+        <div class="legend-bar"><div class="legend-fill" style="width:100%"></div></div>
+        <div class="legend-label">Optimal Obturation</div>
+        <p>Meets all clinical criteria. Length, density, and taper within acceptable parameters. No retreatment indicated.</p>
+      </div>
+      <div class="legend-item acceptable">
+        <div class="legend-range">6–7.9</div>
+        <div class="legend-bar"><div class="legend-fill" style="width:75%"></div></div>
+        <div class="legend-label">Acceptable</div>
+        <p>Minor deviations in one or two parameters. Clinically acceptable. Monitor at recall appointments.</p>
+      </div>
+      <div class="legend-item suboptimal">
+        <div class="legend-range">4–5.9</div>
+        <div class="legend-bar"><div class="legend-fill" style="width:50%"></div></div>
+        <div class="legend-label">Suboptimal</div>
+        <p>Notable deficiencies present. Consider clinical correlation. Retreatment may be warranted depending on symptoms.</p>
+      </div>
+      <div class="legend-item poor">
+        <div class="legend-range">&lt;4</div>
+        <div class="legend-bar"><div class="legend-fill" style="width:25%"></div></div>
+        <div class="legend-label">Poor Obturation</div>
+        <p>Significant deficiencies across parameters. Clinical re-evaluation and probable retreatment strongly advised.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="research-section" id="research">
+    <div class="research-inner">
+      <div class="research-text">
+        <div class="section-label">STUDY BACKGROUND</div>
+        <h2 class="section-title">Built on<br /><em>Evidence</em></h2>
+        <p>ObturaScore AI is derived from a cross-sectional observational study leveraging a dataset of 800–1500 annotated radiographs evaluated by three independent endodontists.</p>
+        <p>Consensus ground truth labeling ensures annotation quality. The CNN model achieves standardized, examiner-independent evaluation — eliminating inter-observer variability that has historically limited radiographic studies.</p>
+        <div class="research-tags">
+          <span>Cross-Sectional Study</span>
+          <span>CNN Architecture</span>
+          <span>Endodontist Annotated</span>
+          <span>IRB Approved</span>
+          <span>DICOM Compatible</span>
+        </div>
+      </div>
+      <div class="research-comparison">
+        <div class="comparison-table">
+          <div class="comparison-head">
+            <div></div>
+            <div>Manual IOPA</div>
+            <div>CBCT</div>
+            <div class="highlight-col">AI System</div>
+          </div>
+          <div class="comparison-row">
+            <div class="row-label">Subjectivity</div>
+            <div class="cell bad">High</div>
+            <div class="cell mid">Moderate</div>
+            <div class="cell good highlight-col">Low</div>
+          </div>
+          <div class="comparison-row">
+            <div class="row-label">Standardized Score</div>
+            <div class="cell bad">✕</div>
+            <div class="cell bad">✕</div>
+            <div class="cell good highlight-col">✓</div>
+          </div>
+          <div class="comparison-row">
+            <div class="row-label">Cost</div>
+            <div class="cell mid">Low</div>
+            <div class="cell bad">High</div>
+            <div class="cell good highlight-col">Low</div>
+          </div>
+          <div class="comparison-row">
+            <div class="row-label">Auto Suggestions</div>
+            <div class="cell bad">✕</div>
+            <div class="cell bad">✕</div>
+            <div class="cell good highlight-col">✓</div>
+          </div>
+          <div class="comparison-row">
+            <div class="row-label">Clinical Audit</div>
+            <div class="cell bad">Limited</div>
+            <div class="cell mid">Limited</div>
+            <div class="cell good highlight-col">High</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-icon small">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">ObturaScore<sup>AI</sup></div>
+          <div class="footer-tagline">Radiographic Obturation Intelligence</div>
+        </div>
+      </div>
+      <div class="footer-notice">
+        For research and educational use only. Not a substitute for clinical judgment. De-identified data only. Ethical clearance maintained.
+      </div>
+      <div class="footer-meta">© 2025 ObturaScore AI · Cross-Sectional Observational Study Platform</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+
+  <script>
+    /* ══════════════════════════════════
+       AUTH GUARD
+       Checks sessionStorage OR localStorage for a valid auth token.
+       If neither found → redirect to signup.html
+    ══════════════════════════════════ */
+    (function() {
+      /* ✅ Accept auth from sessionStorage (set by signup.html) OR
+            from localStorage (set by backend token) */
+      const sessionAuth = sessionStorage.getItem('obturaAuth');
+      const localUser   = localStorage.getItem('dentrix_user');
+      const localToken  = localStorage.getItem('dentrix_token');
+
+      const isAuthed = sessionAuth || (localToken && localUser);
+
+      if (!isAuthed) {
+        /* Not logged in — redirect immediately */
+        window.location.replace('signup.html');
+        return;
+      }
+
+      /* ── Sync: if only localStorage exists, populate sessionStorage ── */
+      if (!sessionAuth && localUser) {
+        sessionStorage.setItem('obturaAuth', localUser);
+      }
+
+      /* Logged in — hide guard, show page */
+      const guard = document.getElementById('auth-guard');
+      if (guard) guard.style.display = 'none';
+
+      /* Populate user name in nav */
+      try {
+        const rawUser = sessionAuth || localUser;
+        const user = JSON.parse(rawUser);
+        const nameEl = document.getElementById('nav-user-name');
+        if (nameEl && user && user.name) {
+          const initials = user.name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+          nameEl.innerHTML = `<span style="
+            display:inline-flex;align-items:center;justify-content:center;
+            width:28px;height:28px;border-radius:50%;
+            background:#1a1916;color:#fff;
+            font-size:11px;font-weight:600;letter-spacing:0.02em;
+            margin-right:6px;flex-shrink:0;
+          ">${initials}</span>${user.name}`;
+        }
+      } catch(e) {}
+    })();
+
+    /* ✅ Logout — clears BOTH storages */
+    function logout() {
+      sessionStorage.removeItem('obturaAuth');
+      localStorage.removeItem('dentrix_token');
+      localStorage.removeItem('dentrix_user');
+      window.location.href = 'signup.html';
+    }
+  </script>
+</body>
+</html>
