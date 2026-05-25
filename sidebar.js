@@ -45,7 +45,7 @@
     }
   
     const html = `
-      <div class="sidebar-brand" href="index.html">
+      <a class="sidebar-brand" href="home.html">
         <div class="brand-icon-wrap">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
@@ -54,10 +54,10 @@
           </svg>
         </div>
         <div class="brand-text">
-          <div class="brand-name">ObturaScore<sup>AI</sup></div>
+          <div class="brand-name">Dentrix<sup>AI</sup></div>
           <div class="brand-sub">ENDO INTELLIGENCE</div>
         </div>
-      </div>
+      </a>
   
       <a class="sidebar-doctor" href="profile.html">
         <div class="doctor-avatar-sm" id="sidebarAvatar">${initials}</div>
@@ -112,6 +112,12 @@
             <path d="M9 3H5a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
             <path d="M15 2l3 3-7 7H8v-3l7-7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
           </svg>`, 'Research')}
+
+         ${navItem('smile.html', `
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M9 3H5a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M15 2l3 3-7 7H8v-3l7-7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>`, 'Smile Design')}
   
         <div class="nav-section-label">Account</div>
   
@@ -136,7 +142,7 @@
           </svg>
           Help & Docs
         </a>
-        <a class="nav-item" href="index.html">
+        <a class="nav-item" href="home.html">
           <svg viewBox="0 0 20 20" fill="none">
             <path d="M3 10h12M9 5l6 5-6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

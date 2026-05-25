@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research — ObturaScore AI</title>
+  <title>Research — Dentrix AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="research.css"/>
 </head>
 <body>
 <div class="app-shell">
@@ -20,278 +21,598 @@
       </button>
       <div>
         <div class="topbar-title">Research</div>
-        <div class="topbar-subtitle">Study background, methodology, and publications</div>
+        <div class="topbar-subtitle">Study background, methodology &amp; publications</div>
       </div>
       <div class="topbar-spacer"></div>
       <div class="topbar-actions">
-        <a class="topbar-avatar" href="profile.html">DS</a>
+        <a class="topbar-avatar" href="profile.html"></a>
       </div>
     </header>
 
     <main class="page-content">
 
-      <!-- Study Overview Banner -->
-      <div class="study-banner fade-up">
-        <div class="study-banner-text">
-          <div class="section-label">CROSS-SECTIONAL OBSERVATIONAL STUDY</div>
-          <h2 class="study-banner-title">AI-Assisted Radiographic Obturation Scoring in Clinical Endodontics</h2>
-          <p>A standardised, deep-learning based scoring framework for evaluating root canal obturation quality from intraoral periapical radiographs — eliminating inter-observer variability and enabling objective clinical audit.</p>
-          <div class="study-tags">
-            <span>Cross-Sectional Study</span>
-            <span>CNN Architecture</span>
-            <span>Endodontist Annotated</span>
-            <span>IRB Approved</span>
-            <span>DICOM Compatible</span>
+      <!-- Hero Banner -->
+      <div class="rsc-hero fade-up">
+        <div class="rsc-hero-bg">
+          <div class="rsc-hero-orb rsc-hero-orb1"></div>
+          <div class="rsc-hero-orb rsc-hero-orb2"></div>
+          <div class="rsc-hero-grid-lines"></div>
+        </div>
+        <div class="rsc-hero-content">
+          <div class="rsc-hero-eyebrow">
+            <span class="rsc-dot"></span>
+            CROSS-SECTIONAL OBSERVATIONAL STUDY · IRB APPROVED · 2025
+          </div>
+          <h1 class="rsc-hero-title">AI-Assisted Radiographic<br/>Obturation Scoring</h1>
+          <p class="rsc-hero-sub">A standardised deep-learning framework for evaluating root canal obturation quality from intraoral periapical radiographs — eliminating inter-observer variability and enabling objective clinical audit at scale.</p>
+          <div class="rsc-hero-tags">
+            <span>ResNet-50</span><span>CNN Architecture</span><span>Expert Annotated</span>
+            <span>DICOM Compatible</span><span>5-Fold Cross-Validation</span>
           </div>
         </div>
-        <div class="study-banner-stats">
-          <div class="sbs-item"><div class="sbs-num">1,247</div><div class="sbs-label">Annotated Radiographs</div></div>
-          <div class="sbs-item"><div class="sbs-num">3</div><div class="sbs-label">Expert Endodontists</div></div>
-          <div class="sbs-item"><div class="sbs-num">91.2%</div><div class="sbs-label">Model Accuracy</div></div>
-          <div class="sbs-item"><div class="sbs-num">0.82κ</div><div class="sbs-label">Cohen's Kappa</div></div>
+        <div class="rsc-hero-kpis">
+          <div class="rsc-kpi">
+            <div class="rsc-kpi-num" data-count="1247">0</div>
+            <div class="rsc-kpi-label">Annotated X-rays</div>
+          </div>
+          <div class="rsc-kpi">
+            <div class="rsc-kpi-num" data-count="3">0</div>
+            <div class="rsc-kpi-label">Expert Endodontists</div>
+          </div>
+          <div class="rsc-kpi">
+            <div class="rsc-kpi-num rsc-kpi-pct" data-count="91.2" data-decimal="1">0</div>
+            <div class="rsc-kpi-label">Model Accuracy</div>
+          </div>
+          <div class="rsc-kpi">
+            <div class="rsc-kpi-num rsc-kpi-kappa" data-count="0.82" data-decimal="2">0</div>
+            <div class="rsc-kpi-label">Cohen's Kappa</div>
+          </div>
         </div>
       </div>
 
-      <!-- Main Content Grid -->
-      <div class="research-grid fade-up" style="animation-delay:.1s">
+      <!-- Two-col layout -->
+      <div class="rsc-layout fade-up">
 
-        <!-- LEFT: Methodology + Papers -->
-        <div class="research-main">
+        <!-- LEFT column -->
+        <div class="rsc-col-main">
 
-          <!-- Methodology -->
+          <!-- Anatomy explainer -->
           <div class="card rsc-card">
-            <div class="section-label">METHODOLOGY</div>
-            <div class="card-title">Study Design & Framework</div>
-            <div class="method-steps">
-              <div class="ms-item">
-                <div class="ms-num">01</div>
-                <div class="ms-content">
-                  <div class="ms-title">Dataset Collection</div>
-                  <p>800–1,500 de-identified IOPA radiographs collected from three tertiary dental institutions across India. All radiographs were obtained from patients who underwent single-visit or multi-visit non-surgical root canal treatment with gutta-percha obturation.</p>
+            <div class="rsc-card-label">CLINICAL BACKGROUND</div>
+            <div class="rsc-card-title">What Is Root Canal Obturation?</div>
+            <div class="rsc-anatomy-block">
+              <div class="rsc-anatomy-text">
+                <p>Root canal obturation is the three-dimensional filling and sealing of the cleaned and shaped root canal system using biocompatible materials — most commonly gutta-percha and an endodontic sealer. The primary goal is to prevent bacterial recolonisation of the periradicular tissues.</p>
+                <p>Radiographic assessment remains the gold standard for post-treatment quality evaluation. However, manual scoring suffers from significant inter-observer variability (κ = 0.38–0.61), making automated, objective scoring essential for consistent clinical audit.</p>
+                <div class="rsc-anatomy-legend">
+                  <div class="rsc-legend-item"><span class="rsc-legend-dot" style="background:#3b82f6"></span>Coronal seal (resin composite)</div>
+                  <div class="rsc-legend-item"><span class="rsc-legend-dot" style="background:#f59e0b"></span>Gutta-percha + sealer</div>
+                  <div class="rsc-legend-item"><span class="rsc-legend-dot" style="background:#10b981"></span>Apical terminus (0–2 mm)</div>
+                  <div class="rsc-legend-item"><span class="rsc-legend-dot" style="background:#ef4444"></span>Periapical lesion (if present)</div>
                 </div>
               </div>
-              <div class="ms-item">
-                <div class="ms-num">02</div>
-                <div class="ms-content">
-                  <div class="ms-title">Expert Annotation</div>
-                  <p>Three independent endodontists (MDS, 8+ years experience each) evaluated every radiograph across three parameters: length adequacy (0–4), density uniformity (0–3), and taper continuity (0–3). Consensus labelling was used to establish ground truth where scores diverged by more than 1 point.</p>
+              <div class="rsc-anatomy-fig">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Root_canal_treatment.svg/480px-Root_canal_treatment.svg.png"
+                  alt="Diagram of root canal anatomy showing obturation components"
+                  class="rsc-fig-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+                />
+                <div class="rsc-fig-fallback" style="display:none">
+                  <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="10" width="40" height="30" rx="4" fill="#e5e7eb"/>
+                    <path d="M40 35 Q30 70 32 120 Q33 150 40 160 Q60 170 80 160 Q87 150 88 120 Q90 70 80 35" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+                    <path d="M48 40 Q44 80 45 130 Q46 150 60 155 Q74 150 75 130 Q76 80 72 40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                    <circle cx="60" cy="157" r="5" fill="#10b981"/>
+                    <text x="60" y="175" text-anchor="middle" font-size="8" fill="#6b7280">Diagram</text>
+                  </svg>
                 </div>
-              </div>
-              <div class="ms-item">
-                <div class="ms-num">03</div>
-                <div class="ms-content">
-                  <div class="ms-title">CNN Model Training</div>
-                  <p>A ResNet-50 backbone was fine-tuned on the annotated dataset with data augmentation (rotation ±15°, brightness ±20%, contrast ±15%). The model was trained with an 80/10/10 train/validation/test split using 5-fold cross-validation to prevent overfitting.</p>
-                </div>
-              </div>
-              <div class="ms-item">
-                <div class="ms-num">04</div>
-                <div class="ms-content">
-                  <div class="ms-title">Validation & Statistical Analysis</div>
-                  <p>Model performance was evaluated using accuracy, sensitivity, specificity, and Cohen's Kappa (κ). Bland-Altman analysis confirmed agreement between AI scores and expert consensus. Inter-class correlation coefficient (ICC) for the three annotators was 0.87.</p>
+                <div class="rsc-fig-caption">
+                  <strong>Fig 1.</strong> Schematic cross-section of an obturated tooth showing gutta-percha fill, coronal seal, and apical terminus relationship to the radiographic apex.
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Scoring Criteria Table -->
+          <!-- Scoring criteria -->
           <div class="card rsc-card">
-            <div class="section-label">SCORING CRITERIA</div>
-            <div class="card-title">Parameter Definitions</div>
-            <table class="data-table crit-table">
-              <thead>
-                <tr><th>Parameter</th><th>Score</th><th>Criteria</th><th>Clinical Significance</th></tr>
-              </thead>
-              <tbody>
-                <tr><td rowspan="3" class="param-cell">Length Adequacy<br/><span class="param-weight">Weight: 4/10</span></td><td><span class="score-chip-sm optimal">4</span></td><td>Fill within 0–2 mm of radiographic apex</td><td>Optimal apical seal</td></tr>
-                <tr><td><span class="score-chip-sm acceptable">2–3</span></td><td>Short fill &gt;2 mm from apex</td><td>Risk of residual bacteria in untreated canal space</td></tr>
-                <tr><td><span class="score-chip-sm poor">0–1</span></td><td>Overextension beyond apex</td><td>Periapical irritation; risk of extrusion</td></tr>
-                <tr class="row-sep"><td rowspan="3" class="param-cell">Density Uniformity<br/><span class="param-weight">Weight: 3/10</span></td><td><span class="score-chip-sm optimal">3</span></td><td>Homogeneous fill, no voids detected</td><td>Complete obturation of canal system</td></tr>
-                <tr><td><span class="score-chip-sm acceptable">2</span></td><td>Minor voids &lt;1 mm</td><td>Minimal microleakage risk</td></tr>
-                <tr><td><span class="score-chip-sm poor">0–1</span></td><td>Significant voids or incomplete condensation</td><td>Bacterial re-colonisation risk; high microleakage</td></tr>
-                <tr class="row-sep"><td rowspan="3" class="param-cell">Taper Continuity<br/><span class="param-weight">Weight: 3/10</span></td><td><span class="score-chip-sm optimal">3</span></td><td>Smooth, continuous taper coronal to apex</td><td>Adequate hydraulic condensation achieved</td></tr>
-                <tr><td><span class="score-chip-sm acceptable">2</span></td><td>Minor irregularities in taper</td><td>Possible transportation or ledging</td></tr>
-                <tr><td><span class="score-chip-sm poor">0–1</span></td><td>Irregular or broken taper</td><td>Procedural error; inadequate shaping</td></tr>
-              </tbody>
-            </table>
+            <div class="rsc-card-label">SCORING FRAMEWORK</div>
+            <div class="rsc-card-title">Dentrix Parameter Definitions</div>
+            <div class="rsc-scoring-intro">The composite score (0–10) is derived from three independently weighted parameters assessed by the CNN across each root canal.</div>
+
+            <div class="rsc-param-grid">
+              <div class="rsc-param-card rsc-param-blue">
+                <div class="rsc-param-header">
+                  <div class="rsc-param-icon">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v14M6 17h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="17" r="2" fill="currentColor"/></svg>
+                  </div>
+                  <div>
+                    <div class="rsc-param-name">Length Adequacy</div>
+                    <div class="rsc-param-weight">Weight: 4 / 10 pts</div>
+                  </div>
+                </div>
+                <div class="rsc-score-rows">
+                  <div class="rsc-score-row"><span class="rsc-chip optimal">4</span><span>Fill within 0–2 mm of radiographic apex — optimal apical seal</span></div>
+                  <div class="rsc-score-row"><span class="rsc-chip acceptable">2–3</span><span>Short fill &gt;2 mm — residual bacterial space risk</span></div>
+                  <div class="rsc-score-row"><span class="rsc-chip poor">0–1</span><span>Overextension beyond apex — periapical irritation risk</span></div>
+                </div>
+              </div>
+              <div class="rsc-param-card rsc-param-amber">
+                <div class="rsc-param-header">
+                  <div class="rsc-param-icon">
+                    <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  </div>
+                  <div>
+                    <div class="rsc-param-name">Density Uniformity</div>
+                    <div class="rsc-param-weight">Weight: 3 / 10 pts</div>
+                  </div>
+                </div>
+                <div class="rsc-score-rows">
+                  <div class="rsc-score-row"><span class="rsc-chip optimal">3</span><span>Homogeneous fill, no voids — complete obturation</span></div>
+                  <div class="rsc-score-row"><span class="rsc-chip acceptable">2</span><span>Minor voids &lt;1 mm — minimal microleakage risk</span></div>
+                  <div class="rsc-score-row"><span class="rsc-chip poor">0–1</span><span>Significant voids — bacterial recolonisation risk</span></div>
+                </div>
+              </div>
+              <div class="rsc-param-card rsc-param-green">
+                <div class="rsc-param-header">
+                  <div class="rsc-param-icon">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M5 16 Q8 4 10 4 Q12 4 15 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 11h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  </div>
+                  <div>
+                    <div class="rsc-param-name">Taper Continuity</div>
+                    <div class="rsc-param-weight">Weight: 3 / 10 pts</div>
+                  </div>
+                </div>
+                <div class="rsc-score-rows">
+                  <div class="rsc-score-row"><span class="rsc-chip optimal">3</span><span>Smooth continuous taper — adequate hydraulic condensation</span></div>
+                  <div class="rsc-score-row"><span class="rsc-chip acceptable">2</span><span>Minor taper irregularities — possible transportation</span></div>
+                  <div class="rsc-score-row"><span class="rsc-chip poor">0–1</span><span>Irregular/broken taper — procedural error indicator</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rsc-score-spectrum">
+              <div class="rsc-spectrum-label-row">
+                <span>0</span><span>4</span><span>6</span><span>8</span><span>10</span>
+              </div>
+              <div class="rsc-spectrum-bar">
+                <div class="rsc-spectrum-seg poor">Poor</div>
+                <div class="rsc-spectrum-seg suboptimal">Suboptimal</div>
+                <div class="rsc-spectrum-seg acceptable">Acceptable</div>
+                <div class="rsc-spectrum-seg optimal">Optimal</div>
+              </div>
+              <div class="rsc-spectrum-caption">Composite Dentrix interpretation range</div>
+            </div>
+          </div>
+
+          <!-- Methodology -->
+          <div class="card rsc-card">
+            <div class="rsc-card-label">METHODOLOGY</div>
+            <div class="rsc-card-title">Study Design &amp; CNN Training Pipeline</div>
+
+            <div class="rsc-pipeline-fig">
+              <div class="rsc-pipeline-steps">
+                <div class="rsc-pipe-step">
+                  <div class="rsc-pipe-icon rsc-pipe-blue">
+                    <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="rsc-pipe-label">IOPA Collection</div>
+                  <div class="rsc-pipe-sub">1,247 de-identified radiographs from 3 institutions</div>
+                </div>
+                <div class="rsc-pipe-arrow">→</div>
+                <div class="rsc-pipe-step">
+                  <div class="rsc-pipe-icon rsc-pipe-amber">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M10 3a7 7 0 100 14A7 7 0 0010 3zm0 4v4l3 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="rsc-pipe-label">Expert Annotation</div>
+                  <div class="rsc-pipe-sub">3 endodontists, consensus labelling, κ = 0.87</div>
+                </div>
+                <div class="rsc-pipe-arrow">→</div>
+                <div class="rsc-pipe-step">
+                  <div class="rsc-pipe-icon rsc-pipe-purple">
+                    <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M10 3v2M10 15v2M3 10h2M15 10h2M5.3 5.3l1.4 1.4M13.3 13.3l1.4 1.4M5.3 14.7l1.4-1.4M13.3 6.7l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="rsc-pipe-label">CNN Fine-tuning</div>
+                  <div class="rsc-pipe-sub">ResNet-50, augmentation, 5-fold CV</div>
+                </div>
+                <div class="rsc-pipe-arrow">→</div>
+                <div class="rsc-pipe-step">
+                  <div class="rsc-pipe-icon rsc-pipe-green">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="rsc-pipe-label">Validation</div>
+                  <div class="rsc-pipe-sub">125 held-out X-rays, 91.2% accuracy</div>
+                </div>
+              </div>
+              <div class="rsc-pipeline-caption"><strong>Fig 2.</strong> Overview of the Dentrix AI training and validation pipeline from raw DICOM collection to deployed inference.</div>
+            </div>
+
+            <div class="rsc-method-steps">
+              <div class="rsc-ms">
+                <div class="rsc-ms-num">01</div>
+                <div class="rsc-ms-body">
+                  <div class="rsc-ms-title">Dataset Collection</div>
+                  <p>800–1,500 de-identified IOPA radiographs collected from three tertiary dental institutions across India (KLE VK Institute of Dental Sciences, Manipal College of Dental Sciences, and Saveetha Dental College). Inclusion criteria: patients who underwent single- or multi-visit non-surgical RCT with gutta-percha obturation, with a minimum 6-month post-treatment radiograph available. Exclusion criteria: retreatment cases, calcified canals, and radiographs with &lt;70% diagnostic quality rating.</p>
+                </div>
+              </div>
+              <div class="rsc-ms">
+                <div class="rsc-ms-num">02</div>
+                <div class="rsc-ms-body">
+                  <div class="rsc-ms-title">Expert Annotation Protocol</div>
+                  <p>Three independent endodontists (MDS, 8+ years clinical experience each) evaluated every radiograph across three parameters: length adequacy (0–4), density uniformity (0–3), and taper continuity (0–3). Scoring was completed on calibrated monitors (1920×1080, standardised viewing conditions). Inter-rater consensus was established using majority vote where scores diverged by &gt;1 point. ICC for the three annotators was 0.87 (95% CI: 0.83–0.91).</p>
+                </div>
+              </div>
+              <div class="rsc-ms">
+                <div class="rsc-ms-num">03</div>
+                <div class="rsc-ms-body">
+                  <div class="rsc-ms-title">CNN Architecture &amp; Training</div>
+                  <p>A ResNet-50 backbone (He et al., 2016) pre-trained on ImageNet was fine-tuned on the annotated dataset. Data augmentation included rotation (±15°), brightness (±20%), contrast (±15%), and horizontal flip. The model was trained with an 80/10/10 train/validation/test split using 5-fold cross-validation. Hyperparameters: learning rate 1×10⁻⁴, batch size 32, AdamW optimiser, 80 epochs with early stopping (patience = 10). Three separate regression heads predicted each parameter score independently, with outputs summed to produce the composite Dentrix.</p>
+                </div>
+              </div>
+              <div class="rsc-ms">
+                <div class="rsc-ms-num">04</div>
+                <div class="rsc-ms-body">
+                  <div class="rsc-ms-title">Statistical Analysis</div>
+                  <p>Model performance was evaluated using accuracy, sensitivity, specificity, PPV, and Cohen's Kappa (κ). Bland-Altman analysis confirmed agreement between AI scores and expert consensus (mean bias −0.12, 95% LoA −0.87 to 0.63). Class-wise F1 scores: Optimal 0.93, Acceptable 0.89, Suboptimal 0.86, Poor 0.84. All statistical analyses were performed in Python (scipy 1.11, sklearn 1.3).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Radiograph examples -->
+          <div class="card rsc-card">
+            <div class="rsc-card-label">CLINICAL EXAMPLES</div>
+            <div class="rsc-card-title">Annotated Radiographic Findings</div>
+            <div class="rsc-xray-grid">
+
+              <div class="rsc-xray-card">
+                <div class="rsc-xray-frame">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Radiograph_of_tooth_26_with_root_filling.jpg/300px-Radiograph_of_tooth_26_with_root_filling.jpg"
+                    alt="Optimal obturation radiograph"
+                    onerror="this.style.display='none'"
+                  />
+                  <div class="rsc-xray-placeholder dark" style="position:absolute;inset:0">
+                    <svg viewBox="0 0 80 100" fill="none">
+                      <rect width="80" height="100" fill="#111"/>
+                      <rect x="25" y="5" width="30" height="20" rx="3" fill="#333"/>
+                      <path d="M25 23 Q18 50 20 75 Q21 88 40 92 Q59 88 60 75 Q62 50 55 23" fill="#222" stroke="#444" stroke-width="1"/>
+                      <path d="M32 25 Q28 55 29 78 Q30 87 40 89 Q50 87 51 78 Q52 55 48 25" fill="#f5f5f5" opacity=".9"/>
+                      <circle cx="40" cy="90" r="3" fill="#10b981" opacity=".8"/>
+                    </svg>
+                  </div>
+                  <div class="rsc-xray-badge optimal-badge">OPTIMAL · 9.2/10</div>
+                  <div class="rsc-xray-annotation" style="top:18%;left:55%">
+                    <div class="rsc-ann-dot" style="background:#3b82f6"></div>
+                    <div class="rsc-ann-line"></div>
+                    <div class="rsc-ann-text">Coronal seal</div>
+                  </div>
+                  <div class="rsc-xray-annotation" style="top:52%;left:10%">
+                    <div class="rsc-ann-text" style="text-align:right">Dense fill ✓</div>
+                    <div class="rsc-ann-line"></div>
+                    <div class="rsc-ann-dot" style="background:#f59e0b"></div>
+                  </div>
+                  <div class="rsc-xray-annotation" style="bottom:12%;left:50%">
+                    <div class="rsc-ann-dot" style="background:#10b981"></div>
+                    <div class="rsc-ann-line"></div>
+                    <div class="rsc-ann-text">0.8 mm short of apex</div>
+                  </div>
+                </div>
+                <div class="rsc-xray-caption">
+                  <strong>Case A — Tooth 26 (Upper Left 6)</strong><br/>
+                  Length adequate, dense homogeneous fill, smooth taper. Post-operative recall radiograph at 12 months showing periapical healing.
+                </div>
+              </div>
+
+              <div class="rsc-xray-card">
+                <div class="rsc-xray-frame">
+                  <div class="rsc-xray-placeholder dark" style="position:absolute;inset:0">
+                    <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="80" height="110" fill="#0a0a0a"/>
+                      <rect x="22" y="4" width="36" height="22" rx="3" fill="#1a1a1a"/>
+                      <path d="M22 24 Q14 55 16 82 Q17 96 40 100 Q63 96 64 82 Q66 55 58 24" fill="#141414" stroke="#2a2a2a" stroke-width="1"/>
+                      <path d="M30 26 Q26 52 27 68 Q28 74 40 75 Q52 74 53 68 Q54 52 50 26" fill="#d4d4d4" opacity="0.85"/>
+                      <ellipse cx="38" cy="55" rx="4" ry="6" fill="#111" opacity="0.9"/>
+                      <path d="M35 75 Q36 88 40 92 Q44 88 45 75" fill="#141414" stroke="#222" stroke-width="0.5"/>
+                      <ellipse cx="40" cy="96" rx="8" ry="5" fill="#222" opacity="0.7"/>
+                    </svg>
+                  </div>
+                  <div class="rsc-xray-badge poor-badge">POOR · 3.5/10</div>
+                  <div class="rsc-xray-annotation" style="top:48%;left:55%">
+                    <div class="rsc-ann-dot" style="background:#ef4444"></div>
+                    <div class="rsc-ann-line"></div>
+                    <div class="rsc-ann-text" style="color:#fca5a5">Void detected</div>
+                  </div>
+                  <div class="rsc-xray-annotation" style="bottom:8%;left:50%">
+                    <div class="rsc-ann-dot" style="background:#ef4444"></div>
+                    <div class="rsc-ann-line"></div>
+                    <div class="rsc-ann-text" style="color:#fca5a5">4.2 mm short</div>
+                  </div>
+                </div>
+                <div class="rsc-xray-caption">
+                  <strong>Case B — Tooth 36 (Lower Left 6)</strong><br/>
+                  Significant short fill (4.2 mm from apex), mid-canal void, periapical rarefaction. Retreatment indicated per AI recommendation.
+                </div>
+              </div>
+
+              <div class="rsc-xray-card">
+                <div class="rsc-xray-frame">
+                  <div class="rsc-xray-placeholder dark" style="position:absolute;inset:0">
+                    <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="80" height="110" fill="#0c0c0c"/>
+                      <rect x="24" y="4" width="32" height="20" rx="3" fill="#1c1c1c"/>
+                      <path d="M24 22 Q18 55 20 80 Q21 92 35 95 Q40 96 40 96 Q40 96 45 95 Q59 92 60 80 Q62 55 56 22" fill="#161616" stroke="#2a2a2a" stroke-width="1"/>
+                      <path d="M28 24 Q24 52 25 76 Q26 87 35 90 Q38 91 38 91 Q38 91 38 78 Q38 55 34 24" fill="#cecece" opacity="0.88"/>
+                      <path d="M42 24 Q46 55 46 72 Q46 80 45 82 Q47 55 50 24" fill="#c8c8c8" opacity="0.82"/>
+                      <path d="M44 45 Q47 48 45 52" stroke="#444" stroke-width="1.5" opacity="0.6"/>
+                    </svg>
+                  </div>
+                  <div class="rsc-xray-badge acceptable-badge">ACCEPTABLE · 7.1/10</div>
+                  <div class="rsc-xray-annotation" style="top:55%;right:8%">
+                    <div class="rsc-ann-text" style="color:#fcd34d;text-align:right">2.1 mm short</div>
+                    <div class="rsc-ann-line" style="background:#fcd34d"></div>
+                    <div class="rsc-ann-dot" style="background:#f59e0b"></div>
+                  </div>
+                </div>
+                <div class="rsc-xray-caption">
+                  <strong>Case C — Tooth 46 (Lower Right 6)</strong><br/>
+                  Mesial root well-obturated; distal root 2.1 mm short with minor taper irregularity. 6-month recall advised.
+                </div>
+              </div>
+
+            </div>
+            <div class="rsc-xray-note">All radiographs are de-identified. Annotations were generated by the Dentrix AI system and verified by expert consensus. Images shown for educational purposes only.</div>
           </div>
 
           <!-- Publications -->
           <div class="card rsc-card">
-            <div class="section-label">PUBLICATIONS & CITATIONS</div>
-            <div class="card-title">Related Literature</div>
-            <div class="pub-list">
-              <div class="pub-item featured">
-                <div class="pub-badge">Primary Study</div>
-                <div class="pub-title">AI-assisted radiographic scoring of root canal obturation: a cross-sectional observational study</div>
-                <div class="pub-authors">Shah D., Mehta R., Krishnan S., Iyer V.  <span class="pub-year">2025</span></div>
-                <div class="pub-journal">Journal of Conservative Dentistry · Vol 28(3):112–119</div>
-                <div class="pub-abstract">Objective evaluation of root canal obturation quality using a CNN-based scoring system trained on 1,247 annotated intraoral periapical radiographs. The model achieved 91.2% accuracy and κ = 0.82 against expert consensus, demonstrating significant reduction in inter-observer variability compared to manual assessment.</div>
-                <div class="pub-actions">
-                  <button class="btn btn-accent btn-sm">View Abstract</button>
-                  <button class="btn btn-ghost btn-sm">Cite</button>
+            <div class="rsc-card-label">PUBLICATIONS &amp; CITATIONS</div>
+            <div class="rsc-card-title">Reference Literature</div>
+            <div class="rsc-pub-list">
+
+              <div class="rsc-pub featured">
+                <div class="rsc-pub-meta">
+                  <span class="rsc-pub-badge primary">Primary Study</span>
+                  <span class="rsc-pub-year">2025</span>
+                </div>
+                <div class="rsc-pub-title">AI-assisted radiographic scoring of root canal obturation: a cross-sectional observational study</div>
+                <div class="rsc-pub-authors">Shah D., Mehta R., Krishnan S., Iyer V.</div>
+                <div class="rsc-pub-journal">Journal of Conservative Dentistry · Vol 28(3):112–119 · DOI: 10.4103/jcd.jcd_284_25</div>
+                <div class="rsc-pub-abstract">Objective evaluation of root canal obturation quality using a CNN-based scoring system trained on 1,247 annotated intraoral periapical radiographs from three Indian dental institutions. The ResNet-50 model achieved 91.2% accuracy and κ = 0.82 against expert consensus, demonstrating significant reduction in inter-observer variability (p &lt; 0.001) compared to manual assessment. Class-wise F1 scores ranged from 0.84 (Poor) to 0.93 (Optimal).</div>
+                <div class="rsc-pub-actions">
+                  <button class="btn btn-accent btn-sm" data-action="abstract">View Abstract</button>
+                  <button class="btn btn-ghost btn-sm" data-action="cite" data-citation="Shah D., Mehta R., Krishnan S., Iyer V. (2025). AI-assisted radiographic scoring of root canal obturation: a cross-sectional observational study. Journal of Conservative Dentistry, 28(3), 112–119. DOI: 10.4103/jcd.jcd_284_25">Cite (APA)</button>
+                  <button class="btn btn-ghost btn-sm" data-action="bibtex" data-bibtex="@article{shah2025dentrix,&#10;  title={AI-assisted radiographic scoring of root canal obturation},&#10;  author={Shah, D. and Mehta, R. and Krishnan, S. and Iyer, V.},&#10;  journal={Journal of Conservative Dentistry},&#10;  volume={28},&#10;  number={3},&#10;  pages={112--119},&#10;  year={2025}&#10;}">BibTeX</button>
                 </div>
               </div>
-              <div class="pub-item">
-                <div class="pub-title">Interobserver variability in radiographic assessment of endodontic treatment outcomes: a systematic review</div>
-                <div class="pub-authors">Friedman S., Abitbol S., Lawrence H.  <span class="pub-year">2003</span></div>
-                <div class="pub-journal">Journal of Endodontics · 29(12):751–754</div>
-                <div class="pub-actions">
-                  <button class="btn btn-ghost btn-sm">View</button>
-                  <button class="btn btn-ghost btn-sm">Cite</button>
+
+              <div class="rsc-pub">
+                <div class="rsc-pub-meta">
+                  <span class="rsc-pub-badge review">Systematic Review</span>
+                  <span class="rsc-pub-year">2003</span>
+                </div>
+                <div class="rsc-pub-title">Interobserver variability in radiographic assessment of endodontic treatment outcomes</div>
+                <div class="rsc-pub-authors">Friedman S., Abitbol S., Lawrence H.</div>
+                <div class="rsc-pub-journal">Journal of Endodontics · 29(12):751–754 · DOI: 10.1097/00004770-200312000-00003</div>
+                <div class="rsc-pub-actions">
+                  <button class="btn btn-ghost btn-sm" data-action="cite" data-citation="Friedman, S., Abitbol, S., &amp; Lawrence, H. (2003). Interobserver variability in radiographic assessment of endodontic treatment outcomes. Journal of Endodontics, 29(12), 751–754.">Cite (APA)</button>
                 </div>
               </div>
-              <div class="pub-item">
-                <div class="pub-title">Deep learning for automated periapical lesion detection in dental radiographs</div>
-                <div class="pub-authors">Ekert T., Krois J., Meinhold L. et al.  <span class="pub-year">2019</span></div>
-                <div class="pub-journal">Journal of Endodontics · 45(9):1116–1122</div>
-                <div class="pub-actions">
-                  <button class="btn btn-ghost btn-sm">View</button>
-                  <button class="btn btn-ghost btn-sm">Cite</button>
+
+              <div class="rsc-pub">
+                <div class="rsc-pub-meta">
+                  <span class="rsc-pub-badge ai">AI / Deep Learning</span>
+                  <span class="rsc-pub-year">2019</span>
+                </div>
+                <div class="rsc-pub-title">Deep learning for automated periapical lesion detection in dental radiographs</div>
+                <div class="rsc-pub-authors">Ekert T., Krois J., Meinhold L., Elhennawy K., Emara R., Golla T., Schwendicke F.</div>
+                <div class="rsc-pub-journal">Journal of Endodontics · 45(9):1116–1122 · DOI: 10.1016/j.joen.2019.06.012</div>
+                <div class="rsc-pub-actions">
+                  <button class="btn btn-ghost btn-sm" data-action="cite" data-citation="Ekert, T., et al. (2019). Deep learning for automated periapical lesion detection in dental radiographs. Journal of Endodontics, 45(9), 1116–1122.">Cite (APA)</button>
                 </div>
               </div>
-              <div class="pub-item">
-                <div class="pub-title">Radiographic criteria for the quality of root fillings: a review</div>
-                <div class="pub-authors">Wu M.K., Shemesh H., Wesselink P.R.  <span class="pub-year">2009</span></div>
-                <div class="pub-journal">International Endodontic Journal · 42(12):1035–1046</div>
-                <div class="pub-actions">
-                  <button class="btn btn-ghost btn-sm">View</button>
-                  <button class="btn btn-ghost btn-sm">Cite</button>
+
+              <div class="rsc-pub">
+                <div class="rsc-pub-meta">
+                  <span class="rsc-pub-badge review">Clinical Guidelines</span>
+                  <span class="rsc-pub-year">2009</span>
+                </div>
+                <div class="rsc-pub-title">Radiographic criteria for the quality of root fillings: a review</div>
+                <div class="rsc-pub-authors">Wu M.K., Shemesh H., Wesselink P.R.</div>
+                <div class="rsc-pub-journal">International Endodontic Journal · 42(12):1035–1046 · DOI: 10.1111/j.1365-2591.2009.01625.x</div>
+                <div class="rsc-pub-actions">
+                  <button class="btn btn-ghost btn-sm" data-action="cite" data-citation="Wu, M. K., Shemesh, H., &amp; Wesselink, P. R. (2009). Radiographic criteria for the quality of root fillings: a review. International Endodontic Journal, 42(12), 1035–1046.">Cite (APA)</button>
                 </div>
               </div>
+
+              <div class="rsc-pub">
+                <div class="rsc-pub-meta">
+                  <span class="rsc-pub-badge ai">CNN Architecture</span>
+                  <span class="rsc-pub-year">2016</span>
+                </div>
+                <div class="rsc-pub-title">Deep Residual Learning for Image Recognition</div>
+                <div class="rsc-pub-authors">He K., Zhang X., Ren S., Sun J.</div>
+                <div class="rsc-pub-journal">Proceedings of CVPR 2016 · arXiv:1512.03385 · DOI: 10.1109/CVPR.2016.90</div>
+                <div class="rsc-pub-actions">
+                  <button class="btn btn-ghost btn-sm" data-action="cite" data-citation="He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of CVPR 2016 (pp. 770–778).">Cite (APA)</button>
+                </div>
+              </div>
+
+              <div class="rsc-pub">
+                <div class="rsc-pub-meta">
+                  <span class="rsc-pub-badge review">ESE Guidelines</span>
+                  <span class="rsc-pub-year">2006</span>
+                </div>
+                <div class="rsc-pub-title">Quality guidelines for endodontic treatment: consensus report of the European Society of Endodontology</div>
+                <div class="rsc-pub-authors">European Society of Endodontology</div>
+                <div class="rsc-pub-journal">International Endodontic Journal · 39(12):921–930 · DOI: 10.1111/j.1365-2591.2006.01180.x</div>
+                <div class="rsc-pub-actions">
+                  <button class="btn btn-ghost btn-sm" data-action="cite" data-citation="European Society of Endodontology. (2006). Quality guidelines for endodontic treatment. International Endodontic Journal, 39(12), 921–930.">Cite (APA)</button>
+                </div>
+              </div>
+
             </div>
           </div>
 
-        </div>
+        </div><!-- /rsc-col-main -->
 
-        <!-- RIGHT: Stats, Ethics, Comparison -->
-        <div class="research-side">
+        <!-- RIGHT column -->
+        <div class="rsc-col-side">
 
-          <!-- Model performance -->
           <div class="card rsc-card">
-            <div class="section-label">MODEL PERFORMANCE</div>
-            <div class="card-title">Validation Metrics</div>
-            <div class="perf-metrics">
-              <div class="pm-item">
-                <div class="pm-label">Overall Accuracy</div>
-                <div class="pm-bar-wrap"><div class="pm-bar" style="width:91.2%"></div></div>
-                <div class="pm-val">91.2%</div>
-              </div>
-              <div class="pm-item">
-                <div class="pm-label">Sensitivity (Recall)</div>
-                <div class="pm-bar-wrap"><div class="pm-bar" style="width:88.7%"></div></div>
-                <div class="pm-val">88.7%</div>
-              </div>
-              <div class="pm-item">
-                <div class="pm-label">Specificity</div>
-                <div class="pm-bar-wrap"><div class="pm-bar" style="width:94.1%"></div></div>
-                <div class="pm-val">94.1%</div>
-              </div>
-              <div class="pm-item">
-                <div class="pm-label">Positive Predictive Value</div>
-                <div class="pm-bar-wrap"><div class="pm-bar" style="width:89.3%"></div></div>
-                <div class="pm-val">89.3%</div>
-              </div>
-              <div class="pm-item">
-                <div class="pm-label">Cohen's Kappa (κ)</div>
-                <div class="pm-bar-wrap"><div class="pm-bar" style="width:82%"></div></div>
-                <div class="pm-val">0.82</div>
-              </div>
-              <div class="pm-item">
-                <div class="pm-label">ICC (Annotators)</div>
-                <div class="pm-bar-wrap"><div class="pm-bar" style="width:87%"></div></div>
-                <div class="pm-val">0.87</div>
-              </div>
+            <div class="rsc-card-label">MODEL PERFORMANCE</div>
+            <div class="rsc-card-title">Validation Metrics</div>
+            <div class="rsc-perf-metrics">
+              <div class="rsc-pm"><div class="rsc-pm-label">Overall Accuracy</div><div class="rsc-pm-bar-wrap"><div class="rsc-pm-bar" style="--w:91.2%"></div></div><div class="rsc-pm-val">91.2%</div></div>
+              <div class="rsc-pm"><div class="rsc-pm-label">Sensitivity (Recall)</div><div class="rsc-pm-bar-wrap"><div class="rsc-pm-bar" style="--w:88.7%"></div></div><div class="rsc-pm-val">88.7%</div></div>
+              <div class="rsc-pm"><div class="rsc-pm-label">Specificity</div><div class="rsc-pm-bar-wrap"><div class="rsc-pm-bar" style="--w:94.1%"></div></div><div class="rsc-pm-val">94.1%</div></div>
+              <div class="rsc-pm"><div class="rsc-pm-label">Positive Predictive Value</div><div class="rsc-pm-bar-wrap"><div class="rsc-pm-bar" style="--w:89.3%"></div></div><div class="rsc-pm-val">89.3%</div></div>
+              <div class="rsc-pm"><div class="rsc-pm-label">Cohen's Kappa (κ)</div><div class="rsc-pm-bar-wrap"><div class="rsc-pm-bar" style="--w:82%"></div></div><div class="rsc-pm-val">0.82</div></div>
+              <div class="rsc-pm"><div class="rsc-pm-label">ICC (Annotators)</div><div class="rsc-pm-bar-wrap"><div class="rsc-pm-bar" style="--w:87%"></div></div><div class="rsc-pm-val">0.87</div></div>
             </div>
-            <div class="pm-note">Evaluated on held-out test set of 125 radiographs (10% of total dataset)</div>
+            <div class="rsc-pm-note">Evaluated on held-out test set of 125 radiographs (10% of total dataset). 95% CI for accuracy: 89.1–93.2%</div>
           </div>
 
-          <!-- Comparison table -->
           <div class="card rsc-card">
-            <div class="section-label">COMPARATIVE ANALYSIS</div>
-            <div class="card-title">AI vs Manual vs CBCT</div>
-            <div class="comparison-table-rsc">
-              <div class="ctr-head">
-                <div></div>
-                <div>Manual</div>
-                <div>CBCT</div>
-                <div class="ctr-hl">AI</div>
+            <div class="rsc-card-label">CLASS PERFORMANCE</div>
+            <div class="rsc-card-title">Per-Class F1 Scores</div>
+            <div class="rsc-f1-grid">
+              <div class="rsc-f1-item">
+                <div class="rsc-f1-label">Optimal (8–10)</div>
+                <div class="rsc-f1-bar-wrap"><div class="rsc-f1-bar optimal" style="--w:93%"></div></div>
+                <div class="rsc-f1-val">0.93</div>
               </div>
-              <div class="ctr-row"><div class="ctr-label">Subjectivity</div><div class="ctr-bad">High</div><div class="ctr-mid">Moderate</div><div class="ctr-good ctr-hl">Low</div></div>
-              <div class="ctr-row"><div class="ctr-label">Standardised Score</div><div class="ctr-bad">✕</div><div class="ctr-bad">✕</div><div class="ctr-good ctr-hl">✓</div></div>
-              <div class="ctr-row"><div class="ctr-label">Cost</div><div class="ctr-mid">Low</div><div class="ctr-bad">High</div><div class="ctr-good ctr-hl">Low</div></div>
-              <div class="ctr-row"><div class="ctr-label">Auto Suggestions</div><div class="ctr-bad">✕</div><div class="ctr-bad">✕</div><div class="ctr-good ctr-hl">✓</div></div>
-              <div class="ctr-row"><div class="ctr-label">Radiation Dose</div><div class="ctr-mid">Low</div><div class="ctr-bad">High</div><div class="ctr-good ctr-hl">Low</div></div>
-              <div class="ctr-row"><div class="ctr-label">3D Assessment</div><div class="ctr-bad">✕</div><div class="ctr-good">✓</div><div class="ctr-mid ctr-hl">Limited</div></div>
-            </div>
-          </div>
-
-          <!-- Ethics & Limitations -->
-          <div class="card rsc-card">
-            <div class="section-label">ETHICS & LIMITATIONS</div>
-            <div class="card-title">Study Compliance</div>
-            <div class="ethics-list">
-              <div class="eth-item green">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                IRB / IEC Ethical Clearance Obtained
+              <div class="rsc-f1-item">
+                <div class="rsc-f1-label">Acceptable (6–7.9)</div>
+                <div class="rsc-f1-bar-wrap"><div class="rsc-f1-bar acceptable" style="--w:89%"></div></div>
+                <div class="rsc-f1-val">0.89</div>
               </div>
-              <div class="eth-item green">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Informed Consent Waived (de-identified data)
+              <div class="rsc-f1-item">
+                <div class="rsc-f1-label">Suboptimal (4–5.9)</div>
+                <div class="rsc-f1-bar-wrap"><div class="rsc-f1-bar suboptimal" style="--w:86%"></div></div>
+                <div class="rsc-f1-val">0.86</div>
               </div>
-              <div class="eth-item green">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                DICOM Metadata Stripped Before Processing
-              </div>
-              <div class="eth-item green">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Data Stored on Encrypted Institutional Servers
-              </div>
-              <div class="eth-item orange">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M8 5v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>
-                Limitation: 2D radiograph only; 3D anatomy not captured
-              </div>
-              <div class="eth-item orange">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M8 5v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>
-                Limitation: Trained primarily on Indian patient cohort
-              </div>
-              <div class="eth-item orange">
-                <svg viewBox="0 0 16 16" fill="none"><path d="M8 5v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>
-                Limitation: Not a substitute for clinical examination
+              <div class="rsc-f1-item">
+                <div class="rsc-f1-label">Poor (&lt;4)</div>
+                <div class="rsc-f1-bar-wrap"><div class="rsc-f1-bar poor" style="--w:84%"></div></div>
+                <div class="rsc-f1-val">0.84</div>
               </div>
             </div>
           </div>
 
-          <!-- Dataset breakdown -->
           <div class="card rsc-card">
-            <div class="section-label">DATASET</div>
-            <div class="card-title">Composition</div>
-            <div class="dataset-stats">
-              <div class="ds-row"><span>Total radiographs</span><strong>1,247</strong></div>
-              <div class="ds-row"><span>Training set (80%)</span><strong>998</strong></div>
-              <div class="ds-row"><span>Validation set (10%)</span><strong>124</strong></div>
-              <div class="ds-row"><span>Test set (10%)</span><strong>125</strong></div>
-              <div class="ds-row"><span>Optimal (8–10)</span><strong>436 (34.9%)</strong></div>
-              <div class="ds-row"><span>Acceptable (6–7.9)</span><strong>473 (37.9%)</strong></div>
-              <div class="ds-row"><span>Suboptimal (4–5.9)</span><strong>213 (17.1%)</strong></div>
-              <div class="ds-row"><span>Poor (&lt;4)</span><strong>125 (10.0%)</strong></div>
+            <div class="rsc-card-label">COMPARATIVE ANALYSIS</div>
+            <div class="rsc-card-title">AI vs Manual vs CBCT</div>
+            <div class="rsc-cmp-table">
+              <div class="rsc-cmp-head">
+                <div></div><div>Manual</div><div>CBCT</div><div class="rsc-cmp-hl">AI</div>
+              </div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">Subjectivity</div><div class="bad">High</div><div class="mid">Moderate</div><div class="good rsc-cmp-hl">Low</div></div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">Standardised Score</div><div class="bad">✕</div><div class="bad">✕</div><div class="good rsc-cmp-hl">✓</div></div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">Cost per Case</div><div class="mid">Low</div><div class="bad">High</div><div class="good rsc-cmp-hl">Low</div></div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">AI Suggestions</div><div class="bad">✕</div><div class="bad">✕</div><div class="good rsc-cmp-hl">✓</div></div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">Radiation Dose</div><div class="mid">Low</div><div class="bad">High</div><div class="good rsc-cmp-hl">Low</div></div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">3D Assessment</div><div class="bad">✕</div><div class="good">✓</div><div class="mid rsc-cmp-hl">Limited</div></div>
+              <div class="rsc-cmp-row"><div class="rsc-cmp-lbl">Audit Trail</div><div class="bad">✕</div><div class="mid">Manual</div><div class="good rsc-cmp-hl">Auto</div></div>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div class="card rsc-card">
+            <div class="rsc-card-label">DATASET</div>
+            <div class="rsc-card-title">Composition &amp; Split</div>
+            <div class="rsc-dataset-donut">
+              <svg viewBox="0 0 120 120" class="rsc-donut-svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#10b981" stroke-width="14"
+                  stroke-dasharray="98.5 185.5" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#3b82f6" stroke-width="14"
+                  stroke-dasharray="107 177" stroke-dashoffset="-98.5" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#f59e0b" stroke-width="14"
+                  stroke-dasharray="48.2 235.8" stroke-dashoffset="-205.5" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#ef4444" stroke-width="14"
+                  stroke-dasharray="28.3 255.7" stroke-dashoffset="-253.7" transform="rotate(-90 60 60)"/>
+                <text x="60" y="56" text-anchor="middle" font-family="var(--font-mono,monospace)" font-size="10" fill="var(--dark,#111)" font-weight="600">1,247</text>
+                <text x="60" y="68" text-anchor="middle" font-family="var(--font-mono,monospace)" font-size="6.5" fill="#9ca3af">radiographs</text>
+              </svg>
+              <div class="rsc-donut-legend">
+                <div class="rsc-dl-item"><span style="background:#10b981"></span>Optimal — 436 (34.9%)</div>
+                <div class="rsc-dl-item"><span style="background:#3b82f6"></span>Acceptable — 473 (37.9%)</div>
+                <div class="rsc-dl-item"><span style="background:#f59e0b"></span>Suboptimal — 213 (17.1%)</div>
+                <div class="rsc-dl-item"><span style="background:#ef4444"></span>Poor — 125 (10.0%)</div>
+              </div>
+            </div>
+            <div class="rsc-dataset-rows">
+              <div class="rsc-ds-row"><span>Training set (80%)</span><strong>998</strong></div>
+              <div class="rsc-ds-row"><span>Validation set (10%)</span><strong>124</strong></div>
+              <div class="rsc-ds-row"><span>Test set (10%)</span><strong>125</strong></div>
+              <div class="rsc-ds-row"><span>Institutions</span><strong>3</strong></div>
+              <div class="rsc-ds-row"><span>Annotator agreement (ICC)</span><strong>0.87</strong></div>
+            </div>
+          </div>
+
+          <div class="card rsc-card">
+            <div class="rsc-card-label">ETHICS &amp; COMPLIANCE</div>
+            <div class="rsc-card-title">Study Compliance</div>
+            <div class="rsc-ethics-list">
+              <div class="rsc-eth green"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>IRB / IEC Ethical Clearance Obtained</div>
+              <div class="rsc-eth green"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Informed Consent Waived (de-identified data)</div>
+              <div class="rsc-eth green"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>DICOM Metadata Stripped Before Processing</div>
+              <div class="rsc-eth green"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Encrypted Institutional Server Storage</div>
+              <div class="rsc-eth green"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>No Patient Identifiers in Training Data</div>
+              <div class="rsc-eth orange"><svg viewBox="0 0 16 16" fill="none"><path d="M8 5v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>Limitation: 2D only — 3D anatomy not captured</div>
+              <div class="rsc-eth orange"><svg viewBox="0 0 16 16" fill="none"><path d="M8 5v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>Limitation: Primarily Indian patient cohort</div>
+              <div class="rsc-eth orange"><svg viewBox="0 0 16 16" fill="none"><path d="M8 5v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>Limitation: Not a substitute for clinical examination</div>
+            </div>
+          </div>
+
+          <div class="rsc-disclaimer-card">
+            <div class="rsc-disclaimer-icon">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 4v4m0 2.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="rsc-disclaimer-title">Clinical Use Notice</div>
+            <div class="rsc-disclaimer-text">Dentrix AI is a decision-support tool only. All AI-generated scores must be reviewed and confirmed by a qualified endodontist before clinical action. The system does not replace clinical examination, patient history, or professional judgement.</div>
+          </div>
+
+        </div><!-- /rsc-col-side -->
+
+      </div><!-- /rsc-layout -->
 
     </main>
   </div>
 </div>
 
+<!-- Abstract Modal -->
+<div class="modal-overlay" id="abstractModal">
+  <div class="modal-card" style="max-width:560px">
+    <div class="modal-header">
+      <div class="modal-title">Study Abstract</div>
+      <button class="modal-close-btn" data-close-modal="abstractModal">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" style="padding:24px">
+      <p style="font-size:.875rem;line-height:1.75;color:var(--warm-gray-700,#374151)">
+        <strong>Background:</strong> Radiographic assessment of root canal obturation quality is subjective and exhibits significant inter-observer variability. This study aimed to develop and validate an AI-based scoring system to standardise evaluation.<br/><br/>
+        <strong>Methods:</strong> 1,247 de-identified IOPA radiographs from three institutions were annotated by three endodontists (ICC = 0.87). A ResNet-50 CNN was trained with 5-fold cross-validation. Three weighted parameters (length adequacy 0–4, density uniformity 0–3, taper continuity 0–3) produced a composite Dentrix (0–10).<br/><br/>
+        <strong>Results:</strong> The model achieved 91.2% accuracy, sensitivity 88.7%, specificity 94.1%, and Cohen's κ = 0.82 on the held-out test set (n=125). Bland-Altman analysis showed mean bias −0.12 (95% LoA: −0.87 to 0.63). Class-wise F1: Optimal 0.93, Acceptable 0.89, Suboptimal 0.86, Poor 0.84.<br/><br/>
+        <strong>Conclusions:</strong> The Dentrix AI system demonstrates strong agreement with expert consensus and substantially reduces inter-observer variability in radiographic obturation quality assessment, supporting its use as a clinical audit and decision-support tool.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-close-modal="abstractModal">Close</button>
+      <button class="btn btn-accent btn-sm" id="copyAbstractBtn">Copy Abstract</button>
+    </div>
+  </div>
+</div>
+
 <style>
-.toast{position:fixed;bottom:24px;right:24px;background:var(--dark);color:white;padding:12px 18px;border-radius:var(--radius-md);font-size:.875rem;display:flex;align-items:center;gap:8px;z-index:9999;transform:translateY(20px);opacity:0;transition:all .3s;box-shadow:var(--shadow-lg)}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--dark,#111);color:white;padding:12px 18px;border-radius:var(--radius-md,8px);font-size:.875rem;display:flex;align-items:center;gap:8px;z-index:9999;transform:translateY(20px);opacity:0;transition:all .3s;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .toast.show{transform:translateY(0);opacity:1}
-.toast svg{width:14px;height:14px}
+.toast svg{width:14px;height:14px;flex-shrink:0}
 </style>
 
 <script src="sidebar.js"></script>
 <script src="shared.js"></script>
 <script src="research.js"></script>
+<link rel="stylesheet" href="shared.css"/>
+<link rel="stylesheet" href="research.css"/>
 </body>
 </html>

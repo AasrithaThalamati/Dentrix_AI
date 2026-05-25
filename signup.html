@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ObturaScore AI · Sign In</title>
+<title>Dentrix AI · Sign In</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet" />
@@ -551,6 +551,25 @@
   .footer-links a { font-size: 11.5px; color: var(--text-muted); text-decoration: none; }
   .footer-links a:hover { color: var(--text-primary); }
 
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--input-bg);
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    resize: vertical;
+  }
+  textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+  }
+  textarea::placeholder { color: #c0bdb8; }
+
   @media (max-width: 560px) {
     nav { padding: 0 20px; }
     main { padding: 36px 16px 48px; }
@@ -576,7 +595,7 @@
         <circle cx="16" cy="16" r="2" fill="currentColor"/>
       </svg>
     </div>
-    <span class="brand-name">ObturaScore<sup>AI</sup></span>
+    <span class="brand-name">Dentrix<sup>AI</sup></span>
   </a>
 </nav>
 
@@ -615,7 +634,7 @@
           <label>Password</label>
           <div class="password-wrap">
             <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
-            <button class="eye-btn" onclick="togglePwd('login-password', this)" type="button" aria-label="Toggle password">
+            <button class="eye-btn" onclick="togglePwd('login-password')" type="button" aria-label="Toggle password">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                 <circle cx="12" cy="12" r="3"/>
@@ -695,7 +714,7 @@
 
         <div class="field-group">
           <label>Professional Bio</label>
-          <textarea id="su-bio" rows="4" style="width:100%;border:1px solid var(--border);border-radius:10px;padding:12px;font-family:var(--font-body);resize:none;" placeholder="Tell us about your professional background..."></textarea>
+          <textarea id="su-bio" rows="4" placeholder="Tell us about your professional background..."></textarea>
         </div>
 
         <div class="section-sep-label">Professional Details</div>
@@ -751,7 +770,7 @@
           <label>Password</label>
           <div class="password-wrap">
             <input type="password" id="su-password" placeholder="Min. 8 characters" oninput="checkStrength(this.value); checkMatch()" autocomplete="new-password" />
-            <button class="eye-btn" onclick="togglePwd('su-password', this)" type="button" aria-label="Toggle password">
+            <button class="eye-btn" onclick="togglePwd('su-password')" type="button" aria-label="Toggle password">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                 <circle cx="12" cy="12" r="3"/>
@@ -774,7 +793,7 @@
           <label>Confirm Password</label>
           <div class="password-wrap">
             <input type="password" id="su-confirm" placeholder="Re-enter password" oninput="checkMatch()" autocomplete="new-password" />
-            <button class="eye-btn" onclick="togglePwd('su-confirm', this)" type="button" aria-label="Toggle password">
+            <button class="eye-btn" onclick="togglePwd('su-confirm')" type="button" aria-label="Toggle password">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                 <circle cx="12" cy="12" r="3"/>
@@ -787,7 +806,7 @@
 
         <div class="terms-row">
           <input type="checkbox" id="terms" />
-          <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I understand ObturaScore AI is for research &amp; educational use only — not a substitute for clinical judgment.</span>
+          <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I understand Dentrix AI is for research &amp; educational use only — not a substitute for clinical judgment.</span>
         </div>
 
         <button class="btn-primary" onclick="handleSignup()">
@@ -807,7 +826,7 @@
       </div>
 
       <div class="card-footer" id="card-footer">
-        New to ObturaScore? <a href="#" onclick="switchTab('signup'); return false;">Create a free account →</a>
+        New to Dentrix? <a href="#" onclick="switchTab('signup'); return false;">Create a free account →</a>
       </div>
 
     </div>
@@ -825,6 +844,28 @@
 
 <script>
   const API_BASE = 'http://localhost:5001/api';
+
+  /* ── Helpers ── */
+  function getInitials(name) {
+    if (!name) return '?';
+    return name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  }
+
+  /* Save a complete, normalised user object to both storages */
+  function saveUser(userData) {
+    const parts = (userData.name || '').trim().split(/\s+/);
+    const normalised = {
+      ...userData,
+      name: userData.name || `${userData.firstName || ''} ${userData.lastName || ''}`.trim(),
+      firstName: userData.firstName || parts[0] || '',
+      lastName:  userData.lastName  || parts.slice(1).join(' ') || '',
+      initials:  getInitials(userData.name || `${userData.firstName} ${userData.lastName}`)
+    };
+    localStorage.setItem('dentrix_user',       JSON.stringify(normalised));
+    localStorage.setItem('obturaCurrentUser',  JSON.stringify(normalised));
+    sessionStorage.setItem('obturaAuth',       JSON.stringify(normalised));
+    return normalised;
+  }
 
   /* ── Tab switching ── */
   function switchTab(tab) {
@@ -854,7 +895,7 @@
   }
 
   /* ══════════════════════════════
-     SIGN UP — saves to sessionStorage, redirects to index.html
+     SIGN UP
   ══════════════════════════════ */
   async function handleSignup() {
     const firstName       = document.getElementById('su-first').value.trim();
@@ -863,13 +904,13 @@
     const phone           = document.getElementById('su-phone').value.trim();
     const password        = document.getElementById('su-password').value;
     const confirmPassword = document.getElementById('su-confirm').value;
-    const institution     = document.getElementById('su-institution').value;
+    const institution     = document.getElementById('su-institution').value.trim();
     const specialization  = document.getElementById('su-specialty').value;
     const dob             = document.getElementById('su-dob').value;
     const gender          = document.getElementById('su-gender').value;
-    const city            = document.getElementById('su-city').value;
+    const city            = document.getElementById('su-city').value.trim();
     const experience      = document.getElementById('su-exp').value;
-    const bio             = document.getElementById('su-bio').value;
+    const bio             = document.getElementById('su-bio').value.trim();
     const selectedRole    = document.querySelector('.role-chip.selected input');
     const role            = selectedRole ? selectedRole.value : 'dentist';
 
@@ -886,12 +927,14 @@
       alert('Please accept Terms & Conditions'); return;
     }
 
+    const fullName = `${firstName} ${lastName}`;
+
     try {
       const res = await fetch(`${API_BASE}/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`,
+          name: fullName, firstName, lastName,
           email, password, phone,
           clinic: institution, role, specialization,
           dob, gender, city, experience, bio
@@ -905,13 +948,19 @@
         return;
       }
 
-      /* ✅ Save auth to BOTH storages for compatibility */
+      const userPayload = {
+        ...(data.user || {}),
+        name: fullName, firstName, lastName,
+        email, phone, role, specialization,
+        dob, gender, city,
+        experience: experience ? parseInt(experience) : '',
+        bio, clinic: institution
+      };
+
       localStorage.setItem('dentrix_token', data.token);
-      localStorage.setItem('dentrix_user', JSON.stringify(data.user));
-      sessionStorage.setItem('obturaAuth', JSON.stringify(data.user));
+      saveUser(userPayload);
 
       showSuccess('Account Created!', 'Taking you to the home page…');
-      /* ✅ Redirect to index.html (home), NOT dashboard */
       setTimeout(() => { window.location.href = 'home.html'; }, 2000);
 
     } catch (err) {
@@ -921,7 +970,7 @@
   }
 
   /* ══════════════════════════════
-     LOGIN — saves to sessionStorage, redirects to index.html
+     LOGIN
   ══════════════════════════════ */
   async function handleLogin() {
     const email    = document.getElementById('login-email').value.trim();
@@ -945,13 +994,13 @@
         return;
       }
 
-      /* ✅ Save auth to BOTH storages for compatibility */
       localStorage.setItem('dentrix_token', data.token);
-      localStorage.setItem('dentrix_user', JSON.stringify(data.user));
-      sessionStorage.setItem('obturaAuth', JSON.stringify(data.user));
+      saveUser(data.user);
+
+      // Refresh topbar avatar if the function exists on the page
+      window.refreshTopbarAvatar?.();
 
       showSuccess('Welcome Back!', 'Taking you to the home page…');
-      /* ✅ Redirect to index.html (home), NOT dashboard */
       setTimeout(() => { window.location.href = 'home.html'; }, 1500);
 
     } catch (err) {

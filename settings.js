@@ -24,17 +24,33 @@
     });
   
     // ── Theme picker ──
+    function applyTheme(theme) {
+      if (theme === 'system') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    }
+  
+    // Restore saved theme on load
+    const savedTheme = localStorage.getItem('dentrix-theme') || 'light';
+    applyTheme(savedTheme);
+    document.querySelector(`.theme-opt[data-theme="${savedTheme}"]`)?.classList.add('active');
+  
     document.querySelectorAll('.theme-opt').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.theme-opt').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        if (btn.dataset.theme === 'dark') {
-          document.body.classList.add('dark-mode-preview');
-          showToast('Dark mode preview — save to apply');
-        } else {
-          document.body.classList.remove('dark-mode-preview');
-        }
+        const theme = btn.dataset.theme;
+        applyTheme(theme);
+        localStorage.setItem('dentrix-theme', theme);
       });
+    });
+  
+    // Keep system theme in sync if user picks "System"
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (localStorage.getItem('dentrix-theme') === 'system') applyTheme('system');
     });
   
     // ── Sensitivity selector ──
@@ -80,10 +96,10 @@
     });
   
     // ── API Key ──
-    const apiInput    = document.getElementById('apiKeyInput');
-    const toggleBtn   = document.getElementById('toggleApiKey');
-    const copyBtn     = document.getElementById('copyApiKey');
-    const regenBtn    = document.getElementById('regenApiKey');
+    const apiInput  = document.getElementById('apiKeyInput');
+    const toggleBtn = document.getElementById('toggleApiKey');
+    const copyBtn   = document.getElementById('copyApiKey');
+    const regenBtn  = document.getElementById('regenApiKey');
   
     toggleBtn?.addEventListener('click', () => {
       if (apiInput.type === 'password') {

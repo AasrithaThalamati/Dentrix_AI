@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smile Design AI — Dentrix AI</title>
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="smile.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="auth-guard" style="display:flex;position:fixed;inset:0;background:#f4f3f0;z-index:9999;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;color:#6b6760;">
+    Redirecting to sign in…
+  </div>
+
+  <!-- Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="brand-name">Dentrix<sup>AI</sup></span>
+      </a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="research.html">Research</a>
+        <a href="settings.html">Settings</a>
+        <div class="nav-user" id="nav-user-area">
+          <a href="profile.html" class="nav-user-name" id="nav-user-name" style="text-decoration:none;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:13px;color:#6b6760;"></a>
+          <button class="nav-logout-btn" onclick="logout()">Sign Out</button>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="research.html">Research</a>
+      <a href="signup.html" onclick="logout()">Sign Out</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="sd-hero">
+    <div class="sd-hero-badge">
+      <span class="badge-dot"></span>
+      AI Face Analysis · Aesthetic Dentistry · Personalised Recommendations
+    </div>
+    <h1 class="sd-hero-title">
+      Smile Design<br />
+      <em>Powered by AI</em>
+    </h1>
+    <p class="sd-hero-subtitle">
+      Upload a frontal face photo. Our AI analyses your facial geometry — jaw width, face length, cheekbone prominence — and recommends the optimal tooth shape category for your unique features.
+    </p>
+    <div class="sd-hero-stats">
+      <div class="sd-stat">
+        <span class="sd-stat-num">5</span>
+        <span class="sd-stat-label">Tooth Shape Categories</span>
+      </div>
+      <div class="sd-stat-div"></div>
+      <div class="sd-stat">
+        <span class="sd-stat-num">7</span>
+        <span class="sd-stat-label">Face Shape Types</span>
+      </div>
+      <div class="sd-stat-div"></div>
+      <div class="sd-stat">
+        <span class="sd-stat-num">AI</span>
+        <span class="sd-stat-label">Vision Analysis</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Tool -->
+  <section class="sd-tool-section">
+    <div class="sd-tool-layout">
+
+      <!-- Upload Panel -->
+      <div class="sd-upload-panel">
+        <div class="sd-panel-label">STEP 1 — UPLOAD PHOTO</div>
+        <div class="sd-upload-zone" id="sdDropZone">
+          <div class="sd-upload-visual">
+            <div class="sd-upload-rings">
+              <div class="sd-ring r1"></div>
+              <div class="sd-ring r2"></div>
+              <div class="sd-ring r3"></div>
+            </div>
+            <div class="sd-upload-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <!-- Face silhouette -->
+                <ellipse cx="32" cy="26" rx="14" ry="18" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <!-- Eyes -->
+                <circle cx="26" cy="23" r="2" fill="currentColor" opacity="0.4"/>
+                <circle cx="38" cy="23" r="2" fill="currentColor" opacity="0.4"/>
+                <!-- Smile -->
+                <path d="M26 32 Q32 37 38 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+                <!-- Upload arrow -->
+                <path d="M32 50 L32 58M27 54 L32 50 L37 54" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sd-upload-text">
+            <h3>Drop Frontal Face Photo</h3>
+            <p>Clear, well-lit frontal photo · JPEG or PNG · Max 10MB</p>
+          </div>
+          <label class="sd-upload-btn">
+            <input type="file" id="sdFileInput" accept="image/jpeg,image/png,image/webp" hidden />
+            Choose Photo
+          </label>
+          <p class="sd-upload-note">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zM8 5v4M8 11v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Photo is analysed locally and never stored on our servers
+          </p>
+        </div>
+
+        <!-- Preview -->
+        <div class="sd-preview" id="sdPreview" style="display:none">
+          <div class="sd-preview-img-wrap">
+            <img id="sdPreviewImg" src="" alt="Face photo" />
+            <div class="sd-preview-overlay"></div>
+            <div class="sd-scan-line" id="sdScanLine" style="display:none"></div>
+            <button class="sd-remove-btn" id="sdRemoveBtn">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="sd-preview-meta" id="sdPreviewMeta"></div>
+          <button class="sd-analyze-btn" id="sdAnalyzeBtn">
+            <span class="sd-btn-text">Analyse Face & Design Smile</span>
+            <span class="sd-btn-loader" style="display:none">
+              <span class="ld"></span><span class="ld"></span><span class="ld"></span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Research Sidebar -->
+        <div class="sd-research-box">
+          <div class="sd-research-label">RESEARCH BASIS</div>
+          <p>The face–tooth shape correspondence principle is grounded in the work of Leon Williams (1914) and expanded by modern aesthetic dentistry literature. The "tooth-face harmony" concept maps facial geometry to dental form for natural-looking smile designs.</p>
+          <div class="sd-research-tags">
+            <span>Williams 1914</span>
+            <span>Frush & Fisher</span>
+            <span>Aesthetic Dentistry</span>
+            <span>Smile Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="sd-results-panel" id="sdResults" style="display:none">
+        <div class="sd-results-header">
+          <div class="sd-results-badge" id="sdResultsBadge">ANALYSIS COMPLETE</div>
+          <div class="sd-results-time" id="sdResultsTime"></div>
+        </div>
+
+        <!-- Face Shape Result -->
+        <div class="sd-face-result" id="sdFaceResult">
+          <div class="sd-face-shape-card">
+            <div class="sd-face-shape-icon" id="sdFaceIcon">
+              <!-- injected by JS -->
+            </div>
+            <div class="sd-face-shape-info">
+              <div class="sd-face-shape-label">Detected Face Shape</div>
+              <div class="sd-face-shape-name" id="sdFaceShapeName">—</div>
+              <div class="sd-face-shape-desc" id="sdFaceShapeDesc">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Recommendation -->
+        <div class="sd-primary-rec">
+          <div class="sd-rec-header">
+            <div class="sd-rec-icon">★</div>
+            <div>
+              <div class="sd-rec-label">Primary Recommendation</div>
+              <div class="sd-rec-tooth-name" id="sdPrimaryName">—</div>
+            </div>
+            <div class="sd-rec-score" id="sdPrimaryScore">—%</div>
+          </div>
+          <p class="sd-rec-reason" id="sdPrimaryReason">—</p>
+          <div class="sd-tooth-visual" id="sdPrimaryVisual">
+            <!-- SVG tooth shape injected by JS -->
+          </div>
+        </div>
+
+        <!-- All Shape Compatibility -->
+        <div class="sd-compatibility">
+          <div class="sd-compat-label">SHAPE COMPATIBILITY SCORES</div>
+          <div class="sd-compat-grid" id="sdCompatGrid">
+            <!-- injected by JS -->
+          </div>
+        </div>
+
+        <!-- Clinical Notes -->
+        <div class="sd-clinical-notes" id="sdClinicalNotes">
+          <div class="sd-notes-header">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 4v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Clinical & Aesthetic Notes
+          </div>
+          <div class="sd-notes-body" id="sdNotesBody">—</div>
+        </div>
+
+        <!-- Suggestions List -->
+        <div class="sd-suggestions" id="sdSuggestions" style="display:none">
+          <div class="sd-sugg-header">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M9 12l2 2 4-4M7 2H5a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Dentist Recommendations
+          </div>
+          <ul class="sd-sugg-list" id="sdSuggList"></ul>
+        </div>
+
+        <!-- Actions -->
+        <div class="sd-actions">
+          <button class="sd-action-btn sd-share-btn" id="sdShareBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M15 7a2 2 0 100-4 2 2 0 000 4zm-8 4a2 2 0 100-4 2 2 0 000 4zm8 4a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.3"/></svg>
+            Share Result
+          </button>
+          <button class="sd-action-btn sd-download-btn" id="sdDownloadBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v10m0 0l-3-3m3 3l3-3M4 17h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download Report
+          </button>
+          <button class="sd-action-btn sd-reset-btn" id="sdResetBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10a6 6 0 1112 0 6 6 0 01-12 0zm3-3l-3 3 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            New Analysis
+          </button>
+        </div>
+      </div>
+
+      <!-- Idle State (shown before analysis) -->
+      <div class="sd-idle-panel" id="sdIdlePanel">
+        <div class="sd-idle-title">Tooth Shape Reference Guide</div>
+        <div class="sd-shapes-grid">
+
+          <div class="sd-shape-card" data-shape="oval">
+            <div class="sd-shape-svg-wrap">
+              <svg viewBox="0 0 60 90" fill="none">
+                <ellipse cx="30" cy="45" rx="22" ry="38" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+                <ellipse cx="30" cy="30" rx="14" ry="10" fill="#bfdbfe" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="sd-shape-name">Oval</div>
+            <div class="sd-shape-desc">Soft, natural, balanced. Suits most face shapes. The most commonly recommended form.</div>
+            <div class="sd-shape-suits"><span>Oval Face</span><span>Square Face</span></div>
+          </div>
+
+          <div class="sd-shape-card" data-shape="round">
+            <div class="sd-shape-svg-wrap">
+              <svg viewBox="0 0 60 90" fill="none">
+                <rect x="8" y="7" width="44" height="76" rx="22" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                <ellipse cx="30" cy="25" rx="14" ry="9" fill="#a7f3d0" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="sd-shape-name">Round</div>
+            <div class="sd-shape-desc">Completely rounded edges. Soft, feminine, and friendly. Complements angular face structures.</div>
+            <div class="sd-shape-suits"><span>Square Face</span><span>Diamond Face</span></div>
+          </div>
+
+          <div class="sd-shape-card" data-shape="square">
+            <div class="sd-shape-svg-wrap">
+              <svg viewBox="0 0 60 90" fill="none">
+                <rect x="8" y="7" width="44" height="76" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                <rect x="8" y="7" width="44" height="20" rx="5" fill="#fde68a" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="sd-shape-name">Square / Rectangular</div>
+            <div class="sd-shape-desc">Broader with minimal rounding. Projects confidence and strength. Adds structure to round faces.</div>
+            <div class="sd-shape-suits"><span>Round Face</span><span>Oval Face</span></div>
+          </div>
+
+          <div class="sd-shape-card" data-shape="triangular">
+            <div class="sd-shape-svg-wrap">
+              <svg viewBox="0 0 60 90" fill="none">
+                <path d="M30 83 L8 7 Q30 2 52 7 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M15 7 Q30 4 45 7 L38 30 Q30 28 22 30 Z" fill="#ddd6fe" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="sd-shape-name">Triangular</div>
+            <div class="sd-shape-desc">Wider at the top, narrower at the incisal edge. Youthful and playful. Suits heart-shaped faces.</div>
+            <div class="sd-shape-suits"><span>Heart Face</span><span>Inverted Triangle</span></div>
+          </div>
+
+          <div class="sd-shape-card" data-shape="tapered">
+            <div class="sd-shape-svg-wrap">
+              <svg viewBox="0 0 60 90" fill="none">
+                <path d="M30 83 Q10 60 12 30 Q15 7 30 5 Q45 7 48 30 Q50 60 30 83Z" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+                <path d="M18 10 Q30 6 42 10 Q36 28 30 28 Q24 28 18 10Z" fill="#fed7aa" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="sd-shape-name">Tapered / Pointed Oval</div>
+            <div class="sd-shape-desc">Hybrid: strength of square, softness of oval. Slightly pointed incisal tip. Suits oblong faces.</div>
+            <div class="sd-shape-suits"><span>Oblong Face</span><span>Narrow Face</span></div>
+          </div>
+
+        </div>
+
+        <!-- Face Shape Guide -->
+        <div class="sd-face-guide">
+          <div class="sd-face-guide-label">FACE SHAPE CORRESPONDENCE CHART</div>
+          <div class="sd-face-table">
+            <div class="sd-face-table-head">
+              <div>Face Shape</div>
+              <div>Key Features</div>
+              <div>Recommended Tooth</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Oval</div>
+              <div class="sdf-feat">Balanced width, gently curved jaw</div>
+              <div class="sdf-tooth optimal">Oval or Square</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Round</div>
+              <div class="sdf-feat">Similar width & length, full cheeks</div>
+              <div class="sdf-tooth optimal">Square / Rectangular</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Square</div>
+              <div class="sdf-feat">Broad forehead, strong jaw, equal width</div>
+              <div class="sdf-tooth warn">Round or Oval</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Heart</div>
+              <div class="sdf-feat">Wide forehead, narrow chin, high cheekbones</div>
+              <div class="sdf-tooth warn">Round or Triangular</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Diamond</div>
+              <div class="sdf-feat">Narrow forehead & jaw, wide cheekbones</div>
+              <div class="sdf-tooth optimal">Oval or Tapered</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Oblong</div>
+              <div class="sdf-feat">Long, narrow face, parallel sides</div>
+              <div class="sdf-tooth info">Tapered / Pointed Oval</div>
+            </div>
+            <div class="sd-face-table-row">
+              <div class="sdf-name">Triangular</div>
+              <div class="sdf-feat">Narrow forehead, wide jaw</div>
+              <div class="sdf-tooth info">Square or Oval</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Error Toast -->
+  <div class="sd-toast" id="sdToast" style="display:none">
+    <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 4v4m0 2.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+    <span id="sdToastMsg">Something went wrong.</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="sd-footer">
+    <div class="sd-footer-inner">
+      <div class="sd-footer-brand">
+        <div class="brand-icon small">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 16 Q12 8 16 16 Q20 24 24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name" style="color:white">Dentrix<sup>AI</sup></div>
+          <div class="sd-footer-tag">Smile Design Intelligence</div>
+        </div>
+      </div>
+      <div class="sd-footer-notice">
+        For aesthetic planning and educational use only. Recommendations are AI-generated suggestions and do not replace clinical examination by a qualified dental professional.
+      </div>
+      <div class="sd-footer-meta">© 2025 Dentrix AI · Smile Design Module</div>
+    </div>
+  </footer>
+
+  <script src="smile.js"></script>
+
+  <script>
+    /* ── Auth Guard ── */
+    (function() {
+      const sessionAuth = sessionStorage.getItem('obturaAuth');
+      const localUser   = localStorage.getItem('dentrix_user');
+      const localToken  = localStorage.getItem('dentrix_token');
+      const isAuthed    = sessionAuth || (localToken && localUser);
+
+      if (!isAuthed) { window.location.replace('signup.html'); return; }
+      if (!sessionAuth && localUser) sessionStorage.setItem('obturaAuth', localUser);
+
+      document.getElementById('auth-guard').style.display = 'none';
+
+      try {
+        const user = JSON.parse(sessionAuth || localUser);
+        const nameEl = document.getElementById('nav-user-name');
+        if (nameEl && user?.name) {
+          const initials = user.name.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
+          nameEl.innerHTML = `<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1a1916;color:#fff;font-size:11px;font-weight:600;">${initials}</span>${user.name}`;
+        }
+      } catch(e) {}
+    })();
+
+    function logout() {
+      sessionStorage.removeItem('obturaAuth');
+      localStorage.removeItem('dentrix_token');
+      localStorage.removeItem('dentrix_user');
+      window.location.href = 'signup.html';
+    }
+
+    /* ── Hamburger ── */
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu')?.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

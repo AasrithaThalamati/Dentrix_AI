@@ -632,3 +632,165 @@ document.addEventListener('DOMContentLoaded', () => {
 if (document.readyState !== 'loading') {
   initAnatomyInteractivity();
 }
+
+/* ══════════════════════════════════════════════════════════════
+   GALLERY INTERACTIVITY
+   Add this block to the bottom of app.js
+══════════════════════════════════════════════════════════════ */
+
+function initGallery() {
+  const track     = document.getElementById('galleryTrack');
+  const prevBtn   = document.getElementById('galleryPrev');
+  const nextBtn   = document.getElementById('galleryNext');
+  const dotsWrap  = document.getElementById('galleryDots');
+  const hint      = document.getElementById('galleryHint');
+  if (!track) return;
+
+  const cards     = track.querySelectorAll('.gcard');
+  const total     = cards.length;
+  let   current   = 0;
+  let   isDragging = false;
+  let   startX    = 0;
+  let   startTranslate = 0;
+  let   currentTranslate = 0;
+  const CARD_WIDTH = () => cards[0].getBoundingClientRect().width + 20; // card + gap
+
+  /* ── Build dots ── */
+  dotsWrap.innerHTML = '';
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'gdot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = Math.max(0, Math.min(index, total - 1));
+    const offset = -current * CARD_WIDTH();
+    track.style.transform = `translateX(${offset}px)`;
+    currentTranslate = offset;
+    updateDots();
+    updateButtons();
+  }
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('.gdot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function updateButtons() {
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  /* ── Keyboard navigation ── */
+  document.addEventListener('keydown', (e) => {
+    const gallerySection = document.getElementById('gallery');
+    if (!gallerySection) return;
+    const rect = gallerySection.getBoundingClientRect();
+    const visible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!visible) return;
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+  });
+
+  /* ── Drag / Touch ── */
+  function getClientX(e) {
+    return e.touches ? e.touches[0].clientX : e.clientX;
+  }
+
+  function onDragStart(e) {
+    isDragging = true;
+    startX = getClientX(e);
+    startTranslate = currentTranslate;
+    track.style.transition = 'none';
+  }
+
+  function onDragMove(e) {
+    if (!isDragging) return;
+    const dx = getClientX(e) - startX;
+    track.style.transform = `translateX(${startTranslate + dx}px)`;
+  }
+
+  function onDragEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+    const dx = getClientX(e) - startX;
+    const threshold = CARD_WIDTH() * 0.25;
+    if (dx < -threshold) goTo(current + 1);
+    else if (dx > threshold) goTo(current - 1);
+    else goTo(current); // snap back
+  }
+
+  track.addEventListener('mousedown', onDragStart);
+  window.addEventListener('mousemove', onDragMove);
+  window.addEventListener('mouseup', onDragEnd);
+  track.addEventListener('touchstart', onDragStart, { passive: true });
+  window.addEventListener('touchmove', onDragMove, { passive: true });
+  window.addEventListener('touchend', onDragEnd);
+
+  /* ── Hide hint after first interaction ── */
+  function hideHint() {
+    if (hint) { hint.style.opacity = '0'; hint.style.pointerEvents = 'none'; }
+    prevBtn.removeEventListener('click', hideHint);
+    nextBtn.removeEventListener('click', hideHint);
+    track.removeEventListener('mousedown', hideHint);
+    track.removeEventListener('touchstart', hideHint);
+  }
+  prevBtn.addEventListener('click', hideHint);
+  nextBtn.addEventListener('click', hideHint);
+  track.addEventListener('mousedown', hideHint);
+  track.addEventListener('touchstart', hideHint);
+
+  /* ── Animate AI param bars on first visibility ── */
+  const aiCard = track.querySelector('.gcard--ai');
+  if (aiCard) {
+    const aiObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aiCard.querySelectorAll('.ai-param-fill').forEach(bar => {
+            const w = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => { bar.style.width = w; }, 100);
+          });
+          aiObserver.unobserve(aiCard);
+        }
+      });
+    }, { threshold: 0.3 });
+    aiObserver.observe(aiCard);
+  }
+
+  /* ── Gallery card entrance animation ── */
+  const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        cards.forEach((card, i) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          card.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        });
+        galleryObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const gallerySection = document.getElementById('gallery');
+  if (gallerySection) galleryObserver.observe(gallerySection);
+
+  /* Init state */
+  updateButtons();
+  updateDots();
+}
+
+/* ── Init on load ── */
+document.addEventListener('DOMContentLoaded', initGallery);
+if (document.readyState !== 'loading') initGallery();

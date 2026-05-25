@@ -2,14 +2,22 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: true, trim: true },
-  email: { type: String, required: true, unique: true, lowercase: true },
-  password: { type: String, required: true, minlength: 6 },
-  role: { type: String, enum: ['dentist', 'admin'], default: 'dentist' },
-  clinic: { type: String, default: '' },
-  phone: { type: String, default: '' },
-  avatar: { type: String, default: '' },
-  createdAt: { type: Date, default: Date.now }
+  name:           { type: String, required: true, trim: true },
+  email:          { type: String, required: true, unique: true, lowercase: true },
+  password:       { type: String, required: true, minlength: 6 },
+  role:           { type: String, enum: ['dentist', 'admin', 'endodontist', 'student', 'researcher'], default: 'dentist' },
+  clinic:         { type: String, default: '' },
+  phone:          { type: String, default: '' },
+  avatar:         { type: String, default: '' },
+  firstName:      { type: String, default: '' },
+  lastName:       { type: String, default: '' },
+  specialization: { type: String, default: '' },
+  dob:            { type: String, default: '' },
+  gender:         { type: String, default: '' },
+  city:           { type: String, default: '' },
+  experience:     { type: Number, default: 0 },
+  bio:            { type: String, default: '' },
+  createdAt:      { type: Date, default: Date.now }
 });
 
 // Hash password before saving

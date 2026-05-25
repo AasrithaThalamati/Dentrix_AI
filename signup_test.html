@@ -1,0 +1,8 @@
+<h1>Test</h1>
+<script>
+fetch('http://localhost:5001/api/auth/login', {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({email:'sushanth@gmail.com', password:'Dentrix123'})
+}).then(r=>r.json()).then(d=>document.body.innerHTML='<pre>'+JSON.stringify(d,null,2)+'</pre>').catch(e=>document.body.innerHTML='ERROR: '+e);
+</script>

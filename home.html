@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ObturaScore AI — Radiographic Obturation Intelligence</title>
+  <title>Dentrix AI — Radiographic Obturation Intelligence</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Syne+Mono&display=swap" rel="stylesheet" />
@@ -78,11 +78,11 @@
             <circle cx="16" cy="16" r="2" fill="currentColor"/>
           </svg>
         </div>
-        <span class="brand-name">ObturaScore<sup>AI</sup></span>
+        <span class="brand-name">Dentrix<sup>AI</sup></span>
       </div>
       <div class="nav-links">
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html#scoring">Scoring</a>
+        <a href="smile.html">Smile Design</a>
         <a href="research.html">Research</a>
         <a href="analyze.html">Analyze X-Ray</a>
         <a href="settings.html">Settings</a>
@@ -97,7 +97,7 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a href="dashboard.html">Dashboard</a>
-      <a href="#scoring">Scoring</a>
+      <a href="home.html#scoring">Scoring</a>
       <a href="research.html">Research</a>
       <a href="analyze.html" class="nav-cta">Analyze X-Ray</a>
       <a href="signup.html" onclick="logout()">Sign Out</a>
@@ -149,7 +149,7 @@
   <section class="anatomy-section" id="anatomy">
     <div class="section-label">INTERACTIVE ANATOMY</div>
     <h2 class="section-title">Understanding the<br /><em>Root Canal</em></h2>
-    <p class="anatomy-intro">Hover over each labelled structure to understand what ObturaScore AI evaluates. Click a label to learn more.</p>
+    <p class="anatomy-intro">Hover over each labelled structure to understand what Dentrix AI evaluates. Click a label to learn more.</p>
 
     <div class="anatomy-layout">
       <div class="anatomy-diagram-wrap">
@@ -230,7 +230,7 @@
               <div class="legend-dot" style="background:#1a1916"></div>
               <div class="legend-entry-text">
                 <strong>② Gutta-Percha Fill</strong>
-                <p>The radiopaque obturating material visible as a dense white column on IOPA. ObturaScore AI analyzes homogeneity, void presence, and taper continuity throughout this column.</p>
+                <p>The radiopaque obturating material visible as a dense white column on IOPA. Dentrix AI analyzes homogeneity, void presence, and taper continuity throughout this column.</p>
               </div>
             </div>
             <div class="legend-entry" data-key="apex">
@@ -286,45 +286,418 @@
     </div>
   </section>
 
-  <!-- MEDIA SECTION -->
-  <section class="media-section" id="media">
-    <div class="section-label">EDUCATIONAL MEDIA</div>
-    <h2 class="section-title">See It in<br /><em>Action</em></h2>
-    <p class="media-intro">Understanding the radiographic anatomy behind obturation scoring helps clinicians correlate AI output with clinical findings.</p>
-    <div class="media-grid">
-      <div class="media-card featured-media">
-        <div class="video-embed-wrap">
-          <iframe class="video-iframe" src="https://www.youtube.com/embed/CbFuuHlZCas?rel=0&modestbranding=1" title="Root Canal Obturation — How to Read IOPA Radiographs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="media-card-body">
-          <div class="media-tag">TECHNIQUE</div>
-          <h3>Reading Obturation on IOPA</h3>
-          <p>How endodontists evaluate radiographic obturation quality — the same criteria our AI has been trained on using consensus-annotated datasets.</p>
-        </div>
-      </div>
-      <div class="media-card">
-        <div class="video-embed-wrap compact">
-          <iframe class="video-iframe" src="https://www.youtube.com/embed/SdoMTdJlteo?rel=0&modestbranding=1" title="Gutta Percha Obturation Technique" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="media-card-body">
-          <div class="media-tag">PROCEDURE</div>
-          <h3>Gutta-Percha Condensation</h3>
-          <p>Lateral vs vertical condensation techniques and their radiographic signatures — understanding how technique affects density scores.</p>
-        </div>
-      </div>
-      <div class="media-card">
-        <div class="video-embed-wrap compact">
-          <iframe class="video-iframe" src="https://www.youtube.com/embed/WFoTGGkgzfI?rel=0&modestbranding=1" title="Periapical Radiograph Interpretation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="media-card-body">
-          <div class="media-tag">INTERPRETATION</div>
-          <h3>Periapical Radiograph Reading</h3>
-          <p>Systematic approach to periapical radiograph interpretation — structures, pathology, and how obturation quality relates to outcomes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  
+ <!-- ═══════════════════════════════════════════════════════════
+     OBTURATION GALLERY SECTION
+     Replace the entire  MEDIA SECTION -->
 
+<section class="gallery-section" id="gallery">
+  <div class="section-label">CLINICAL REFERENCE GALLERY</div>
+  <h2 class="section-title">Obturation<br /><em>Case Gallery</em></h2>
+  <p class="gallery-intro">Scroll through real-world obturation types, radiographic landmarks, and clinical tips used by the AI scoring system.</p>
+
+  <!-- Track indicator -->
+  <div class="gallery-track-wrap">
+    <div class="gallery-track" id="galleryTrack">
+
+      <!-- CARD 1: Optimal obturation -->
+      <div class="gcard gcard--optimal">
+        <div class="gcard-image-wrap">
+          <svg class="gcard-xray" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- X-ray background -->
+            <rect width="200" height="300" fill="#0a0e14"/>
+            <!-- Bone texture -->
+            <rect x="0" y="100" width="200" height="150" fill="#111820" opacity="0.8"/>
+            <!-- Tooth outline -->
+            <path d="M65 20 Q75 10 100 8 Q125 10 135 20 Q148 40 145 75 Q142 100 135 118 L115 132 L100 136 L85 132 L65 118 Q58 100 55 75 Q52 40 65 20Z" fill="#1a2535" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Enamel highlight -->
+            <path d="M72 18 Q90 10 110 11 Q122 14 130 22" stroke="#5d8aaa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Root L -->
+            <path d="M85 132 L80 142 Q74 165 73 210 Q72 250 75 272 Q77 285 82 291 Q87 296 92 291 Q97 286 97 272 Q97 250 95 210 Q93 165 89 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Root R -->
+            <path d="M115 132 L120 142 Q126 165 127 210 Q128 250 125 272 Q123 285 118 291 Q113 296 108 291 Q103 286 103 272 Q103 250 105 210 Q107 165 111 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Canal fill L - OPTIMAL bright -->
+            <path d="M87 142 L84 152 Q79 172 78 212 Q77 250 80 270 Q82 282 86 287 Q90 291 93 287 Q96 282 96 270 Q95 250 93 212 Q91 172 88 152 Z" fill="#d4e8f7" stroke="#a8d4f0" stroke-width="0.5" opacity="0.95"/>
+            <!-- Canal fill R - OPTIMAL bright -->
+            <path d="M113 142 L116 152 Q121 172 122 212 Q123 250 120 270 Q118 282 114 287 Q110 291 107 287 Q104 282 104 270 Q105 250 107 212 Q109 172 112 152 Z" fill="#d4e8f7" stroke="#a8d4f0" stroke-width="0.5" opacity="0.95"/>
+            <!-- Pulp chamber -->
+            <path d="M88 55 Q91 46 100 44 Q109 46 112 55 Q114 68 112 90 L106 100 L100 102 L94 100 L88 90 Q86 68 88 55Z" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3 2"/>
+            <!-- Alveolar bone line -->
+            <rect x="40" y="108" width="120" height="8" rx="3" fill="#223040" stroke="#3d5a80" stroke-width="0.5"/>
+            <!-- PDL lines -->
+            <path d="M72 168 Q68 200 70 250" stroke="#7a6020" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <path d="M128 168 Q132 200 130 250" stroke="#7a6020" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <!-- Apex dots - green optimal -->
+            <ellipse cx="89" cy="288" rx="5" ry="3.5" fill="#22c55e" opacity="0.9"/>
+            <ellipse cx="111" cy="288" rx="5" ry="3.5" fill="#22c55e" opacity="0.9"/>
+            <!-- Measurement bracket -->
+            <line x1="50" y1="140" x2="50" y2="288" stroke="#4a90d9" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.6"/>
+            <line x1="46" y1="140" x2="54" y2="140" stroke="#4a90d9" stroke-width="1.2"/>
+            <line x1="46" y1="288" x2="54" y2="288" stroke="#22c55e" stroke-width="1.2"/>
+            <!-- Labels -->
+            <text x="100" y="158" text-anchor="middle" font-size="6" fill="#22c55e" font-family="monospace">OPTIMAL</text>
+            <text x="100" y="166" text-anchor="middle" font-size="5.5" fill="#a8d4f0" font-family="monospace">0-2mm SHORT</text>
+          </svg>
+          <div class="gcard-badge gcard-badge--optimal">OPTIMAL</div>
+          <div class="gcard-score">9.2<span>/10</span></div>
+          <div class="gcard-label-pins">
+            <div class="gpin gpin--top-right" style="top:18%;right:8%">
+              <div class="gpin-dot" style="background:#4a90d9"></div>
+              <div class="gpin-tip">Pulp chamber<br/>well-defined</div>
+            </div>
+            <div class="gpin gpin--mid-left" style="top:55%;left:6%">
+              <div class="gpin-dot" style="background:#d4e8f7"></div>
+              <div class="gpin-tip">Dense, void-free<br/>GP fill</div>
+            </div>
+            <div class="gpin gpin--bottom-right" style="bottom:10%;right:8%">
+              <div class="gpin-dot" style="background:#22c55e"></div>
+              <div class="gpin-tip">Apex termination<br/>0–2mm short</div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard-body">
+          <div class="gcard-tag">LENGTH · DENSITY · TAPER</div>
+          <h3>Ideal Obturation</h3>
+          <p>All three parameters score at maximum. Canal fill terminates 1.2mm short of the radiographic apex, with homogeneous density and smooth continuous taper. No voids detected.</p>
+          <div class="gcard-fact">
+            <div class="gcard-fact-icon">💡</div>
+            <div><strong>Clinical tip:</strong> The 0–2mm rule is based on the average distance between the radiographic and anatomic apex. Terminating in this window avoids overpacking while ensuring apical seal.</div>
+          </div>
+          <div class="gcard-metrics">
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">4.0</span><span class="gm-key">Length /4</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">3.0</span><span class="gm-key">Density /3</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">2.2</span><span class="gm-key">Taper /3</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Short fill -->
+      <div class="gcard gcard--short">
+        <div class="gcard-image-wrap">
+          <svg class="gcard-xray" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="300" fill="#0a0e14"/>
+            <rect x="0" y="100" width="200" height="150" fill="#111820" opacity="0.8"/>
+            <path d="M65 20 Q75 10 100 8 Q125 10 135 20 Q148 40 145 75 Q142 100 135 118 L115 132 L100 136 L85 132 L65 118 Q58 100 55 75 Q52 40 65 20Z" fill="#1a2535" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M72 18 Q90 10 110 11 Q122 14 130 22" stroke="#5d8aaa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M85 132 L80 142 Q74 165 73 210 Q72 250 75 272 Q77 285 82 291 Q87 296 92 291 Q97 286 97 272 Q97 250 95 210 Q93 165 89 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M115 132 L120 142 Q126 165 127 210 Q128 250 125 272 Q123 285 118 291 Q113 296 108 291 Q103 286 103 272 Q103 250 105 210 Q107 165 111 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Canal fill L - SHORT - stops higher -->
+            <path d="M87 142 L84 152 Q79 172 78 205 Q77 235 80 252 Q82 262 86 266 Q90 268 93 266 Q96 262 96 252 Q95 232 93 205 Q91 172 88 152 Z" fill="#c8dff0" stroke="#8abede" stroke-width="0.5" opacity="0.85"/>
+            <!-- Canal fill R - SHORT -->
+            <path d="M113 142 L116 152 Q121 172 122 205 Q123 235 120 252 Q118 262 114 266 Q110 268 107 266 Q104 262 104 252 Q105 232 107 205 Q109 172 112 152 Z" fill="#c8dff0" stroke="#8abede" stroke-width="0.5" opacity="0.85"/>
+            <!-- Gap below fill - dark/void area -->
+            <path d="M80 254 Q77 265 79 278 Q80 285 84 290" stroke="#0a0e14" stroke-width="1" opacity="0.4"/>
+            <path d="M120 254 Q123 265 121 278 Q120 285 116 290" stroke="#0a0e14" stroke-width="1" opacity="0.4"/>
+            <path d="M88 55 Q91 46 100 44 Q109 46 112 55 Q114 68 112 90 L106 100 L100 102 L94 100 L88 90 Q86 68 88 55Z" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3 2"/>
+            <rect x="40" y="108" width="120" height="8" rx="3" fill="#223040" stroke="#3d5a80" stroke-width="0.5"/>
+            <path d="M72 168 Q68 200 70 250" stroke="#7a6020" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <path d="M128 168 Q132 200 130 250" stroke="#7a6020" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <!-- Gap arrows -->
+            <line x1="90" y1="268" x2="90" y2="288" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <line x1="110" y1="268" x2="110" y2="288" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <!-- Apex dots - warning -->
+            <ellipse cx="89" cy="288" rx="5" ry="3.5" fill="#f59e0b" opacity="0.7"/>
+            <ellipse cx="111" cy="288" rx="5" ry="3.5" fill="#f59e0b" opacity="0.7"/>
+            <!-- Gap label -->
+            <rect x="62" y="270" width="76" height="13" rx="3" fill="#1a1200" stroke="#f59e0b" stroke-width="0.7"/>
+            <text x="100" y="280" text-anchor="middle" font-size="6" fill="#f59e0b" font-family="monospace">GAP &gt;2mm SHORT</text>
+          </svg>
+          <div class="gcard-badge gcard-badge--warn">SHORT FILL</div>
+          <div class="gcard-score">5.5<span>/10</span></div>
+          <div class="gcard-label-pins">
+            <div class="gpin gpin--bottom-left" style="bottom:18%;left:6%">
+              <div class="gpin-dot" style="background:#f59e0b"></div>
+              <div class="gpin-tip">Unfilled apical<br/>3.8mm gap</div>
+            </div>
+            <div class="gpin gpin--mid-right" style="top:50%;right:6%">
+              <div class="gpin-dot" style="background:#c8dff0"></div>
+              <div class="gpin-tip">Fill density<br/>acceptable</div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard-body">
+          <div class="gcard-tag">LENGTH DEFICIENCY</div>
+          <h3>Short Fill (&gt;2mm)</h3>
+          <p>Gutta-percha terminates 3.8mm short of the radiographic apex, leaving an unsealed apical portion. Density and taper are adequate, but the length deficiency alone reduces the total score by 2.5 points.</p>
+          <div class="gcard-fact">
+            <div class="gcard-fact-icon">⚠️</div>
+            <div><strong>Why it matters:</strong> An unsealed apical segment creates a reservoir for residual bacteria and periapical fluid communication. Studies show short fills &gt;2mm have significantly higher rates of periapical periodontitis at 4-year recall.</div>
+          </div>
+          <div class="gcard-metrics">
+            <div class="gm-item"><span class="gm-val" style="color:#f59e0b">1.5</span><span class="gm-key">Length /4</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">2.8</span><span class="gm-key">Density /3</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">1.2</span><span class="gm-key">Taper /3</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: Overextension -->
+      <div class="gcard gcard--over">
+        <div class="gcard-image-wrap">
+          <svg class="gcard-xray" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="300" fill="#0a0e14"/>
+            <rect x="0" y="100" width="200" height="150" fill="#111820" opacity="0.8"/>
+            <path d="M65 20 Q75 10 100 8 Q125 10 135 20 Q148 40 145 75 Q142 100 135 118 L115 132 L100 136 L85 132 L65 118 Q58 100 55 75 Q52 40 65 20Z" fill="#1a2535" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M72 18 Q90 10 110 11 Q122 14 130 22" stroke="#5d8aaa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M85 132 L80 142 Q74 165 73 210 Q72 250 75 272 Q77 285 82 289 Q87 292 92 289 Q97 286 97 272 Q97 250 95 210 Q93 165 89 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M115 132 L120 142 Q126 165 127 210 Q128 250 125 272 Q123 285 118 289 Q113 292 108 289 Q103 286 103 272 Q103 250 105 210 Q107 165 111 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Canal fills extending BEYOND root -->
+            <path d="M87 142 L84 152 Q79 172 78 212 Q77 250 80 272 Q82 284 86 290 Q89 294 92 291 Q95 286 95 270 Q94 250 92 212 Q90 172 88 152 Z" fill="#c8dff0" stroke="#8abede" stroke-width="0.5" opacity="0.9"/>
+            <!-- Extruded GP puff outside apex -->
+            <ellipse cx="89" cy="295" rx="8" ry="5" fill="#d4e8f7" opacity="0.8" stroke="#f87171" stroke-width="1"/>
+            <path d="M113 142 L116 152 Q121 172 122 212 Q123 250 120 272 Q118 284 114 290 Q111 294 108 291 Q105 286 105 270 Q106 250 108 212 Q110 172 113 152 Z" fill="#c8dff0" stroke="#8abede" stroke-width="0.5" opacity="0.9"/>
+            <ellipse cx="111" cy="295" rx="7" ry="4.5" fill="#d4e8f7" opacity="0.8" stroke="#f87171" stroke-width="1"/>
+            <path d="M88 55 Q91 46 100 44 Q109 46 112 55 Q114 68 112 90 L106 100 L100 102 L94 100 L88 90 Q86 68 88 55Z" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3 2"/>
+            <rect x="40" y="108" width="120" height="8" rx="3" fill="#223040" stroke="#3d5a80" stroke-width="0.5"/>
+            <!-- Periapical lesion halo -->
+            <ellipse cx="100" cy="291" rx="28" ry="14" fill="none" stroke="#f87171" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+            <!-- Warning labels -->
+            <rect x="52" y="282" width="96" height="12" rx="3" fill="#200a0a" stroke="#f87171" stroke-width="0.7"/>
+            <text x="100" y="291" text-anchor="middle" font-size="6" fill="#f87171" font-family="monospace">OVEREXTENSION</text>
+          </svg>
+          <div class="gcard-badge gcard-badge--poor">OVEREXTENSION</div>
+          <div class="gcard-score">2.8<span>/10</span></div>
+          <div class="gcard-label-pins">
+            <div class="gpin gpin--bottom-center" style="bottom:4%;left:30%">
+              <div class="gpin-dot" style="background:#f87171"></div>
+              <div class="gpin-tip">Extruded GP<br/>beyond foramen</div>
+            </div>
+            <div class="gpin gpin--mid-right" style="top:42%;right:5%">
+              <div class="gpin-dot" style="background:#f87171"></div>
+              <div class="gpin-tip">Periapical<br/>irritation zone</div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard-body">
+          <div class="gcard-tag">CRITICAL DEFICIENCY</div>
+          <h3>Overextension</h3>
+          <p>Gutta-percha extrudes 2.4mm beyond the radiographic apex into periapical tissues. This triggers a foreign body reaction, inflammation, and potential nerve proximity injury in the mandible.</p>
+          <div class="gcard-fact">
+            <div class="gcard-fact-icon">🔴</div>
+            <div><strong>Retreatment indicated:</strong> Extruded GP rarely resorbs spontaneously. Surgical endodontics (apicoectomy) may be required if non-surgical retreatment cannot retrieve the material.</div>
+          </div>
+          <div class="gcard-metrics">
+            <div class="gm-item"><span class="gm-val" style="color:#f87171">0.5</span><span class="gm-key">Length /4</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#f59e0b">1.5</span><span class="gm-key">Density /3</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#f59e0b">0.8</span><span class="gm-key">Taper /3</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: Void / density failure -->
+      <div class="gcard gcard--void">
+        <div class="gcard-image-wrap">
+          <svg class="gcard-xray" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="300" fill="#0a0e14"/>
+            <rect x="0" y="100" width="200" height="150" fill="#111820" opacity="0.8"/>
+            <path d="M65 20 Q75 10 100 8 Q125 10 135 20 Q148 40 145 75 Q142 100 135 118 L115 132 L100 136 L85 132 L65 118 Q58 100 55 75 Q52 40 65 20Z" fill="#1a2535" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M72 18 Q90 10 110 11 Q122 14 130 22" stroke="#5d8aaa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M85 132 L80 142 Q74 165 73 210 Q72 250 75 272 Q77 285 82 291 Q87 296 92 291 Q97 286 97 272 Q97 250 95 210 Q93 165 89 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M115 132 L120 142 Q126 165 127 210 Q128 250 125 272 Q123 285 118 291 Q113 296 108 291 Q103 286 103 272 Q103 250 105 210 Q107 165 111 142 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Canal fill with VOIDS (dark patches) -->
+            <path d="M87 142 L84 152 Q79 172 78 212 Q77 250 80 270 Q82 282 86 287 Q90 291 93 287 Q96 282 96 270 Q95 250 93 212 Q91 172 88 152 Z" fill="#a8c8e0" stroke="#8abede" stroke-width="0.5" opacity="0.75"/>
+            <!-- Voids in L canal -->
+            <ellipse cx="89" cy="185" rx="4.5" ry="3" fill="#0a0e14" opacity="0.9"/>
+            <ellipse cx="88" cy="220" rx="3" ry="5" fill="#0a0e14" opacity="0.9"/>
+            <ellipse cx="90" cy="248" rx="3.5" ry="2.5" fill="#0a0e14" opacity="0.85"/>
+            <path d="M113 142 L116 152 Q121 172 122 212 Q123 250 120 270 Q118 282 114 287 Q110 291 107 287 Q104 282 104 270 Q105 250 107 212 Q109 172 112 152 Z" fill="#a8c8e0" stroke="#8abede" stroke-width="0.5" opacity="0.75"/>
+            <!-- Voids in R canal -->
+            <ellipse cx="113" cy="195" rx="3.5" ry="4" fill="#0a0e14" opacity="0.9"/>
+            <ellipse cx="112" cy="232" rx="4" ry="2.5" fill="#0a0e14" opacity="0.9"/>
+            <path d="M88 55 Q91 46 100 44 Q109 46 112 55 Q114 68 112 90 L106 100 L100 102 L94 100 L88 90 Q86 68 88 55Z" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3 2"/>
+            <rect x="40" y="108" width="120" height="8" rx="3" fill="#223040" stroke="#3d5a80" stroke-width="0.5"/>
+            <path d="M72 168 Q68 200 70 250" stroke="#7a6020" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <path d="M128 168 Q132 200 130 250" stroke="#7a6020" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <!-- Void callout rings -->
+            <circle cx="89" cy="185" r="7" fill="none" stroke="#ea580c" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <circle cx="88" cy="220" r="7" fill="none" stroke="#ea580c" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <circle cx="113" cy="195" r="7" fill="none" stroke="#ea580c" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <!-- Apex seals OK -->
+            <ellipse cx="89" cy="288" rx="5" ry="3.5" fill="#f59e0b" opacity="0.7"/>
+            <ellipse cx="111" cy="288" rx="5" ry="3.5" fill="#f59e0b" opacity="0.7"/>
+            <!-- Void legend -->
+            <rect x="58" y="155" width="40" height="11" rx="2" fill="#180800" stroke="#ea580c" stroke-width="0.6"/>
+            <text x="78" y="164" text-anchor="middle" font-size="5.5" fill="#ea580c" font-family="monospace">VOID ①</text>
+          </svg>
+          <div class="gcard-badge gcard-badge--warn">VOIDS DETECTED</div>
+          <div class="gcard-score">5.0<span>/10</span></div>
+          <div class="gcard-label-pins">
+            <div class="gpin gpin--mid-left" style="top:38%;left:5%">
+              <div class="gpin-dot" style="background:#ea580c"></div>
+              <div class="gpin-tip">Radiolucent void<br/>coronal third</div>
+            </div>
+            <div class="gpin gpin--mid-right" style="top:56%;right:5%">
+              <div class="gpin-dot" style="background:#ea580c"></div>
+              <div class="gpin-tip">Mid-root void<br/>bacterial harbour</div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard-body">
+          <div class="gcard-tag">DENSITY DEFICIENCY</div>
+          <h3>Multiple Voids</h3>
+          <p>Six radiolucent voids detected across both canals, ranging 1.2–3.4mm. Length and taper are acceptable, but the density score drops to 1.0/3 due to the heterogeneous fill pattern.</p>
+          <div class="gcard-fact">
+            <div class="gcard-fact-icon">🔬</div>
+            <div><strong>Cause analysis:</strong> Voids typically result from inadequate condensation pressure, moisture contamination, or the use of lateral condensation technique in severely curved canals. Warm vertical condensation reduces void incidence by ~60%.</div>
+          </div>
+          <div class="gcard-metrics">
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">3.5</span><span class="gm-key">Length /4</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#f87171">1.0</span><span class="gm-key">Density /3</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#f59e0b">0.5</span><span class="gm-key">Taper /3</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5: Taper analysis -->
+      <div class="gcard gcard--taper">
+        <div class="gcard-image-wrap">
+          <svg class="gcard-xray" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="300" fill="#0a0e14"/>
+            <rect x="0" y="100" width="200" height="150" fill="#111820" opacity="0.8"/>
+            <path d="M65 20 Q75 10 100 8 Q125 10 135 20 Q148 40 145 75 Q142 100 135 118 L115 132 L100 136 L85 132 L65 118 Q58 100 55 75 Q52 40 65 20Z" fill="#1a2535" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M72 18 Q90 10 110 11 Q122 14 130 22" stroke="#5d8aaa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Root with curve deviation -->
+            <path d="M85 132 L80 142 Q72 165 68 210 Q65 250 68 272 Q70 284 75 290 Q80 294 85 290 Q90 285 91 272 Q92 250 90 210 Q88 170 85 148 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <path d="M115 132 L120 142 Q128 165 132 210 Q135 250 132 272 Q130 284 125 290 Q120 294 115 290 Q110 285 109 272 Q108 250 110 210 Q112 170 115 148 Z" fill="#1c2e42" stroke="#3d5a80" stroke-width="1"/>
+            <!-- Canal fill with IRREGULAR taper - ledge visible -->
+            <path d="M87 148 Q83 168 76 205 Q71 240 73 268 Q75 280 79 286 Q83 290 87 287 Q91 283 92 268 Q92 242 90 208 Q87 172 88 152 Z" fill="#b8d8ee" stroke="#8abede" stroke-width="0.5" opacity="0.85"/>
+            <!-- Ledge/step artifact -->
+            <path d="M86 195 L76 198" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+            <!-- Abrupt width change annotation -->
+            <path d="M113 148 Q117 168 124 205 Q129 240 127 268 Q125 280 121 286 Q117 290 113 287 Q109 283 108 268 Q108 242 110 208 Q113 172 112 152 Z" fill="#b8d8ee" stroke="#8abede" stroke-width="0.5" opacity="0.85"/>
+            <path d="M88 55 Q91 46 100 44 Q109 46 112 55 Q114 68 112 90 L106 100 L100 102 L94 100 L88 90 Q86 68 88 55Z" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3 2"/>
+            <rect x="40" y="108" width="120" height="8" rx="3" fill="#223040" stroke="#3d5a80" stroke-width="0.5"/>
+            <!-- Taper guide lines: ideal vs actual -->
+            <line x1="88" y1="148" x2="80" y2="288" stroke="#22c55e" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.5"/>
+            <line x1="88" y1="148" x2="76" y2="288" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+            <!-- Ledge arrow -->
+            <line x1="86" y1="195" x2="60" y2="200" stroke="#f59e0b" stroke-width="0.8"/>
+            <rect x="32" y="194" width="28" height="12" rx="2" fill="#1a1000" stroke="#f59e0b" stroke-width="0.6"/>
+            <text x="46" y="203" text-anchor="middle" font-size="5.5" fill="#f59e0b" font-family="monospace">LEDGE</text>
+            <!-- Taper labels -->
+            <text x="154" y="220" font-size="5.5" fill="#22c55e" font-family="monospace" opacity="0.7">ideal</text>
+            <text x="154" y="229" font-size="5.5" fill="#f59e0b" font-family="monospace" opacity="0.7">actual</text>
+            <!-- Apex seals -->
+            <ellipse cx="82" cy="288" rx="5" ry="3.5" fill="#f59e0b" opacity="0.7"/>
+            <ellipse cx="118" cy="288" rx="5" ry="3.5" fill="#f59e0b" opacity="0.7"/>
+          </svg>
+          <div class="gcard-badge gcard-badge--warn">TAPER IRREGULAR</div>
+          <div class="gcard-score">6.0<span>/10</span></div>
+          <div class="gcard-label-pins">
+            <div class="gpin gpin--mid-left" style="top:46%;left:5%">
+              <div class="gpin-dot" style="background:#f59e0b"></div>
+              <div class="gpin-tip">Ledge artifact at<br/>mid-root</div>
+            </div>
+            <div class="gpin gpin--top-right" style="top:28%;right:6%">
+              <div class="gpin-dot" style="background:#b8d8ee"></div>
+              <div class="gpin-tip">Coronal taper<br/>acceptable</div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard-body">
+          <div class="gcard-tag">TAPER ANALYSIS</div>
+          <h3>Taper Irregularity & Ledging</h3>
+          <p>A distinct ledge is identified at the mid-root third of the mesial canal. This represents a procedural deviation from the original canal path, reducing taper score despite acceptable length and density.</p>
+          <div class="gcard-fact">
+            <div class="gcard-fact-icon">📐</div>
+            <div><strong>AI detection method:</strong> The model measures taper angle at 1mm intervals from orifice to apex. Deviations &gt;8° from the predicted centroid path are flagged as irregularities. Ledges appear as abrupt angle reversals.</div>
+          </div>
+          <div class="gcard-metrics">
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">3.8</span><span class="gm-key">Length /4</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#22c55e">2.5</span><span class="gm-key">Density /3</span></div>
+            <div class="gm-item"><span class="gm-val" style="color:#f87171">0.2</span><span class="gm-key">Taper /3</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6: How AI sees radiograph - tips -->
+      <div class="gcard gcard--ai">
+        <div class="gcard-image-wrap">
+          <!-- AI vision overlay card - no xray, pure info graphic -->
+          <div class="gcard-ai-viz">
+            <div class="ai-pipeline">
+              <div class="ai-step">
+                <div class="ai-step-num">01</div>
+                <div class="ai-step-label">IOPA<br/>INPUT</div>
+                <div class="ai-step-icon">
+                  <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#4a90d9" stroke-width="1.2"/><rect x="8" y="8" width="16" height="16" rx="1.5" fill="#1e3a5f" stroke="#3d5a80" stroke-width="0.8"/><path d="M10 16 Q13 12 16 16 Q19 20 22 16" stroke="#4a90d9" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+                </div>
+              </div>
+              <div class="ai-arrow">→</div>
+              <div class="ai-step">
+                <div class="ai-step-num">02</div>
+                <div class="ai-step-label">CNN<br/>FEATURES</div>
+                <div class="ai-step-icon">
+                  <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="8" width="6" height="16" rx="2" fill="#1e3a5f" stroke="#4a90d9" stroke-width="0.8"/><rect x="10" y="5" width="6" height="22" rx="2" fill="#2a4a6f" stroke="#4a90d9" stroke-width="0.8"/><rect x="18" y="9" width="6" height="14" rx="2" fill="#1e3a5f" stroke="#4a90d9" stroke-width="0.8"/><rect x="26" y="12" width="4" height="8" rx="1.5" fill="#122030" stroke="#4a90d9" stroke-width="0.8"/></svg>
+                </div>
+              </div>
+              <div class="ai-arrow">→</div>
+              <div class="ai-step">
+                <div class="ai-step-num">03</div>
+                <div class="ai-step-label">SCORE<br/>OUTPUT</div>
+                <div class="ai-step-icon">
+                  <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#3d5a80" stroke-width="1.5"/><path d="M16 4 A12 12 0 0 1 27 20" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/><text x="16" y="20" text-anchor="middle" font-size="8" fill="#22c55e" font-family="monospace" font-weight="bold">8.5</text></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ai-params">
+              <div class="ai-param-row">
+                <span class="ai-param-name">LENGTH</span>
+                <div class="ai-param-bar"><div class="ai-param-fill" style="width:88%;background:#22c55e"></div></div>
+                <span class="ai-param-score" style="color:#22c55e">3.5/4</span>
+              </div>
+              <div class="ai-param-row">
+                <span class="ai-param-name">DENSITY</span>
+                <div class="ai-param-bar"><div class="ai-param-fill" style="width:83%;background:#22c55e"></div></div>
+                <span class="ai-param-score" style="color:#22c55e">2.5/3</span>
+              </div>
+              <div class="ai-param-row">
+                <span class="ai-param-name">TAPER</span>
+                <div class="ai-param-bar"><div class="ai-param-fill" style="width:67%;background:#f59e0b"></div></div>
+                <span class="ai-param-score" style="color:#f59e0b">2.0/3</span>
+              </div>
+            </div>
+            <div class="ai-total-score">8.0<span>/10</span></div>
+          </div>
+          <div class="gcard-badge gcard-badge--info">AI EXPLAINED</div>
+        </div>
+        <div class="gcard-body">
+          <div class="gcard-tag">HOW THE AI WORKS</div>
+          <h3>Scoring Methodology</h3>
+          <p>The CNN analyses radiographic pixel density maps using edge-detection convolutions tuned for hydroxyapatite vs. gutta-percha attenuation coefficients.</p>
+          <div class="gcard-fact">
+            <div class="gcard-fact-icon">🧠</div>
+            <div><strong>Training dataset:</strong> The model was trained on 1,500+ annotated IOPA radiographs, each labelled by consensus of 3 independent endodontists. Inter-examiner agreement of κ ≥ 0.82 was required before inclusion.</div>
+          </div>
+          <div class="gcard-tip-list">
+            <div class="gtip"><span class="gtip-icon">→</span>Calibrate monitor brightness before interpretation</div>
+            <div class="gtip"><span class="gtip-icon">→</span>Use de-identified radiographs — patient data is never stored</div>
+            <div class="gtip"><span class="gtip-icon">→</span>Submit the sharpest available image for best results</div>
+            <div class="gtip"><span class="gtip-icon">→</span>Correlate score with clinical symptoms always</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /gallery-track -->
+  </div><!-- /gallery-track-wrap -->
+
+  <!-- Navigation controls -->
+  <div class="gallery-controls">
+    <button class="gctl-btn" id="galleryPrev" aria-label="Previous">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="gallery-dots" id="galleryDots"></div>
+    <button class="gctl-btn" id="galleryNext" aria-label="Next">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="gallery-scroll-hint" id="galleryHint">
+    <span>Drag or use arrows to explore</span>
+    <div class="hint-track"><div class="hint-thumb"></div></div>
+  </div>
+</section>
   <!-- HOW IT WORKS -->
   <section class="workflow-section" id="workflow">
     <div class="section-label">AI WORKFLOW</div>
@@ -602,11 +975,11 @@
       </button>
       <div class="modal-title">Share Your Result</div>
       <div class="share-preview-card" id="shareCard">
-        <div class="share-brand">ObturaScore<sup>AI</sup></div>
+        <div class="share-brand">Dentrix<sup>AI</sup></div>
         <div class="share-score-big" id="shareScoreDisplay">—/10</div>
         <div class="share-label-big" id="shareLabelDisplay">—</div>
         <div class="share-params" id="shareParams"></div>
-        <div class="share-footer">Radiographic Obturation Quality Analysis · obturaScore.ai</div>
+        <div class="share-footer">Radiographic Obturation Quality Analysis · dentrix.ai</div>
       </div>
       <div class="share-platforms">
         <button class="platform-btn twitter" id="twitterBtn">
@@ -663,7 +1036,7 @@
       <div class="research-text">
         <div class="section-label">STUDY BACKGROUND</div>
         <h2 class="section-title">Built on<br /><em>Evidence</em></h2>
-        <p>ObturaScore AI is derived from a cross-sectional observational study leveraging a dataset of 800–1500 annotated radiographs evaluated by three independent endodontists.</p>
+        <p>Dentrix AI is derived from a cross-sectional observational study leveraging a dataset of 800–1500 annotated radiographs evaluated by three independent endodontists.</p>
         <p>Consensus ground truth labeling ensures annotation quality. The CNN model achieves standardized, examiner-independent evaluation — eliminating inter-observer variability that has historically limited radiographic studies.</p>
         <div class="research-tags">
           <span>Cross-Sectional Study</span>
@@ -728,18 +1101,20 @@
           </svg>
         </div>
         <div>
-          <div class="brand-name">ObturaScore<sup>AI</sup></div>
+          <div class="brand-name">Dentrix<sup>AI</sup></div>
           <div class="footer-tagline">Radiographic Obturation Intelligence</div>
         </div>
       </div>
       <div class="footer-notice">
         For research and educational use only. Not a substitute for clinical judgment. De-identified data only. Ethical clearance maintained.
       </div>
-      <div class="footer-meta">© 2025 ObturaScore AI · Cross-Sectional Observational Study Platform</div>
+      <div class="footer-meta">© 2025 Dentrix AI · Cross-Sectional Observational Study Platform</div>
     </div>
   </footer>
 
   <script src="app.js"></script>
+  <link rel="stylesheet" href="shared.css"/>
+<link rel="stylesheet" href="research.css"/>
 
   <script>
     /* ══════════════════════════════════
