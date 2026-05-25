@@ -2,7 +2,7 @@
    ObturaScore AI — Analyze Page JS (MongoDB Connected)
    ============================================================ */
 
-   const API = 'http://localhost:5001/api';
+   const API = 'https://dentrix-ai-8k2b.vercel.app/api';
    function getToken() { return localStorage.getItem('dentrix_token'); }
    
    // ── Load real patients from MongoDB ──

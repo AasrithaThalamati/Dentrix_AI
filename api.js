@@ -1,7 +1,7 @@
 // api.js — drop this in your Dentrix_AI project root or src/
 // Use this in all your HTML pages to call the backend
 
-const API_BASE = 'http://localhost:5001/api';
+const API_BASE = 'https://dentrix-ai-8k2b.vercel.app/api';
 
 // Get stored token
 const getToken = () => localStorage.getItem('dentrix_token');
