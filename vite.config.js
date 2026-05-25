@@ -7,7 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',      // React app entry
-        home: 'home.html',       // Your original homepage
+        home: 'index.html',       // Your original homepage
         dashboard: 'dashboard.html',
         patients: 'patients.html',
         analytics: 'analytics.html',

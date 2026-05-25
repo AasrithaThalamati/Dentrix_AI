@@ -45,7 +45,7 @@
     }
   
     const html = `
-      <a class="sidebar-brand" href="home.html">
+      <a class="sidebar-brand" href="index.html">
         <div class="brand-icon-wrap">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
@@ -142,7 +142,7 @@
           </svg>
           Help & Docs
         </a>
-        <a class="nav-item" href="home.html">
+        <a class="nav-item" href="index.html">
           <svg viewBox="0 0 20 20" fill="none">
             <path d="M3 10h12M9 5l6 5-6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
