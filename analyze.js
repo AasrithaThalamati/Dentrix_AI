@@ -127,27 +127,45 @@
    
    analyzeBtn?.addEventListener('click', runAnalysis);
    
+   async function callGrokAnalysis(file) {
+     const formData = new FormData();
+     formData.append('xray', file);
+     const res = await fetch(`${API}/analysis/ai-score`, {
+       method: 'POST',
+       headers: { 'Authorization': `Bearer ${getToken()}` },
+       body: formData
+     });
+     if (!res.ok) {
+       const err = await res.json().catch(() => ({}));
+       throw new Error(err.message || 'AI analysis failed');
+     }
+     return res.json();
+   }
+
    async function runAnalysis() {
      if (!currentFile) return;
-   
+
      const btnText   = analyzeBtn.querySelector('.btn-text');
      const btnLoader = analyzeBtn.querySelector('.btn-loader');
      btnText.style.display   = 'none';
      btnLoader.style.display = 'flex';
      analyzeBtn.disabled     = true;
-   
+
      resultsEmpty.style.display    = 'none';
      resultsPanel.style.display    = 'none';
      processingSteps.style.display = 'block';
-   
+
      for (let i = 1; i <= 6; i++) document.getElementById(`step${i}`).className = 'proc-step';
-   
+
      const statuses = [
        'Preprocessing image…','Segmenting canal boundaries…',
        'Detecting apex position…','Analysing density…',
        'Evaluating taper geometry…','Generating report…',
      ];
-   
+
+     // Kick off the Grok API call in parallel with the UX animation
+     const aiPromise = callGrokAnalysis(currentFile);
+
      for (let i = 1; i <= 6; i++) {
        const step = document.getElementById(`step${i}`);
        const loaderStatus = document.getElementById('loaderStatus');
@@ -156,41 +174,38 @@
        await delay(450 + Math.random() * 200);
        step.className = 'proc-step done';
      }
-   
+
      await delay(300);
-   
-     const result = generateResult();
+
+     let result;
+     try {
+       result = await aiPromise;
+     } catch (err) {
+       console.error('Grok analysis error:', err);
+       showToast('AI analysis unavailable — check API key', 'error');
+       btnText.style.display   = 'flex';
+       btnLoader.style.display = 'none';
+       analyzeBtn.disabled     = false;
+       processingSteps.style.display = 'none';
+       resultsEmpty.style.display    = 'block';
+       return;
+     }
+
      currentScore     = result.total;
      currentBreakdown = result;
-   
+
      displayResults(result);
-   
+
      btnText.style.display   = 'flex';
      btnLoader.style.display = 'none';
      analyzeBtn.disabled     = false;
      processingSteps.style.display = 'none';
-   
+
      if (annotateToggle?.checked) addAnnotations(result);
    }
    
    function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
    
-   function generateResult() {
-     const tier = Math.random();
-     let length, density, taper;
-     if (tier < 0.12)      { length = rnd(0.5,1.5); density = rnd(0.5,1.2); taper = rnd(0.5,1.2); }
-     else if (tier < 0.30) { length = rnd(1.5,2.5); density = rnd(1.2,2.0); taper = rnd(1.2,2.0); }
-     else if (tier < 0.65) { length = rnd(2.5,3.5); density = rnd(2.0,2.7); taper = rnd(2.0,2.7); }
-     else                  { length = rnd(3.2,4.0); density = rnd(2.5,3.0); taper = rnd(2.5,3.0); }
-     const clamp = (v,mn,mx) => Math.min(Math.max(parseFloat(v.toFixed(1)),mn),mx);
-     length  = clamp(length, 0,4);
-     density = clamp(density,0,3);
-     taper   = clamp(taper,  0,3);
-     const total      = parseFloat((length+density+taper).toFixed(1));
-     const confidence = parseFloat((85+Math.random()*13).toFixed(1));
-     return { length, density, taper, total, confidence };
-   }
-   function rnd(min,max) { return Math.random()*(max-min)+min; }
    
    function displayResults(r) {
      resultsPanel.style.display = 'block';
