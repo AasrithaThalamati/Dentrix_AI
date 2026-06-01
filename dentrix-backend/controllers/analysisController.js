@@ -96,14 +96,14 @@ Respond ONLY with a raw JSON object (no markdown fences, no extra text):
 {"length":<number>,"density":<number>,"taper":<number>,"confidence":<0-100>,"notes":"<one sentence>"}`;
 
   try {
-    const grokRes = await fetch('https://api.x.ai/v1/chat/completions', {
+    const grokRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GROK_API_KEY}`
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`
       },
       body: JSON.stringify({
-        model: 'grok-4.3',
+        model: 'meta-llama/llama-4-scout-17b-16e-instruct',
         temperature: 0.1,
         max_tokens: 200,
         messages: [{
@@ -113,13 +113,12 @@ Respond ONLY with a raw JSON object (no markdown fences, no extra text):
             { type: 'text', text: prompt }
           ]
         }]
-        
       })
     });
 
     if (!grokRes.ok) {
       const err = await grokRes.text();
-      return res.status(502).json({ message: 'Grok API error', detail: err });
+      return res.status(502).json({ message: 'Groq API error', detail: err });
     }
 
     const grokData = await grokRes.json();
