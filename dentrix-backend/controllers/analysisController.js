@@ -103,7 +103,7 @@ Respond ONLY with a raw JSON object (no markdown fences, no extra text):
         'Authorization': `Bearer ${process.env.GROK_API_KEY}`
       },
       body: JSON.stringify({
-        model: 'grok-2-vision-latest',
+        model: 'grok-4.3',
         temperature: 0.1,
         max_tokens: 200,
         messages: [{
@@ -113,6 +113,7 @@ Respond ONLY with a raw JSON object (no markdown fences, no extra text):
             { type: 'text', text: prompt }
           ]
         }]
+        
       })
     });
 
