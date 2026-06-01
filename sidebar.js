@@ -155,8 +155,4 @@
     if (sidebar) sidebar.innerHTML = html;
   }
   
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', buildSidebar);
-  } else {
-    buildSidebar();
-  }
+  buildSidebar();
