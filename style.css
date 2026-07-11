@@ -1272,6 +1272,37 @@
     border: 1px solid var(--warm-gray-200);
     background: var(--white);
   }
+  .view-toggles {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: #fcfbfa;
+    border-bottom: 1px solid var(--warm-gray-200);
+  }
+  .toggle-btn {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--warm-gray-200);
+    background: var(--white);
+    color: var(--warm-gray-600);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-family: inherit;
+  }
+  .toggle-btn:hover {
+    border-color: var(--warm-gray-400);
+    color: var(--dark);
+  }
+  .toggle-btn.active {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+  }
   .preview-img-wrap {
     position: relative;
     width: 100%;
@@ -1285,6 +1316,24 @@
     object-fit: cover;
     filter: grayscale(60%) contrast(1.2);
     opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+  .preview-img-wrap img.hidden {
+    opacity: 0;
+  }
+  #overlayCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+  #overlayCanvas.visible {
+    opacity: 1;
   }
   .preview-overlay {
     position: absolute;

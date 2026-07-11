@@ -6,6 +6,7 @@
 let currentScore = null;
 let currentBreakdown = null;
 let currentFile = null;
+let currentAnalysis = null; // Stores results from client-side image processing
 
 // ── DOM References ──
 const fileInput       = document.getElementById('fileInput');
@@ -23,6 +24,11 @@ const resetBtn        = document.getElementById('resetBtn');
 const modalClose      = document.getElementById('modalClose');
 const hamburger       = document.getElementById('hamburger');
 const mobileMenu      = document.getElementById('mobileMenu');
+
+// Image Processing DOM references
+const overlayCanvas   = document.getElementById('overlayCanvas');
+const viewToggles     = document.getElementById('viewToggles');
+const toggleBtns      = document.querySelectorAll('.toggle-btn');
 
 // ── Mobile Menu ──
 hamburger.addEventListener('click', () => {
@@ -59,6 +65,15 @@ function handleFile(file) {
     previewState.style.display = 'block';
     resultsPanel.style.display = 'none';
     currentScore = null;
+    currentAnalysis = null;
+    
+    // Reset view toggle states
+    viewToggles.style.display = 'none';
+    overlayCanvas.classList.remove('visible');
+    previewImg.classList.remove('hidden');
+    toggleBtns.forEach(btn => btn.classList.remove('active'));
+    const origBtn = document.querySelector('.toggle-btn[data-view="original"]');
+    if (origBtn) origBtn.classList.add('active');
   };
   reader.readAsDataURL(file);
 }
@@ -68,6 +83,7 @@ removeBtn.addEventListener('click', resetUpload);
 function resetUpload() {
   currentFile = null;
   currentScore = null;
+  currentAnalysis = null;
   previewImg.src = '';
   fileInput.value = '';
   previewState.style.display = 'none';
@@ -75,6 +91,13 @@ function resetUpload() {
   dropZone.style.flexDirection = 'column';
   dropZone.style.alignItems = 'center';
   resultsPanel.style.display = 'none';
+  
+  viewToggles.style.display = 'none';
+  overlayCanvas.classList.remove('visible');
+  previewImg.classList.remove('hidden');
+  toggleBtns.forEach(btn => btn.classList.remove('active'));
+  const origBtn = document.querySelector('.toggle-btn[data-view="original"]');
+  if (origBtn) origBtn.classList.add('active');
 }
 
 // ── Analysis Engine ──
@@ -89,15 +112,30 @@ async function runAnalysis() {
   btnLoader.style.display = 'flex';
   analyzeBtn.disabled = true;
 
-  // Simulate AI processing with realistic timing
-  await delay(600);
+  // Reset toggles during analysis
+  viewToggles.style.display = 'none';
+  overlayCanvas.classList.remove('visible');
+  previewImg.classList.remove('hidden');
+
+  // Simulate scanning / processing steps
+  await delay(400);
   await simulateProcessingSteps();
 
-  const result = generateAnalysisResult();
-  currentScore = result.total;
-  currentBreakdown = result;
+  // Run the deterministic image processing engine
+  currentAnalysis = ImageProcessor.processXray(previewImg);
+  currentScore = currentAnalysis.scores.total;
+  currentBreakdown = currentAnalysis.scores;
 
-  displayResults(result);
+  displayResults(currentAnalysis.scores);
+
+  // Show the view toggles
+  viewToggles.style.display = 'flex';
+  
+  // Set default view to "detections" (AI Detections Overlay)
+  toggleBtns.forEach(btn => btn.classList.remove('active'));
+  const detBtn = document.querySelector('.toggle-btn[data-view="detections"]');
+  if (detBtn) detBtn.classList.add('active');
+  updateCanvasView('detections');
 
   btnText.style.display = 'block';
   btnLoader.style.display = 'none';
@@ -119,6 +157,113 @@ async function simulateProcessingSteps() {
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+// ── Canvas View Rendering ──
+function updateCanvasView(viewType) {
+  if (!currentAnalysis) return;
+
+  const ctx = overlayCanvas.getContext('2d');
+  overlayCanvas.width = 400;
+  overlayCanvas.height = 300;
+
+  if (viewType === 'original') {
+    overlayCanvas.classList.remove('visible');
+    previewImg.classList.remove('hidden');
+  } else if (viewType === 'processed') {
+    overlayCanvas.classList.add('visible');
+    previewImg.classList.add('hidden');
+    
+    // Draw the Sobel edge image data
+    ctx.putImageData(currentAnalysis.edgeImageData, 0, 0);
+  } else if (viewType === 'detections') {
+    overlayCanvas.classList.add('visible');
+    previewImg.classList.remove('hidden');
+    
+    ctx.clearRect(0, 0, 400, 300);
+    const f = currentAnalysis.features;
+
+    // 1. Draw canal filling outline (left and right boundary)
+    if (f.leftBoundary && f.rightBoundary && f.leftBoundary.length > 0) {
+      ctx.fillStyle = 'rgba(52, 211, 153, 0.22)'; // transparent emerald green
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.75)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([]);
+      
+      ctx.beginPath();
+      // Draw left boundary from top to bottom
+      ctx.moveTo(f.leftBoundary[0].x, f.leftBoundary[0].y);
+      for (let i = 1; i < f.leftBoundary.length; i++) {
+        ctx.lineTo(f.leftBoundary[i].x, f.leftBoundary[i].y);
+      }
+      // Draw right boundary from bottom to top
+      for (let i = f.rightBoundary.length - 1; i >= 0; i--) {
+        ctx.lineTo(f.rightBoundary[i].x, f.rightBoundary[i].y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    // 2. Draw canal path (centerline)
+    if (f.canalPath && f.canalPath.length > 0) {
+      ctx.strokeStyle = '#60a5fa'; // neon blue center line
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      ctx.moveTo(f.canalPath[0].x, f.canalPath[0].y);
+      for (let i = 1; i < f.canalPath.length; i++) {
+        ctx.lineTo(f.canalPath[i].x, f.canalPath[i].y);
+      }
+      ctx.stroke();
+    }
+
+    // 3. Draw apex point target
+    if (f.apexPoint) {
+      const ap = f.apexPoint;
+      ctx.setLineDash([]);
+      // Solid red dot
+      ctx.fillStyle = '#ef4444';
+      ctx.beginPath();
+      ctx.arc(ap.x, ap.y, 4, 0, 2 * Math.PI);
+      ctx.fill();
+      // Outer target ring
+      ctx.strokeStyle = '#ef4444';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(ap.x, ap.y, 9, 0, 2 * Math.PI);
+      ctx.stroke();
+      // Apex text label
+      ctx.fillStyle = '#ef4444';
+      ctx.font = 'bold 9px monospace';
+      ctx.fillText('APEX DETECTED', ap.x + 12, ap.y + 3);
+    }
+
+    // 4. Draw voids if any
+    if (f.voids && f.voids.length > 0) {
+      ctx.lineWidth = 1.2;
+      ctx.strokeStyle = '#f97316'; // orange warnings
+      ctx.fillStyle = '#f97316';
+      ctx.font = 'bold 8px monospace';
+      f.voids.forEach(v => {
+        ctx.setLineDash([2, 2]);
+        ctx.beginPath();
+        ctx.arc(v.x, v.y, v.r + 3, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillText('VOID', v.x + v.r + 5, v.y + 3);
+      });
+    }
+  }
+}
+
+// Attach event listeners for view toggles
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateCanvasView(btn.dataset.view);
+  });
+});
 
 // Weighted random result generator simulating AI scoring
 function generateAnalysisResult() {
