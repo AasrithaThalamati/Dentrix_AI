@@ -11,7 +11,26 @@ const authRoutes = require('./routes/authRoutes');
 
 // ── Middleware ─────────────────────────────────────────────
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5500', 'http://localhost:5500', 'https://dentrixxai.netlify.app', 'http://20.244.9.227:5173'],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like curl, Postman, mobile apps)
+    if (!origin) return callback(null, true);
+
+    const allowedExact = [
+      'http://localhost:5173',
+      'https://dentrixxai.netlify.app',
+      'http://20.244.9.227:5173'
+    ];
+
+    // Allow any port on localhost / 127.0.0.1 (covers Live Server picking
+    // a different port each time — 5500, 5503, 5505, etc.)
+    const isLocalDev = /^https?:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin);
+
+    if (allowedExact.includes(origin) || isLocalDev) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 app.use(express.json({ limit: '20mb' }));
