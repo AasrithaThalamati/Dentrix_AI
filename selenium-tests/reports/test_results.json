@@ -1,6 +1,7 @@
 [
   {
     "id": "DTX-LG-001",
+    "category": "1. Authentication",
     "module": "Login",
     "feature": "Valid Account Authentication",
     "testCase": "test_login_permutation_1",
@@ -16,6 +17,7 @@
   },
   {
     "id": "DTX-LG-002",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_2",
@@ -31,6 +33,7 @@
   },
   {
     "id": "DTX-LG-003",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_3",
@@ -46,6 +49,7 @@
   },
   {
     "id": "DTX-LG-004",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_4",
@@ -61,6 +65,7 @@
   },
   {
     "id": "DTX-LG-005",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_5",
@@ -76,6 +81,7 @@
   },
   {
     "id": "DTX-LG-006",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_6",
@@ -91,6 +97,7 @@
   },
   {
     "id": "DTX-LG-007",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_7",
@@ -106,6 +113,7 @@
   },
   {
     "id": "DTX-LG-008",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_8",
@@ -121,6 +129,7 @@
   },
   {
     "id": "DTX-LG-009",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_9",
@@ -136,6 +145,7 @@
   },
   {
     "id": "DTX-LG-010",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_10",
@@ -151,6 +161,7 @@
   },
   {
     "id": "DTX-LG-011",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_11",
@@ -166,6 +177,7 @@
   },
   {
     "id": "DTX-LG-012",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_12",
@@ -181,6 +193,7 @@
   },
   {
     "id": "DTX-LG-013",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_13",
@@ -196,6 +209,7 @@
   },
   {
     "id": "DTX-LG-014",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_14",
@@ -211,6 +225,7 @@
   },
   {
     "id": "DTX-LG-015",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_15",
@@ -226,6 +241,7 @@
   },
   {
     "id": "DTX-LG-016",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_16",
@@ -241,6 +257,7 @@
   },
   {
     "id": "DTX-LG-017",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_17",
@@ -256,6 +273,7 @@
   },
   {
     "id": "DTX-LG-018",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_18",
@@ -271,6 +289,7 @@
   },
   {
     "id": "DTX-LG-019",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_19",
@@ -286,6 +305,7 @@
   },
   {
     "id": "DTX-LG-020",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_20",
@@ -301,6 +321,7 @@
   },
   {
     "id": "DTX-LG-021",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_21",
@@ -316,6 +337,7 @@
   },
   {
     "id": "DTX-LG-022",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_22",
@@ -331,6 +353,7 @@
   },
   {
     "id": "DTX-LG-023",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_23",
@@ -346,6 +369,7 @@
   },
   {
     "id": "DTX-LG-024",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_24",
@@ -361,6 +385,7 @@
   },
   {
     "id": "DTX-LG-025",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_25",
@@ -376,6 +401,7 @@
   },
   {
     "id": "DTX-LG-026",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_26",
@@ -391,6 +417,7 @@
   },
   {
     "id": "DTX-LG-027",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_27",
@@ -406,6 +433,7 @@
   },
   {
     "id": "DTX-LG-028",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_28",
@@ -421,6 +449,7 @@
   },
   {
     "id": "DTX-LG-029",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_29",
@@ -436,6 +465,7 @@
   },
   {
     "id": "DTX-LG-030",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_30",
@@ -451,6 +481,7 @@
   },
   {
     "id": "DTX-LG-031",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_31",
@@ -466,6 +497,7 @@
   },
   {
     "id": "DTX-LG-032",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_32",
@@ -481,6 +513,7 @@
   },
   {
     "id": "DTX-LG-033",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_33",
@@ -496,6 +529,7 @@
   },
   {
     "id": "DTX-LG-034",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_34",
@@ -511,6 +545,7 @@
   },
   {
     "id": "DTX-LG-035",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_35",
@@ -526,6 +561,7 @@
   },
   {
     "id": "DTX-LG-036",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_36",
@@ -541,6 +577,7 @@
   },
   {
     "id": "DTX-LG-037",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_37",
@@ -556,6 +593,7 @@
   },
   {
     "id": "DTX-LG-038",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_38",
@@ -571,6 +609,7 @@
   },
   {
     "id": "DTX-LG-039",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_39",
@@ -586,6 +625,7 @@
   },
   {
     "id": "DTX-LG-040",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_40",
@@ -601,6 +641,7 @@
   },
   {
     "id": "DTX-LG-041",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_41",
@@ -616,6 +657,7 @@
   },
   {
     "id": "DTX-LG-042",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_42",
@@ -631,6 +673,7 @@
   },
   {
     "id": "DTX-LG-043",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_43",
@@ -646,6 +689,7 @@
   },
   {
     "id": "DTX-LG-044",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_44",
@@ -661,6 +705,7 @@
   },
   {
     "id": "DTX-LG-045",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_45",
@@ -676,6 +721,7 @@
   },
   {
     "id": "DTX-LG-046",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_46",
@@ -691,6 +737,7 @@
   },
   {
     "id": "DTX-LG-047",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_47",
@@ -706,6 +753,7 @@
   },
   {
     "id": "DTX-LG-048",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_48",
@@ -721,6 +769,7 @@
   },
   {
     "id": "DTX-LG-049",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_49",
@@ -736,6 +785,7 @@
   },
   {
     "id": "DTX-LG-050",
+    "category": "2. Input Validation",
     "module": "Login",
     "feature": "Email Structural Validations",
     "testCase": "test_login_permutation_50",
@@ -751,6 +801,7 @@
   },
   {
     "id": "DTX-LG-051",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_51",
@@ -766,6 +817,7 @@
   },
   {
     "id": "DTX-LG-052",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_52",
@@ -781,6 +833,7 @@
   },
   {
     "id": "DTX-LG-053",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_53",
@@ -796,6 +849,7 @@
   },
   {
     "id": "DTX-LG-054",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_54",
@@ -811,6 +865,7 @@
   },
   {
     "id": "DTX-LG-055",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_55",
@@ -826,6 +881,7 @@
   },
   {
     "id": "DTX-LG-056",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_56",
@@ -841,6 +897,7 @@
   },
   {
     "id": "DTX-LG-057",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_57",
@@ -856,6 +913,7 @@
   },
   {
     "id": "DTX-LG-058",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_58",
@@ -871,6 +929,7 @@
   },
   {
     "id": "DTX-LG-059",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_59",
@@ -886,6 +945,7 @@
   },
   {
     "id": "DTX-LG-060",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_60",
@@ -901,6 +961,7 @@
   },
   {
     "id": "DTX-LG-061",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_61",
@@ -916,6 +977,7 @@
   },
   {
     "id": "DTX-LG-062",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_62",
@@ -931,6 +993,7 @@
   },
   {
     "id": "DTX-LG-063",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_63",
@@ -946,6 +1009,7 @@
   },
   {
     "id": "DTX-LG-064",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_64",
@@ -961,6 +1025,7 @@
   },
   {
     "id": "DTX-LG-065",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_65",
@@ -976,6 +1041,7 @@
   },
   {
     "id": "DTX-LG-066",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_66",
@@ -991,6 +1057,7 @@
   },
   {
     "id": "DTX-LG-067",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_67",
@@ -1006,6 +1073,7 @@
   },
   {
     "id": "DTX-LG-068",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_68",
@@ -1021,6 +1089,7 @@
   },
   {
     "id": "DTX-LG-069",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_69",
@@ -1036,6 +1105,7 @@
   },
   {
     "id": "DTX-LG-070",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_70",
@@ -1051,6 +1121,7 @@
   },
   {
     "id": "DTX-LG-071",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_71",
@@ -1066,6 +1137,7 @@
   },
   {
     "id": "DTX-LG-072",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_72",
@@ -1081,6 +1153,7 @@
   },
   {
     "id": "DTX-LG-073",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_73",
@@ -1096,6 +1169,7 @@
   },
   {
     "id": "DTX-LG-074",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_74",
@@ -1111,6 +1185,7 @@
   },
   {
     "id": "DTX-LG-075",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_75",
@@ -1126,6 +1201,7 @@
   },
   {
     "id": "DTX-LG-076",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_76",
@@ -1141,6 +1217,7 @@
   },
   {
     "id": "DTX-LG-077",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_77",
@@ -1156,6 +1233,7 @@
   },
   {
     "id": "DTX-LG-078",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_78",
@@ -1171,6 +1249,7 @@
   },
   {
     "id": "DTX-LG-079",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_79",
@@ -1186,6 +1265,7 @@
   },
   {
     "id": "DTX-LG-080",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_80",
@@ -1201,6 +1281,7 @@
   },
   {
     "id": "DTX-LG-081",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_81",
@@ -1216,6 +1297,7 @@
   },
   {
     "id": "DTX-LG-082",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_82",
@@ -1231,6 +1313,7 @@
   },
   {
     "id": "DTX-LG-083",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_83",
@@ -1246,6 +1329,7 @@
   },
   {
     "id": "DTX-LG-084",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_84",
@@ -1261,6 +1345,7 @@
   },
   {
     "id": "DTX-LG-085",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_85",
@@ -1276,6 +1361,7 @@
   },
   {
     "id": "DTX-LG-086",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_86",
@@ -1291,6 +1377,7 @@
   },
   {
     "id": "DTX-LG-087",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_87",
@@ -1306,6 +1393,7 @@
   },
   {
     "id": "DTX-LG-088",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_88",
@@ -1321,6 +1409,7 @@
   },
   {
     "id": "DTX-LG-089",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_89",
@@ -1336,6 +1425,7 @@
   },
   {
     "id": "DTX-LG-090",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_90",
@@ -1351,6 +1441,7 @@
   },
   {
     "id": "DTX-LG-091",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_91",
@@ -1366,6 +1457,7 @@
   },
   {
     "id": "DTX-LG-092",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_92",
@@ -1381,6 +1473,7 @@
   },
   {
     "id": "DTX-LG-093",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_93",
@@ -1396,6 +1489,7 @@
   },
   {
     "id": "DTX-LG-094",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_94",
@@ -1411,6 +1505,7 @@
   },
   {
     "id": "DTX-LG-095",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_95",
@@ -1426,6 +1521,7 @@
   },
   {
     "id": "DTX-LG-096",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_96",
@@ -1441,6 +1537,7 @@
   },
   {
     "id": "DTX-LG-097",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_97",
@@ -1456,6 +1553,7 @@
   },
   {
     "id": "DTX-LG-098",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_98",
@@ -1471,6 +1569,7 @@
   },
   {
     "id": "DTX-LG-099",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_99",
@@ -1486,6 +1585,7 @@
   },
   {
     "id": "DTX-LG-100",
+    "category": "3. Required Fields",
     "module": "Login",
     "feature": "Required Inputs Presence Constraints",
     "testCase": "test_login_permutation_100",
@@ -1501,6 +1601,7 @@
   },
   {
     "id": "DTX-LG-101",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_101",
@@ -1516,6 +1617,7 @@
   },
   {
     "id": "DTX-LG-102",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_102",
@@ -1531,6 +1633,7 @@
   },
   {
     "id": "DTX-LG-103",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_103",
@@ -1546,6 +1649,7 @@
   },
   {
     "id": "DTX-LG-104",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_104",
@@ -1561,6 +1665,7 @@
   },
   {
     "id": "DTX-LG-105",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_105",
@@ -1576,6 +1681,7 @@
   },
   {
     "id": "DTX-LG-106",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_106",
@@ -1591,6 +1697,7 @@
   },
   {
     "id": "DTX-LG-107",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_107",
@@ -1606,6 +1713,7 @@
   },
   {
     "id": "DTX-LG-108",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_108",
@@ -1621,6 +1729,7 @@
   },
   {
     "id": "DTX-LG-109",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_109",
@@ -1636,6 +1745,7 @@
   },
   {
     "id": "DTX-LG-110",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_110",
@@ -1651,6 +1761,7 @@
   },
   {
     "id": "DTX-LG-111",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_111",
@@ -1666,6 +1777,7 @@
   },
   {
     "id": "DTX-LG-112",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_112",
@@ -1681,6 +1793,7 @@
   },
   {
     "id": "DTX-LG-113",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_113",
@@ -1696,6 +1809,7 @@
   },
   {
     "id": "DTX-LG-114",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_114",
@@ -1711,6 +1825,7 @@
   },
   {
     "id": "DTX-LG-115",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_115",
@@ -1726,6 +1841,7 @@
   },
   {
     "id": "DTX-LG-116",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_116",
@@ -1741,6 +1857,7 @@
   },
   {
     "id": "DTX-LG-117",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_117",
@@ -1756,6 +1873,7 @@
   },
   {
     "id": "DTX-LG-118",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_118",
@@ -1771,6 +1889,7 @@
   },
   {
     "id": "DTX-LG-119",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_119",
@@ -1786,6 +1905,7 @@
   },
   {
     "id": "DTX-LG-120",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_120",
@@ -1801,6 +1921,7 @@
   },
   {
     "id": "DTX-LG-121",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_121",
@@ -1816,6 +1937,7 @@
   },
   {
     "id": "DTX-LG-122",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_122",
@@ -1831,6 +1953,7 @@
   },
   {
     "id": "DTX-LG-123",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_123",
@@ -1846,6 +1969,7 @@
   },
   {
     "id": "DTX-LG-124",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_124",
@@ -1861,6 +1985,7 @@
   },
   {
     "id": "DTX-LG-125",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_125",
@@ -1876,6 +2001,7 @@
   },
   {
     "id": "DTX-LG-126",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_126",
@@ -1891,6 +2017,7 @@
   },
   {
     "id": "DTX-LG-127",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_127",
@@ -1906,6 +2033,7 @@
   },
   {
     "id": "DTX-LG-128",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_128",
@@ -1921,6 +2049,7 @@
   },
   {
     "id": "DTX-LG-129",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_129",
@@ -1936,6 +2065,7 @@
   },
   {
     "id": "DTX-LG-130",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_130",
@@ -1951,6 +2081,7 @@
   },
   {
     "id": "DTX-LG-131",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_131",
@@ -1966,6 +2097,7 @@
   },
   {
     "id": "DTX-LG-132",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_132",
@@ -1981,6 +2113,7 @@
   },
   {
     "id": "DTX-LG-133",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_133",
@@ -1996,6 +2129,7 @@
   },
   {
     "id": "DTX-LG-134",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_134",
@@ -2011,6 +2145,7 @@
   },
   {
     "id": "DTX-LG-135",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_135",
@@ -2026,6 +2161,7 @@
   },
   {
     "id": "DTX-LG-136",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_136",
@@ -2041,6 +2177,7 @@
   },
   {
     "id": "DTX-LG-137",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_137",
@@ -2056,6 +2193,7 @@
   },
   {
     "id": "DTX-LG-138",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_138",
@@ -2071,6 +2209,7 @@
   },
   {
     "id": "DTX-LG-139",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_139",
@@ -2086,6 +2225,7 @@
   },
   {
     "id": "DTX-LG-140",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_140",
@@ -2101,6 +2241,7 @@
   },
   {
     "id": "DTX-LG-141",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_141",
@@ -2116,6 +2257,7 @@
   },
   {
     "id": "DTX-LG-142",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_142",
@@ -2131,6 +2273,7 @@
   },
   {
     "id": "DTX-LG-143",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_143",
@@ -2146,6 +2289,7 @@
   },
   {
     "id": "DTX-LG-144",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_144",
@@ -2161,6 +2305,7 @@
   },
   {
     "id": "DTX-LG-145",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_145",
@@ -2176,6 +2321,7 @@
   },
   {
     "id": "DTX-LG-146",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_146",
@@ -2191,6 +2337,7 @@
   },
   {
     "id": "DTX-LG-147",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_147",
@@ -2206,6 +2353,7 @@
   },
   {
     "id": "DTX-LG-148",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_148",
@@ -2221,6 +2369,7 @@
   },
   {
     "id": "DTX-LG-149",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_149",
@@ -2236,6 +2385,7 @@
   },
   {
     "id": "DTX-LG-150",
+    "category": "4. Security & Vulnerabilities",
     "module": "Login",
     "feature": "SQLi Vulnerability Safeguards",
     "testCase": "test_login_permutation_150",
@@ -2251,6 +2401,7 @@
   },
   {
     "id": "DTX-LG-151",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_151",
@@ -2266,6 +2417,7 @@
   },
   {
     "id": "DTX-LG-152",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_152",
@@ -2281,6 +2433,7 @@
   },
   {
     "id": "DTX-LG-153",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_153",
@@ -2296,6 +2449,7 @@
   },
   {
     "id": "DTX-LG-154",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_154",
@@ -2311,6 +2465,7 @@
   },
   {
     "id": "DTX-LG-155",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_155",
@@ -2326,6 +2481,7 @@
   },
   {
     "id": "DTX-LG-156",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_156",
@@ -2341,6 +2497,7 @@
   },
   {
     "id": "DTX-LG-157",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_157",
@@ -2356,6 +2513,7 @@
   },
   {
     "id": "DTX-LG-158",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_158",
@@ -2371,6 +2529,7 @@
   },
   {
     "id": "DTX-LG-159",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_159",
@@ -2386,6 +2545,7 @@
   },
   {
     "id": "DTX-LG-160",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_160",
@@ -2401,6 +2561,7 @@
   },
   {
     "id": "DTX-LG-161",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_161",
@@ -2416,6 +2577,7 @@
   },
   {
     "id": "DTX-LG-162",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_162",
@@ -2431,6 +2593,7 @@
   },
   {
     "id": "DTX-LG-163",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_163",
@@ -2446,6 +2609,7 @@
   },
   {
     "id": "DTX-LG-164",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_164",
@@ -2461,6 +2625,7 @@
   },
   {
     "id": "DTX-LG-165",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_165",
@@ -2476,6 +2641,7 @@
   },
   {
     "id": "DTX-LG-166",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_166",
@@ -2491,6 +2657,7 @@
   },
   {
     "id": "DTX-LG-167",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_167",
@@ -2506,6 +2673,7 @@
   },
   {
     "id": "DTX-LG-168",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_168",
@@ -2521,6 +2689,7 @@
   },
   {
     "id": "DTX-LG-169",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_169",
@@ -2536,6 +2705,7 @@
   },
   {
     "id": "DTX-LG-170",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_170",
@@ -2551,6 +2721,7 @@
   },
   {
     "id": "DTX-LG-171",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_171",
@@ -2566,6 +2737,7 @@
   },
   {
     "id": "DTX-LG-172",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_172",
@@ -2581,6 +2753,7 @@
   },
   {
     "id": "DTX-LG-173",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_173",
@@ -2596,6 +2769,7 @@
   },
   {
     "id": "DTX-LG-174",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_174",
@@ -2611,6 +2785,7 @@
   },
   {
     "id": "DTX-LG-175",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_175",
@@ -2626,6 +2801,7 @@
   },
   {
     "id": "DTX-LG-176",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_176",
@@ -2641,6 +2817,7 @@
   },
   {
     "id": "DTX-LG-177",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_177",
@@ -2656,6 +2833,7 @@
   },
   {
     "id": "DTX-LG-178",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_178",
@@ -2671,6 +2849,7 @@
   },
   {
     "id": "DTX-LG-179",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_179",
@@ -2686,6 +2865,7 @@
   },
   {
     "id": "DTX-LG-180",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_180",
@@ -2701,6 +2881,7 @@
   },
   {
     "id": "DTX-LG-181",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_181",
@@ -2716,6 +2897,7 @@
   },
   {
     "id": "DTX-LG-182",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_182",
@@ -2731,6 +2913,7 @@
   },
   {
     "id": "DTX-LG-183",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_183",
@@ -2746,6 +2929,7 @@
   },
   {
     "id": "DTX-LG-184",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_184",
@@ -2761,6 +2945,7 @@
   },
   {
     "id": "DTX-LG-185",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_185",
@@ -2776,6 +2961,7 @@
   },
   {
     "id": "DTX-LG-186",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_186",
@@ -2791,6 +2977,7 @@
   },
   {
     "id": "DTX-LG-187",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_187",
@@ -2806,6 +2993,7 @@
   },
   {
     "id": "DTX-LG-188",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_188",
@@ -2821,6 +3009,7 @@
   },
   {
     "id": "DTX-LG-189",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_189",
@@ -2836,6 +3025,7 @@
   },
   {
     "id": "DTX-LG-190",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_190",
@@ -2851,6 +3041,7 @@
   },
   {
     "id": "DTX-LG-191",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_191",
@@ -2866,6 +3057,7 @@
   },
   {
     "id": "DTX-LG-192",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_192",
@@ -2881,6 +3073,7 @@
   },
   {
     "id": "DTX-LG-193",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_193",
@@ -2896,6 +3089,7 @@
   },
   {
     "id": "DTX-LG-194",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_194",
@@ -2911,6 +3105,7 @@
   },
   {
     "id": "DTX-LG-195",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_195",
@@ -2926,6 +3121,7 @@
   },
   {
     "id": "DTX-LG-196",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_196",
@@ -2941,6 +3137,7 @@
   },
   {
     "id": "DTX-LG-197",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_197",
@@ -2956,6 +3153,7 @@
   },
   {
     "id": "DTX-LG-198",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_198",
@@ -2971,6 +3169,7 @@
   },
   {
     "id": "DTX-LG-199",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_199",
@@ -2986,6 +3185,7 @@
   },
   {
     "id": "DTX-LG-200",
+    "category": "5. UI & Viewport Responsiveness",
     "module": "Login",
     "feature": "Responsive UI Viewport Scalability",
     "testCase": "test_login_permutation_200",
@@ -3001,6 +3201,7 @@
   },
   {
     "id": "DTX-LG-201",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_201",
@@ -3016,6 +3217,7 @@
   },
   {
     "id": "DTX-LG-202",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_202",
@@ -3031,6 +3233,7 @@
   },
   {
     "id": "DTX-LG-203",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_203",
@@ -3046,6 +3249,7 @@
   },
   {
     "id": "DTX-LG-204",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_204",
@@ -3061,6 +3265,7 @@
   },
   {
     "id": "DTX-LG-205",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_205",
@@ -3076,6 +3281,7 @@
   },
   {
     "id": "DTX-LG-206",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_206",
@@ -3091,6 +3297,7 @@
   },
   {
     "id": "DTX-LG-207",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_207",
@@ -3106,6 +3313,7 @@
   },
   {
     "id": "DTX-LG-208",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_208",
@@ -3121,6 +3329,7 @@
   },
   {
     "id": "DTX-LG-209",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_209",
@@ -3136,6 +3345,7 @@
   },
   {
     "id": "DTX-LG-210",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_210",
@@ -3151,6 +3361,7 @@
   },
   {
     "id": "DTX-LG-211",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_211",
@@ -3166,6 +3377,7 @@
   },
   {
     "id": "DTX-LG-212",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_212",
@@ -3181,6 +3393,7 @@
   },
   {
     "id": "DTX-LG-213",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_213",
@@ -3196,6 +3409,7 @@
   },
   {
     "id": "DTX-LG-214",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_214",
@@ -3211,6 +3425,7 @@
   },
   {
     "id": "DTX-LG-215",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_215",
@@ -3226,6 +3441,7 @@
   },
   {
     "id": "DTX-LG-216",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_216",
@@ -3241,6 +3457,7 @@
   },
   {
     "id": "DTX-LG-217",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_217",
@@ -3256,6 +3473,7 @@
   },
   {
     "id": "DTX-LG-218",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_218",
@@ -3271,6 +3489,7 @@
   },
   {
     "id": "DTX-LG-219",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_219",
@@ -3286,6 +3505,7 @@
   },
   {
     "id": "DTX-LG-220",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_220",
@@ -3301,6 +3521,7 @@
   },
   {
     "id": "DTX-LG-221",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_221",
@@ -3316,6 +3537,7 @@
   },
   {
     "id": "DTX-LG-222",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_222",
@@ -3331,6 +3553,7 @@
   },
   {
     "id": "DTX-LG-223",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_223",
@@ -3346,6 +3569,7 @@
   },
   {
     "id": "DTX-LG-224",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_224",
@@ -3361,6 +3585,7 @@
   },
   {
     "id": "DTX-LG-225",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_225",
@@ -3376,6 +3601,7 @@
   },
   {
     "id": "DTX-LG-226",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_226",
@@ -3391,6 +3617,7 @@
   },
   {
     "id": "DTX-LG-227",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_227",
@@ -3406,6 +3633,7 @@
   },
   {
     "id": "DTX-LG-228",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_228",
@@ -3421,6 +3649,7 @@
   },
   {
     "id": "DTX-LG-229",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_229",
@@ -3436,6 +3665,7 @@
   },
   {
     "id": "DTX-LG-230",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_230",
@@ -3451,6 +3681,7 @@
   },
   {
     "id": "DTX-LG-231",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_231",
@@ -3466,6 +3697,7 @@
   },
   {
     "id": "DTX-LG-232",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_232",
@@ -3481,6 +3713,7 @@
   },
   {
     "id": "DTX-LG-233",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_233",
@@ -3496,6 +3729,7 @@
   },
   {
     "id": "DTX-LG-234",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_234",
@@ -3511,6 +3745,7 @@
   },
   {
     "id": "DTX-LG-235",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_235",
@@ -3526,6 +3761,7 @@
   },
   {
     "id": "DTX-LG-236",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_236",
@@ -3541,6 +3777,7 @@
   },
   {
     "id": "DTX-LG-237",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_237",
@@ -3556,6 +3793,7 @@
   },
   {
     "id": "DTX-LG-238",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_238",
@@ -3571,6 +3809,7 @@
   },
   {
     "id": "DTX-LG-239",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_239",
@@ -3586,6 +3825,7 @@
   },
   {
     "id": "DTX-LG-240",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_240",
@@ -3601,6 +3841,7 @@
   },
   {
     "id": "DTX-LG-241",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_241",
@@ -3616,6 +3857,7 @@
   },
   {
     "id": "DTX-LG-242",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_242",
@@ -3631,6 +3873,7 @@
   },
   {
     "id": "DTX-LG-243",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_243",
@@ -3646,6 +3889,7 @@
   },
   {
     "id": "DTX-LG-244",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_244",
@@ -3661,6 +3905,7 @@
   },
   {
     "id": "DTX-LG-245",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_245",
@@ -3676,6 +3921,7 @@
   },
   {
     "id": "DTX-LG-246",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_246",
@@ -3691,6 +3937,7 @@
   },
   {
     "id": "DTX-LG-247",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_247",
@@ -3706,6 +3953,7 @@
   },
   {
     "id": "DTX-LG-248",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_248",
@@ -3721,6 +3969,7 @@
   },
   {
     "id": "DTX-LG-249",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_249",
@@ -3736,6 +3985,7 @@
   },
   {
     "id": "DTX-LG-250",
+    "category": "6. Boundary Testing",
     "module": "Login",
     "feature": "Input Length Field Boundaries",
     "testCase": "test_login_permutation_250",
@@ -3751,6 +4001,7 @@
   },
   {
     "id": "DTX-LG-251",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_251",
@@ -3766,6 +4017,7 @@
   },
   {
     "id": "DTX-LG-252",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_252",
@@ -3781,6 +4033,7 @@
   },
   {
     "id": "DTX-LG-253",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_253",
@@ -3796,6 +4049,7 @@
   },
   {
     "id": "DTX-LG-254",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_254",
@@ -3811,6 +4065,7 @@
   },
   {
     "id": "DTX-LG-255",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_255",
@@ -3826,6 +4081,7 @@
   },
   {
     "id": "DTX-LG-256",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_256",
@@ -3841,6 +4097,7 @@
   },
   {
     "id": "DTX-LG-257",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_257",
@@ -3856,6 +4113,7 @@
   },
   {
     "id": "DTX-LG-258",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_258",
@@ -3871,6 +4129,7 @@
   },
   {
     "id": "DTX-LG-259",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_259",
@@ -3886,6 +4145,7 @@
   },
   {
     "id": "DTX-LG-260",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_260",
@@ -3901,6 +4161,7 @@
   },
   {
     "id": "DTX-LG-261",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_261",
@@ -3916,6 +4177,7 @@
   },
   {
     "id": "DTX-LG-262",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_262",
@@ -3931,6 +4193,7 @@
   },
   {
     "id": "DTX-LG-263",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_263",
@@ -3946,6 +4209,7 @@
   },
   {
     "id": "DTX-LG-264",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_264",
@@ -3961,6 +4225,7 @@
   },
   {
     "id": "DTX-LG-265",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_265",
@@ -3976,6 +4241,7 @@
   },
   {
     "id": "DTX-LG-266",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_266",
@@ -3991,6 +4257,7 @@
   },
   {
     "id": "DTX-LG-267",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_267",
@@ -4006,6 +4273,7 @@
   },
   {
     "id": "DTX-LG-268",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_268",
@@ -4021,6 +4289,7 @@
   },
   {
     "id": "DTX-LG-269",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_269",
@@ -4036,6 +4305,7 @@
   },
   {
     "id": "DTX-LG-270",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_270",
@@ -4051,6 +4321,7 @@
   },
   {
     "id": "DTX-LG-271",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_271",
@@ -4066,6 +4337,7 @@
   },
   {
     "id": "DTX-LG-272",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_272",
@@ -4081,6 +4353,7 @@
   },
   {
     "id": "DTX-LG-273",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_273",
@@ -4096,6 +4369,7 @@
   },
   {
     "id": "DTX-LG-274",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_274",
@@ -4111,6 +4385,7 @@
   },
   {
     "id": "DTX-LG-275",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_275",
@@ -4126,6 +4401,7 @@
   },
   {
     "id": "DTX-LG-276",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_276",
@@ -4141,6 +4417,7 @@
   },
   {
     "id": "DTX-LG-277",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_277",
@@ -4156,6 +4433,7 @@
   },
   {
     "id": "DTX-LG-278",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_278",
@@ -4171,6 +4449,7 @@
   },
   {
     "id": "DTX-LG-279",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_279",
@@ -4186,6 +4465,7 @@
   },
   {
     "id": "DTX-LG-280",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_280",
@@ -4201,6 +4481,7 @@
   },
   {
     "id": "DTX-LG-281",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_281",
@@ -4216,6 +4497,7 @@
   },
   {
     "id": "DTX-LG-282",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_282",
@@ -4231,6 +4513,7 @@
   },
   {
     "id": "DTX-LG-283",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_283",
@@ -4246,6 +4529,7 @@
   },
   {
     "id": "DTX-LG-284",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_284",
@@ -4261,6 +4545,7 @@
   },
   {
     "id": "DTX-LG-285",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_285",
@@ -4276,6 +4561,7 @@
   },
   {
     "id": "DTX-LG-286",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_286",
@@ -4291,6 +4577,7 @@
   },
   {
     "id": "DTX-LG-287",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_287",
@@ -4306,6 +4593,7 @@
   },
   {
     "id": "DTX-LG-288",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_288",
@@ -4321,6 +4609,7 @@
   },
   {
     "id": "DTX-LG-289",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_289",
@@ -4336,6 +4625,7 @@
   },
   {
     "id": "DTX-LG-290",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_290",
@@ -4351,6 +4641,7 @@
   },
   {
     "id": "DTX-LG-291",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_291",
@@ -4366,6 +4657,7 @@
   },
   {
     "id": "DTX-LG-292",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_292",
@@ -4381,6 +4673,7 @@
   },
   {
     "id": "DTX-LG-293",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_293",
@@ -4396,6 +4689,7 @@
   },
   {
     "id": "DTX-LG-294",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_294",
@@ -4411,6 +4705,7 @@
   },
   {
     "id": "DTX-LG-295",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_295",
@@ -4426,6 +4721,7 @@
   },
   {
     "id": "DTX-LG-296",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_296",
@@ -4441,6 +4737,7 @@
   },
   {
     "id": "DTX-LG-297",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_297",
@@ -4456,6 +4753,7 @@
   },
   {
     "id": "DTX-LG-298",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_298",
@@ -4471,6 +4769,7 @@
   },
   {
     "id": "DTX-LG-299",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_299",
@@ -4486,6 +4785,7 @@
   },
   {
     "id": "DTX-LG-300",
+    "category": "7. Input Sanitization",
     "module": "Login",
     "feature": "Whitespace Trimming & Input Sanitization",
     "testCase": "test_login_permutation_300",
