@@ -1,0 +1,13 @@
+{
+  "name": "dentrix-selenium-tests",
+  "version": "1.0.0",
+  "description": "E2E Selenium tests for Dentrix AI login functionality",
+  "main": "tests/login-tests.js",
+  "scripts": {
+    "test": "node tests/login-tests.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.20.0",
+    "xlsx-js-style": "^1.2.0"
+  }
+}

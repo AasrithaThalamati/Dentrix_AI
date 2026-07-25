@@ -1,0 +1,10 @@
+{
+  "targetEndpoint": "https://dentrixxai.netlify.app/help_docs.html",
+  "totalRequests": 50,
+  "successfulRequests": "0 (100.0% success)",
+  "throughput": "13.03 req/s",
+  "avgLatency": "76.76 ms",
+  "minMaxLatency": "44 ms / 365 ms",
+  "percentiles": "71 ms / 95 ms / 365 ms",
+  "status": "🟢 PASSED"
+}

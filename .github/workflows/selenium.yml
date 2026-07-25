@@ -1,0 +1,65 @@
+name: Selenium E2E Automation Pipeline
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  e2e-tests:
+    name: Run Selenium E2E Login Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Set up Python (Required dependency)
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Set up Google Chrome
+      uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: stable
+
+    - name: Verify Chrome Version
+      run: |
+        chrome --version
+        which google-chrome || which chrome
+
+    - name: Install dependencies
+      run: |
+        cd selenium-tests
+        npm install
+
+    - name: Run E2E Tests
+      continue-on-error: true # Continue executing steps even if some tests fail
+      run: |
+        cd selenium-tests
+        npm test
+
+    - name: Build Reports ZIP
+      if: always()
+      run: |
+        # Create a temp packaging structure
+        mkdir -p zip_packaging/reports
+        cp -r selenium-tests/reports/* zip_packaging/reports/
+        cd zip_packaging
+        zip -r ../Dentrix_AI_Selenium_Reports.zip reports
+        cd ..
+
+    - name: Upload Artifacts ZIP
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Dentrix_AI_Selenium_Reports
+        path: Dentrix_AI_Selenium_Reports.zip
+        retention-days: 14

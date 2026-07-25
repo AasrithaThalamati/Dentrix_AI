@@ -125,23 +125,35 @@
      openModal('zoomModal');
    });
    
-   analyzeBtn?.addEventListener('click', runAnalysis);
-   
-   async function callGrokAnalysis(file) {
+   async function callGeminiAnalysis(file) {
      const formData = new FormData();
      formData.append('xray', file);
-     const res = await fetch(`${API}/analysis/ai-score`, {
-       method: 'POST',
-       headers: { 'Authorization': `Bearer ${getToken()}` },
-       body: formData
-     });
-     if (!res.ok) {
-       const err = await res.json().catch(() => ({}));
-       throw new Error(err.message || 'AI analysis failed');
+
+     const endpoints = [
+       'http://127.0.0.1:5001/api/analysis/ai-score',
+       `${API}/analysis/ai-score`,
+       'https://dentrix-ai-8k2b.vercel.app/api/analysis/ai-score'
+     ];
+
+     let lastErr;
+     for (const endpoint of endpoints) {
+       try {
+         const res = await fetch(endpoint, {
+           method: 'POST',
+           body: formData
+         });
+         if (res.ok) {
+           return await res.json();
+         }
+       } catch (err) {
+         lastErr = err;
+       }
      }
-     return res.json();
+     throw lastErr || new Error('Unable to connect to Gemini analysis service');
    }
 
+   analyzeBtn?.addEventListener('click', runAnalysis);
+   
    async function runAnalysis() {
      if (!currentFile) return;
 
@@ -160,11 +172,11 @@
      const statuses = [
        'Preprocessing image…','Segmenting canal boundaries…',
        'Detecting apex position…','Analysing density…',
-       'Evaluating taper geometry…','Generating report…',
+       'Evaluating taper geometry…','Generating Gemini AI report…',
      ];
 
-     // Kick off the Grok API call in parallel with the UX animation
-     const aiPromise = callGrokAnalysis(currentFile);
+     // Kick off the Gemini API call in parallel with the UX animation
+     const aiPromise = callGeminiAnalysis(currentFile);
 
      for (let i = 1; i <= 6; i++) {
        const step = document.getElementById(`step${i}`);
@@ -181,8 +193,8 @@
      try {
        result = await aiPromise;
      } catch (err) {
-       console.error('Grok analysis error:', err);
-       showToast('AI analysis unavailable — check API key', 'error');
+       console.error('Gemini analysis error:', err);
+       showToast('Gemini AI analysis unavailable — check backend / API key', 'error');
        btnText.style.display   = 'flex';
        btnLoader.style.display = 'none';
        analyzeBtn.disabled     = false;
