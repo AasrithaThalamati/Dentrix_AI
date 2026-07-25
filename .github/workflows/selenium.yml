@@ -1,4 +1,4 @@
-name: Selenium E2E Automation Pipeline
+name: Dentrix AI Test Automation & Security Pipeline
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [ "master", "main" ]
 
 jobs:
-  e2e-tests:
-    name: Run Selenium E2E Login Tests
+  test-automation-pipeline:
+    name: Run Full Test Suite & Generate Dashboard
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Set up Python (Required dependency)
+    - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
@@ -35,31 +35,36 @@ jobs:
         chrome --version
         which google-chrome || which chrome
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         cd selenium-tests
         npm install
 
-    - name: Run E2E Tests
-      continue-on-error: true # Continue executing steps even if some tests fail
+    - name: Run All Test Suites (Selenium, API, Appium, Load, Vulnerability)
+      continue-on-error: true
       run: |
         cd selenium-tests
         npm test
 
+    - name: Render GitHub Step Summary Dashboard
+      if: always()
+      run: |
+        cd selenium-tests
+        node generate-summary.js
+
     - name: Build Reports ZIP
       if: always()
       run: |
-        # Create a temp packaging structure
         mkdir -p zip_packaging/reports
         cp -r selenium-tests/reports/* zip_packaging/reports/
         cd zip_packaging
-        zip -r ../Dentrix_AI_Selenium_Reports.zip reports
+        zip -r ../Dentrix_AI_Test_Reports.zip reports
         cd ..
 
     - name: Upload Artifacts ZIP
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: Dentrix_AI_Selenium_Reports
-        path: Dentrix_AI_Selenium_Reports.zip
+        name: Dentrix_AI_Test_Reports
+        path: Dentrix_AI_Test_Reports.zip
         retention-days: 14

@@ -1,10 +1,16 @@
 {
   "name": "dentrix-selenium-tests",
   "version": "1.0.0",
-  "description": "E2E Selenium tests for Dentrix AI login functionality",
+  "description": "Comprehensive E2E Selenium, API, Appium, Load and Vulnerability Test Suite for Dentrix AI",
   "main": "tests/login-tests.js",
   "scripts": {
-    "test": "node tests/login-tests.js"
+    "test": "node tests/appium-tests.js && node tests/vulnerability-test.js && node tests/login-tests.js && node generate-summary.js",
+    "test:selenium": "node tests/login-tests.js",
+    "test:api": "node tests/api-tests.js",
+    "test:appium": "node tests/appium-tests.js",
+    "test:load": "node tests/load-test.js",
+    "test:vulnerability": "node tests/vulnerability-test.js",
+    "summary": "node generate-summary.js"
   },
   "dependencies": {
     "selenium-webdriver": "^4.20.0",
