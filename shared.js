@@ -76,12 +76,17 @@ function showToast(message, type = 'success') {
 // ── Modal helpers ──
 function openModal(id) {
   const el = document.getElementById(id);
-  if (el) { el.style.display = 'flex'; setTimeout(() => el.classList.add('open'), 10); }
+  if (el) {
+    el.style.display = 'flex';
+    requestAnimationFrame(() => {
+      el.classList.add('open', 'modal-open', 'active');
+    });
+  }
 }
 function closeModal(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.classList.remove('open');
+  el.classList.remove('open', 'modal-open', 'active');
   setTimeout(() => { el.style.display = 'none'; }, 250);
 }
 
@@ -137,11 +142,9 @@ function getScoreBadgeClass(s) {
   return 'badge-poor';
 }
 
-// ── Dynamic topbar avatar ──
-// Reads the logged-in user's name from localStorage and updates
-// every .topbar-avatar element on the page automatically.
-// No changes needed in individual HTML files except clearing the
-// hardcoded initials (see comment below).
+// ── Dynamic topbar & sidebar avatar ──
+// Reads the logged-in user's profile image and initials from localStorage / MongoDB
+// and updates every avatar element on the page automatically.
 (function () {
   function getInitials(name) {
     if (!name || !name.trim()) return '??';
@@ -149,7 +152,6 @@ function getScoreBadgeClass(s) {
   }
 
   function resolveUserName() {
-    // 1. Try a stored user/profile object
     const raw = localStorage.getItem('dentrix_user')
              || localStorage.getItem('dentrix_profile');
     if (raw) {
@@ -158,12 +160,10 @@ function getScoreBadgeClass(s) {
         const name = user.name || user.fullName || user.displayName || user.username || '';
         if (name) return name;
       } catch {
-        // stored as plain string
         if (raw && raw.trim()) return raw.trim();
       }
     }
 
-    // 2. Decode name directly from the JWT payload
     const token = localStorage.getItem('dentrix_token');
     if (token) {
       try {
@@ -176,25 +176,54 @@ function getScoreBadgeClass(s) {
     return '';
   }
 
+  function resolveUserAvatar() {
+    const avatar = localStorage.getItem('dentrix_avatar');
+    if (avatar && avatar.trim()) return avatar.trim();
+
+    const raw = localStorage.getItem('dentrix_user') || localStorage.getItem('dentrix_profile');
+    if (raw) {
+      try {
+        const user = JSON.parse(raw);
+        if (user.avatar && user.avatar.trim()) return user.avatar.trim();
+      } catch (e) {}
+    }
+    return null;
+  }
+
   function setAvatar() {
-    const name     = resolveUserName();
-    const initials = getInitials(name);
-    document.querySelectorAll('.topbar-avatar').forEach(el => {
-      el.textContent = initials;
-      if (name) el.title = name;
+    const name      = resolveUserName();
+    const initials  = getInitials(name);
+    const avatarUrl = resolveUserAvatar();
+
+    const selectors = ['.topbar-avatar', '.doctor-avatar-sm', '#sidebarAvatar', '#topbarAvatar', '#avatarCircle'];
+
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        if (name) el.title = name;
+        if (avatarUrl) {
+          el.style.backgroundImage = `url('${avatarUrl}')`;
+          el.style.backgroundSize = 'cover';
+          el.style.backgroundPosition = 'center';
+          el.style.backgroundRepeat = 'no-repeat';
+          el.textContent = '';
+        } else {
+          el.style.backgroundImage = '';
+          el.textContent = initials;
+        }
+      });
     });
   }
 
   // Run on initial load
   document.addEventListener('DOMContentLoaded', setAvatar);
 
-  // Also re-run whenever auth data changes (e.g. after login in the same tab)
+  // Re-run whenever auth data or avatar changes
   window.addEventListener('storage', e => {
-    if (['dentrix_user', 'dentrix_profile', 'dentrix_token'].includes(e.key)) {
+    if (['dentrix_user', 'dentrix_profile', 'dentrix_token', 'dentrix_avatar'].includes(e.key)) {
       setAvatar();
     }
   });
 
-  // Expose globally so login/signup pages can trigger an immediate refresh
+  // Expose globally so pages can trigger an immediate refresh
   window.refreshTopbarAvatar = setAvatar;
 })();

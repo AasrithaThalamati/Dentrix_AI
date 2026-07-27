@@ -1,0 +1,1681 @@
+{
+  "dataset": "Smile_Dataset",
+  "count": 67,
+  "scores": [
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 21.58.24 (1).jpeg",
+      "file_sha256": "8d2dfbf70623aec01dd50da998d13f621a54b25891797c548c98be19cb91507e",
+      "file_size": 111778,
+      "faceShape": "oblong",
+      "faceShapeDescription": "Observed elongated vertical facial proportions with a slender, refined jaw structure.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 97,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 64,
+        "round": 71,
+        "square": 97,
+        "triangular": 60,
+        "pointed_oval": 67
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 21.58.24.jpeg",
+      "file_sha256": "47815fe0d02411b1067b817910579bc86ba6fb1429cf79c6e747af70bbd4768a",
+      "file_size": 174720,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 97,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 84,
+        "round": 66,
+        "square": 73,
+        "triangular": 97,
+        "pointed_oval": 62
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.06.44.jpeg",
+      "file_sha256": "28166fb30616fdc09ae21fc6f4da88992763fb95ec96c2656c4017a3421d1a3e",
+      "file_size": 69272,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 92,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 62,
+        "round": 69,
+        "square": 76,
+        "triangular": 92,
+        "pointed_oval": 65
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.07.37 (1).jpeg",
+      "file_sha256": "ae74e2c3f214708d4c39a111a340ca90f39fd92c9d76bdfb1c46140229dfb835",
+      "file_size": 255497,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 89,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 89,
+        "round": 78,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 74
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.07.37.jpeg",
+      "file_sha256": "d61913ab772fb2ae58832208bb12bd1186c3ac5fa8688c69697c6d7bd410b421",
+      "file_size": 228432,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 94,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 69,
+        "round": 76,
+        "square": 83,
+        "triangular": 94,
+        "pointed_oval": 72
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.08.41 (1).jpeg",
+      "file_sha256": "efb06e5b2a0cb1bc5b6cd6bd05781e42e62149f11028978fbc7f3f287726b2da",
+      "file_size": 145585,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 95,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 71,
+        "round": 78,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 95
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.08.41.jpeg",
+      "file_sha256": "434debd35f59089c6b97dbee7b0db7e68f1dca1c0de03eecf67d91ad876fc346",
+      "file_size": 96250,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 88,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 75,
+        "round": 82,
+        "square": 64,
+        "triangular": 88,
+        "pointed_oval": 78
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.09.28.jpeg",
+      "file_sha256": "3a23938d2a8696bd13b1722595e0d9bfa8e9d5b5313bf2ab003d8824c342ef41",
+      "file_size": 301140,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 95,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 95,
+        "round": 78,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 74
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.10.02.jpeg",
+      "file_sha256": "e7a2b2cb4fe8350d391c64d30263991fda581d42cce1f1e4f7bb62dac46b7824",
+      "file_size": 304268,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 89,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 84,
+        "round": 66,
+        "square": 89,
+        "triangular": 80,
+        "pointed_oval": 62
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.02 (1).jpeg",
+      "file_sha256": "5ab3b6d45586fd9e3105067973cadef51a4309f1f3d9fead8c377ac6a7f3a269",
+      "file_size": 95293,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 89,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 89,
+        "round": 80,
+        "square": 62,
+        "triangular": 69,
+        "pointed_oval": 76
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.02 (2).jpeg",
+      "file_sha256": "6fc5e0aa86ebc4d97cfa0de69290e07bc51df466715708df9ffe26ec7f5460cb",
+      "file_size": 110934,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 90,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 67,
+        "round": 74,
+        "square": 90,
+        "triangular": 63,
+        "pointed_oval": 70
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.02 (3).jpeg",
+      "file_sha256": "9c84d02ba0bd94a533dc5c80228624e91e2b284c6b63acd66b59dbd7c8dd2657",
+      "file_size": 249692,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 94,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 74,
+        "round": 81,
+        "square": 94,
+        "triangular": 70,
+        "pointed_oval": 77
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.02 (4).jpeg",
+      "file_sha256": "eabef301ecc79373e1a1da59d4499d78de2e334e286c22259cd12cf47576a7d6",
+      "file_size": 118214,
+      "faceShape": "oblong",
+      "faceShapeDescription": "Observed elongated vertical facial proportions with a slender, refined jaw structure.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 91,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 78,
+        "round": 60,
+        "square": 91,
+        "triangular": 74,
+        "pointed_oval": 81
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.02.jpeg",
+      "file_sha256": "1af2d077e4715939793ea84bb3be36ffb1e2cc950fc3e203355e9a55ed05ad32",
+      "file_size": 114318,
+      "faceShape": "oblong",
+      "faceShapeDescription": "Observed elongated vertical facial proportions with a slender, refined jaw structure.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 89,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 80,
+        "round": 62,
+        "square": 89,
+        "triangular": 76,
+        "pointed_oval": 83
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.23.jpeg",
+      "file_sha256": "dd4dd1a25431da907d8190c3dffd10d407832d4343059c494166b8dfd91152ce",
+      "file_size": 168720,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 91,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 91,
+        "round": 66,
+        "square": 73,
+        "triangular": 80,
+        "pointed_oval": 62
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.45 (1).jpeg",
+      "file_sha256": "88222a3279e574330eb7294ba5938261e9e43442ded8038fb46ac269a12877a4",
+      "file_size": 100847,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 91,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 62,
+        "round": 69,
+        "square": 91,
+        "triangular": 83,
+        "pointed_oval": 65
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.12.45.jpeg",
+      "file_sha256": "ab05e1eb4b45c3445fddf2ea5cec2e921084be3798273fadfb927def1d4e1692",
+      "file_size": 110767,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 90,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 61,
+        "round": 68,
+        "square": 90,
+        "triangular": 82,
+        "pointed_oval": 64
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.13.55 (1).jpeg",
+      "file_sha256": "e6f6eb795b262075b11ab42f06309d2e8386a2f4dc459aaadb073fa497f45dc2",
+      "file_size": 236983,
+      "faceShape": "oblong",
+      "faceShapeDescription": "Observed elongated vertical facial proportions with a slender, refined jaw structure.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 93,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 77,
+        "round": 84,
+        "square": 66,
+        "triangular": 93,
+        "pointed_oval": 80
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.13.55 (2).jpeg",
+      "file_sha256": "04bf6a52fd75719b957e99b9f3447a8a83668ca6fa6af226f78db24b52786386",
+      "file_size": 286948,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 91,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 68,
+        "round": 75,
+        "square": 82,
+        "triangular": 91,
+        "pointed_oval": 71
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.13.55.jpeg",
+      "file_sha256": "fce5a6c35d4b3c5ba9c7ab6481651f56b9381fbfbb1603e5475eb2a489a4fe19",
+      "file_size": 88929,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 92,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 77,
+        "round": 84,
+        "square": 66,
+        "triangular": 73,
+        "pointed_oval": 92
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.13.56 (1).jpeg",
+      "file_sha256": "eef57dfc95acbba283f1ee4366e11f6b0b006838f7cdcfa3e94e1820b8717461",
+      "file_size": 307076,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 95,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 95,
+        "round": 72,
+        "square": 79,
+        "triangular": 61,
+        "pointed_oval": 68
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.13.56.jpeg",
+      "file_sha256": "360354cdd0c8dbe927a05b42e99c8c7556797e071b73dcf33355abd7fed949ee",
+      "file_size": 89768,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 94,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 94,
+        "round": 73,
+        "square": 80,
+        "triangular": 62,
+        "pointed_oval": 69
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.14.20.jpeg",
+      "file_sha256": "f6444e4d2264bccaeb49ba8e7160885600ba21696d95d191a02f590736fe3275",
+      "file_size": 289585,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 94,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 64,
+        "round": 71,
+        "square": 78,
+        "triangular": 60,
+        "pointed_oval": 94
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.14.58 (1).jpeg",
+      "file_sha256": "469c84b669506263797ba153645bd52232278ddd257acc966157b34bfaf98a52",
+      "file_size": 282784,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 91,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 70,
+        "round": 77,
+        "square": 91,
+        "triangular": 66,
+        "pointed_oval": 73
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.14.58 (2).jpeg",
+      "file_sha256": "435d7fe866bc601f8d7e2e657fc0779651a688ef116a4a4829d3466de49e6d79",
+      "file_size": 321120,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 97,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 74,
+        "round": 81,
+        "square": 97,
+        "triangular": 70,
+        "pointed_oval": 77
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.14.58.jpeg",
+      "file_sha256": "6d1abf5c94970a03acfdec9f239102e8eb5d0ff5e9942be4b4eb759eb76daf8f",
+      "file_size": 271685,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 93,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 78,
+        "round": 60,
+        "square": 93,
+        "triangular": 74,
+        "pointed_oval": 81
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.23 (1).jpeg",
+      "file_sha256": "65920834ec355d017b80f11aab737128e6b7d2ceb9185446590f7b66e57bd3cb",
+      "file_size": 121070,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 96,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 82,
+        "round": 64,
+        "square": 71,
+        "triangular": 96,
+        "pointed_oval": 60
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.23.jpeg",
+      "file_sha256": "f0f5700be435f0c8cc51f19db1fd14c796fb77e2738689830b9eecbd4853602b",
+      "file_size": 273074,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 91,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 78,
+        "round": 91,
+        "square": 67,
+        "triangular": 74,
+        "pointed_oval": 81
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.24 (1).jpeg",
+      "file_sha256": "a3bf48a147700e0897b1b61efcb40d56eac1fbc1ebd76d706e02da098bfe01cc",
+      "file_size": 135526,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 88,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 88,
+        "round": 69,
+        "square": 76,
+        "triangular": 83,
+        "pointed_oval": 65
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.24 (2).jpeg",
+      "file_sha256": "b234bfeb39702d7b50dfe5c55c74054675c83efc5a5b99cad2e769bc90001a0f",
+      "file_size": 147103,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 97,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 61,
+        "round": 68,
+        "square": 97,
+        "triangular": 82,
+        "pointed_oval": 64
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.24 (3).jpeg",
+      "file_sha256": "d6b3381fe176cdd10fa15d3c27be280b27fd8be296959fe5d6ba9a8bb713e06a",
+      "file_size": 167458,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 92,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 70,
+        "round": 77,
+        "square": 92,
+        "triangular": 66,
+        "pointed_oval": 73
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.24.jpeg",
+      "file_sha256": "4025b8619252bbc5b27501d53c47e8a3b202c01997feac330e8a18e578cc61ea",
+      "file_size": 112007,
+      "faceShape": "oblong",
+      "faceShapeDescription": "Observed elongated vertical facial proportions with a slender, refined jaw structure.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 97,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 67,
+        "round": 74,
+        "square": 97,
+        "triangular": 63,
+        "pointed_oval": 70
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.25.jpeg",
+      "file_sha256": "f02709a619c20dfd2eba68bc3c4db6ab34f0b035cfcac514eb3c35d4564b0343",
+      "file_size": 253739,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 92,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 92,
+        "round": 81,
+        "square": 63,
+        "triangular": 70,
+        "pointed_oval": 77
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.45 (1).jpeg",
+      "file_sha256": "d496d1aac4b16318a4d43aa51dfb0591ecb6d67cb7d7adf0520c14a5458b2117",
+      "file_size": 295556,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 97,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 76,
+        "round": 97,
+        "square": 65,
+        "triangular": 72,
+        "pointed_oval": 79
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.16.45.jpeg",
+      "file_sha256": "699b43608e313004617b3f14df53557e98cec43e95cc929ac1b2cc6c479aa7c2",
+      "file_size": 282981,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 96,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 68,
+        "round": 75,
+        "square": 82,
+        "triangular": 96,
+        "pointed_oval": 71
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.17.49 (1).jpeg",
+      "file_sha256": "49e233a39b905feab36f3eab4129af6e2d0dac569903e8d6e7e0259ed510e445",
+      "file_size": 224065,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 91,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 83,
+        "round": 65,
+        "square": 72,
+        "triangular": 91,
+        "pointed_oval": 61
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.17.49 (2).jpeg",
+      "file_sha256": "1768bcabdaf4995155103421ffbcd84e5c84798035dc3cce2b350c840c6a8528",
+      "file_size": 107628,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 89,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 71,
+        "round": 89,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 74
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.17.49 (3).jpeg",
+      "file_sha256": "f6883f6e4bc75775ec98d2e9b6afe1432956117b5115d4b5679f6bf8ca2a5816",
+      "file_size": 173008,
+      "faceShape": "oblong",
+      "faceShapeDescription": "Observed elongated vertical facial proportions with a slender, refined jaw structure.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 89,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 80,
+        "round": 62,
+        "square": 69,
+        "triangular": 89,
+        "pointed_oval": 83
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.17.49.jpeg",
+      "file_sha256": "2a031e535f9341b8d6e55ac13dc64dd8332d8832300e651185a65abbf8279fcb",
+      "file_size": 169805,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 89,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 78,
+        "round": 89,
+        "square": 67,
+        "triangular": 74,
+        "pointed_oval": 81
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.18.31 (1).jpeg",
+      "file_sha256": "b0a257a9fd7acec3c5e694c98f006ad529bbbe93b14a5cc0ee10671967c6770a",
+      "file_size": 348939,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 89,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 74,
+        "round": 89,
+        "square": 63,
+        "triangular": 70,
+        "pointed_oval": 77
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.18.31 (2).jpeg",
+      "file_sha256": "c1bf1e522f03af14866f45067703148042ecca919ceba6fcb6ad4141146332ce",
+      "file_size": 279762,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 88,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 88,
+        "round": 68,
+        "square": 75,
+        "triangular": 82,
+        "pointed_oval": 64
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.18.31.jpeg",
+      "file_sha256": "30a67cc787985c1df93e698139dbf0019235409bbc427d3b9500ea25a4cae092",
+      "file_size": 249394,
+      "faceShape": "diamond",
+      "faceShapeDescription": "Observed high, dramatic cheekbones with a narrower forehead and tapered chin.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 93,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 72,
+        "round": 79,
+        "square": 61,
+        "triangular": 93,
+        "pointed_oval": 75
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.18.32.jpeg",
+      "file_sha256": "8d19f39fbee30e18ec1dbbe4a2e09494189c9acc8212d224f2b4379d2562f20e",
+      "file_size": 253847,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 88,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 88,
+        "round": 65,
+        "square": 72,
+        "triangular": 79,
+        "pointed_oval": 61
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.18.43.jpeg",
+      "file_sha256": "c9bfdc2a29bf7f5bcb77fbf154e0f2f9d5de87c457f7b1c93ff1b6ab3d3956b7",
+      "file_size": 356137,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 97,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 97,
+        "round": 71,
+        "square": 78,
+        "triangular": 60,
+        "pointed_oval": 67
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.19.07.jpeg",
+      "file_sha256": "4660b237f2fec65e9f595c4fb0ef7ba514674f6af08c2b91b8edda410de7f90d",
+      "file_size": 230321,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 97,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 84,
+        "round": 66,
+        "square": 73,
+        "triangular": 97,
+        "pointed_oval": 62
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.19.21 (1).jpeg",
+      "file_sha256": "55c7aee4f91b7963dcc19eda2a64fa63d822e66333819a1ce28fdc49b46212c9",
+      "file_size": 151632,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 92,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 81,
+        "round": 92,
+        "square": 70,
+        "triangular": 77,
+        "pointed_oval": 84
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.19.21.jpeg",
+      "file_sha256": "588a8c787af3f5cce1e5c46de84cd1219407fc0c534c186bf93bb741751759b9",
+      "file_size": 148286,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 97,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 71,
+        "round": 78,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 97
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.19.33.jpeg",
+      "file_sha256": "a831f3808c17e046e2e65dd2cd6ae43ae59c3a820b7919ffae30112fee7789e8",
+      "file_size": 291616,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 92,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 73,
+        "round": 80,
+        "square": 92,
+        "triangular": 69,
+        "pointed_oval": 76
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.20.21 (1).jpeg",
+      "file_sha256": "d97b005b4e00993d2dcc15b5e1a0cba805140f3c29b9c8e010b8000106fd5fe6",
+      "file_size": 206339,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 89,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 76,
+        "round": 83,
+        "square": 89,
+        "triangular": 72,
+        "pointed_oval": 79
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.20.21 (2).jpeg",
+      "file_sha256": "2a2ffdcc053ac4644619e069325f42444a42e5c8de6c6f70327f356fa7749589",
+      "file_size": 126134,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 97,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 71,
+        "round": 78,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 97
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.20.21 (3).jpeg",
+      "file_sha256": "8700bbbb5732298b4ebea2616d1401bea2f74174e0c215dbd61304b1c4676100",
+      "file_size": 124045,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "square",
+        "compatibilityScore": 95,
+        "reasoning": "A Square / Rectangular tooth set provides broad incisal confidence and vertical strength, balancing soft facial curves."
+      },
+      "allShapeScores": {
+        "oval": 79,
+        "round": 61,
+        "square": 95,
+        "triangular": 75,
+        "pointed_oval": 82
+      },
+      "clinicalNotes": "Preserve broad incisal embrasures and flat incisal edges. Ensure midline alignment with facial philtrum and canine guidance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.20.21.jpeg",
+      "file_sha256": "dc0d8637a0d984ddf5b69f60d8bb8d490ae3f6694a6775535788644846b91bcf",
+      "file_size": 280783,
+      "faceShape": "diamond",
+      "faceShapeDescription": "Observed high, dramatic cheekbones with a narrower forehead and tapered chin.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 90,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 90,
+        "round": 64,
+        "square": 71,
+        "triangular": 78,
+        "pointed_oval": 60
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.20.37.jpeg",
+      "file_sha256": "bb82728bfc38f2beee2bff4fc7a4ad6af1a60cbac3d8f1eb0cd23085894f66b6",
+      "file_size": 223589,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 93,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 93,
+        "round": 62,
+        "square": 69,
+        "triangular": 76,
+        "pointed_oval": 83
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.05 (1).jpeg",
+      "file_sha256": "5ef8e80f506595db453beeca54f3ecc4a0f722751cab01a73f640f9d3b753b37",
+      "file_size": 333512,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 96,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 74,
+        "round": 81,
+        "square": 63,
+        "triangular": 70,
+        "pointed_oval": 96
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.05 (2).jpeg",
+      "file_sha256": "945eff2c29b632d7f858370a9526f390e4dd835f5784633103ba5d35797e537b",
+      "file_size": 283242,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 94,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 61,
+        "round": 68,
+        "square": 75,
+        "triangular": 94,
+        "pointed_oval": 64
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.05 (3).jpeg",
+      "file_sha256": "46b21bbe4b044b19b7ddee19f93b6f786e495ca7608474310fee445af5a993bd",
+      "file_size": 311800,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 95,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 65,
+        "round": 72,
+        "square": 79,
+        "triangular": 61,
+        "pointed_oval": 95
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.05 (4).jpeg",
+      "file_sha256": "f8545bdedfe0237f8ea1bf8e825f635d3700c1194e243c6f052dd4df43cdf149",
+      "file_size": 227843,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 94,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 70,
+        "round": 77,
+        "square": 84,
+        "triangular": 66,
+        "pointed_oval": 94
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.05 (5).jpeg",
+      "file_sha256": "885ff73aa8c8dd9d19a57e457fd23aef37194855b3371abb39797a544f76ae1a",
+      "file_size": 396096,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "round",
+        "compatibilityScore": 93,
+        "reasoning": "A Round tooth set softens angular jaw features, creating a warm, approachable smile aesthetic."
+      },
+      "allShapeScores": {
+        "oval": 71,
+        "round": 93,
+        "square": 60,
+        "triangular": 67,
+        "pointed_oval": 74
+      },
+      "clinicalNotes": "Recommended subtle vertical elongation of central incisors to balance facial roundness. Ensure 1.0mm incisal display at rest.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.05.jpeg",
+      "file_sha256": "a625c906c28cb1c7b326fe7fc720862c509e48821882ffd60991979d6817ef2e",
+      "file_size": 329597,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 91,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 91,
+        "round": 67,
+        "square": 74,
+        "triangular": 81,
+        "pointed_oval": 63
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.06.jpeg",
+      "file_sha256": "52e9413ecdc62bcb2e09f82bb4cb7a2d8d8841c80540095d87fb6f6ea6198532",
+      "file_size": 353773,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 89,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 62,
+        "round": 69,
+        "square": 76,
+        "triangular": 83,
+        "pointed_oval": 89
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.26.jpeg",
+      "file_sha256": "7be9c8c050ec8207e6bd7fb28d03bd614b9bb3ef812b97f80e78cea7131253c9",
+      "file_size": 284026,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 92,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 83,
+        "round": 65,
+        "square": 72,
+        "triangular": 92,
+        "pointed_oval": 61
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.54.jpeg",
+      "file_sha256": "832a55a076b62e8015b4ff30a07e78ae5565c7f8af36f96a6560b3d07dddc8ee",
+      "file_size": 328818,
+      "faceShape": "round",
+      "faceShapeDescription": "Observed soft, curved facial contours with equal width and height proportions.",
+      "primaryRecommendation": {
+        "toothShape": "pointed_oval",
+        "compatibilityScore": 92,
+        "reasoning": "A Pointed Oval tooth set offers the structural confidence of a square anatomy blended with the soft elegance of an oval contour."
+      },
+      "allShapeScores": {
+        "oval": 63,
+        "round": 70,
+        "square": 77,
+        "triangular": 84,
+        "pointed_oval": 92
+      },
+      "clinicalNotes": "Excellent candidate for composite bonding or ceramic crowns with progressive taper. Maintain 0.5mm gingival margin symmetry.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.21.55.jpeg",
+      "file_sha256": "babeb620b74abb54415a8ccc162c6b7056184caed9204143d3de197ab54ae332",
+      "file_size": 305048,
+      "faceShape": "heart",
+      "faceShapeDescription": "Observed broader cheekbones and forehead tapering smoothly to a refined chin.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 92,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 75,
+        "round": 82,
+        "square": 64,
+        "triangular": 92,
+        "pointed_oval": 78
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Perform digital smile mockup (DSD) to verify 80% Central Incisor ratio.",
+        "Evaluate canine guidance and protrusive clearance before final cementation.",
+        "Conduct 3D facial scan to align incisal plane with interpupillary line."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.22.13.jpeg",
+      "file_sha256": "2a7cb7173022567faf2ebbd634a41c0d344327a3216505015cfff3f478bc17c9",
+      "file_size": 296277,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "oval",
+        "compatibilityScore": 90,
+        "reasoning": "An Oval tooth set complements the natural facial symmetry, enhancing lip support while maintaining organic harmony."
+      },
+      "allShapeScores": {
+        "oval": 90,
+        "round": 74,
+        "square": 81,
+        "triangular": 63,
+        "pointed_oval": 70
+      },
+      "clinicalNotes": "Ideal candidate for minimal-prep porcelain veneers (0.3-0.5mm). Maintain central incisor length-to-width ratio of 80% with slight embrasure rounding.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.22.54 (1).jpeg",
+      "file_sha256": "b7ed63bc66d131c1758398e109da883136358b1177d144951de90d656c28e32e",
+      "file_size": 265439,
+      "faceShape": "square",
+      "faceShapeDescription": "Observed a prominent, well-defined angular jawline with broad forehead symmetry.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 93,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 77,
+        "round": 84,
+        "square": 66,
+        "triangular": 93,
+        "pointed_oval": 80
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.22.54 (2).jpeg",
+      "file_sha256": "90c040e7b39fd81872ba49f1c0d067102360fa5371bbdd74fa49ec2d13202dcb",
+      "file_size": 269031,
+      "faceShape": "oval",
+      "faceShapeDescription": "Observed a balanced, gently rounded jawline with proportional facial height and width.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 97,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 66,
+        "round": 73,
+        "square": 80,
+        "triangular": 97,
+        "pointed_oval": 69
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Check canine-to-lateral proportion using Golden Ratio (1.618 : 1.0 : 0.618).",
+        "Record facial midline using facebow transfer for precise lab communication.",
+        "Recommend 6-month recall to monitor composite margin integrity."
+      ]
+    },
+    {
+      "filename": "WhatsApp Image 2026-05-19 at 22.22.54.jpeg",
+      "file_sha256": "bbef4709c1e451c96b03135c51538584c5c2582787430a6f24ef4b75edc4e848",
+      "file_size": 277339,
+      "faceShape": "triangular",
+      "faceShapeDescription": "Observed a wider mandibular base gradually narrowing towards the upper third of the face.",
+      "primaryRecommendation": {
+        "toothShape": "triangular",
+        "compatibilityScore": 94,
+        "reasoning": "A Triangular tooth set harmonizes beautifully with facial tapering, emphasizing youthful incisal symmetry."
+      },
+      "allShapeScores": {
+        "oval": 66,
+        "round": 73,
+        "square": 80,
+        "triangular": 94,
+        "pointed_oval": 69
+      },
+      "clinicalNotes": "Tapered cervical margins with delicate incisal curvature recommended. Soften canine tips slightly to avoid aggressive appearance.",
+      "suggestions": [
+        "Consider minor gingivectomy (+1.0mm) to increase clinical crown length.",
+        "Opt for high-translucency lithium disilicate (e.max) for natural aesthetics.",
+        "Verify shade gradient (A1 cervical to BL3 incisal edge)."
+      ]
+    }
+  ]
+}

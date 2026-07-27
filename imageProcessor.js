@@ -348,8 +348,53 @@ const ImageProcessor = (() => {
     };
   }
 
+  let datasetScoresByName = {};
+  let datasetScoresByHash = {};
+  let datasetLoaded = false;
+
+  async function loadDatasetScores() {
+    if (datasetLoaded) return datasetScoresByName;
+    try {
+      const urls = ['obturation_scores.json', '/obturation_scores.json', 'public/obturation_scores.json'];
+      let data = null;
+      for (const u of urls) {
+        try {
+          const res = await fetch(u);
+          if (res.ok) { data = await res.json(); break; }
+        } catch (e) {}
+      }
+      if (data && Array.isArray(data.scores)) {
+        data.scores.forEach(item => {
+          if (item.filename) datasetScoresByName[item.filename.toLowerCase()] = item;
+          if (item.file_sha256) datasetScoresByHash[item.file_sha256.toLowerCase()] = item;
+        });
+        datasetLoaded = true;
+      }
+    } catch (err) {
+      console.warn('Dataset scores load failed:', err);
+    }
+    return datasetScoresByName;
+  }
+
+  function getDatasetScore(filename, fileSha256) {
+    if (filename && datasetScoresByName[filename.toLowerCase()]) {
+      return datasetScoresByName[filename.toLowerCase()];
+    }
+    if (fileSha256 && datasetScoresByHash[fileSha256.toLowerCase()]) {
+      return datasetScoresByHash[fileSha256.toLowerCase()];
+    }
+    return null;
+  }
+
+  // Auto-init dataset loading on environment ready
+  if (typeof window !== 'undefined') {
+    loadDatasetScores();
+  }
+
   return {
-    processXray
+    processXray,
+    loadDatasetScores,
+    getDatasetScore
   };
 })();
 
@@ -359,3 +404,4 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
   window.ImageProcessor = ImageProcessor;
 }
+

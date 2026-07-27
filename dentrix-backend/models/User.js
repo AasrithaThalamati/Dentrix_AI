@@ -16,6 +16,8 @@ const userSchema = new mongoose.Schema({
   gender:         { type: String, default: '' },
   city:           { type: String, default: '' },
   experience:     { type: Number, default: 0 },
+  regNumber:      { type: String, default: '' },
+  researchFocus:  { type: String, default: '' },
   bio:            { type: String, default: '' },
   createdAt:      { type: Date, default: Date.now }
 });

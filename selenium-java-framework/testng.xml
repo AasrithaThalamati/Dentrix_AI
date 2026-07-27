@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Dentrix AI Selenium 4 Test Automation Suite" parallel="false">
+
+    <listeners>
+        <listener class-name="com.dentrix.utils.TestListener" />
+    </listeners>
+
+    <test name="300 Unique Regression Test Scenarios">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.dentrix.tests.AuthenticationTest" />
+            <class name="com.dentrix.tests.RegistrationTest" />
+            <class name="com.dentrix.tests.ForgotPasswordTest" />
+            <class name="com.dentrix.tests.ProfileTest" />
+            <class name="com.dentrix.tests.DashboardTest" />
+            <class name="com.dentrix.tests.NavigationTest" />
+            <class name="com.dentrix.tests.CRUDOperationsTest" />
+            <class name="com.dentrix.tests.SearchTest" />
+            <class name="com.dentrix.tests.FiltersTest" />
+            <class name="com.dentrix.tests.SortingTest" />
+            <class name="com.dentrix.tests.PaginationTest" />
+            <class name="com.dentrix.tests.FormsTest" />
+            <class name="com.dentrix.tests.FileUploadTest" />
+            <class name="com.dentrix.tests.DownloadsTest" />
+            <class name="com.dentrix.tests.NotificationsTest" />
+            <class name="com.dentrix.tests.SettingsTest" />
+            <class name="com.dentrix.tests.RoleBasedAccessTest" />
+            <class name="com.dentrix.tests.PermissionsTest" />
+            <class name="com.dentrix.tests.APIIntegrationTest" />
+            <class name="com.dentrix.tests.ResponsiveUITest" />
+            <class name="com.dentrix.tests.CrossBrowserTest" />
+            <class name="com.dentrix.tests.AccessibilityTest" />
+            <class name="com.dentrix.tests.SecurityTest" />
+            <class name="com.dentrix.tests.PerformanceE2ETest" />
+        </classes>
+    </test>
+</suite>

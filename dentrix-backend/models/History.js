@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const historySchema = new mongoose.Schema({
   dentist:        { type: mongoose.Schema.Types.ObjectId, ref: 'User',    required: true },
-  patient:        { type: mongoose.Schema.Types.ObjectId, ref: 'Patient', required: true },
+  patient:        { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' },
+  patientName:    { type: String },
   analysis:       { type: mongoose.Schema.Types.ObjectId, ref: 'Analysis' },
   caseId:         { type: String },           // e.g. "CA-0147"
   toothNumber:    { type: String },           // e.g. "26"

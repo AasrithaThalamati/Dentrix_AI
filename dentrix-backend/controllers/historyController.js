@@ -1,4 +1,5 @@
 const History = require('../models/History');
+const Patient = require('../models/Patient');
 
 function getInitials(name) {
   if (!name) return '??';
@@ -13,10 +14,8 @@ const getHistory = async (req, res) => {
       .sort({ date: -1 });
 
     const cases = records.map(r => {
-      const patientName = r.patient?.name || 'Unknown';
-      // Build a short display ID from the Mongo _id if no caseId stored
+      const patientName = r.patient?.name || r.patientName || 'Unknown';
       const caseId = r.caseId || `CA-${String(r._id).slice(-4).toUpperCase()}`;
-      // Build a short patient ID
       const pid = r.patient?._id
         ? `PT-${String(r.patient._id).slice(-4).toUpperCase()}`
         : 'PT-????';
@@ -48,8 +47,62 @@ const getHistory = async (req, res) => {
 // POST /api/history
 const createHistory = async (req, res) => {
   try {
-    const entry = await History.create({ ...req.body, dentist: req.user._id });
+    let patientId = req.body.patient;
+    let patientName = req.body.patientName || req.body.patient;
+
+    // If patientName is provided but not ObjectId, find or create Patient doc
+    if (typeof patientName === 'string' && patientName.trim() && !patientId) {
+      let patientDoc = await Patient.findOne({ dentist: req.user._id, name: patientName.trim() });
+      if (!patientDoc) {
+        patientDoc = await Patient.create({ name: patientName.trim(), dentist: req.user._id });
+      }
+      patientId = patientDoc._id;
+    }
+
+    const entry = await History.create({
+      ...req.body,
+      patient: patientId,
+      patientName: typeof patientName === 'string' ? patientName.trim() : '',
+      dentist: req.user._id
+    });
+
     res.status(201).json(entry);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// PUT /api/history/:id
+const updateHistory = async (req, res) => {
+  try {
+    const updated = await History.findOneAndUpdate(
+      { _id: req.params.id, dentist: req.user._id },
+      { $set: req.body },
+      { new: true }
+    ).populate('patient', 'name age _id');
+
+    if (!updated) return res.status(404).json({ message: 'Record not found' });
+
+    const patientName = updated.patient?.name || 'Unknown';
+    const caseId = updated.caseId || `CA-${String(updated._id).slice(-4).toUpperCase()}`;
+    const pid = updated.patient?._id ? `PT-${String(updated.patient._id).slice(-4).toUpperCase()}` : 'PT-????';
+
+    res.json({
+      id:         caseId,
+      _id:        updated._id,
+      patient:    patientName,
+      initials:   getInitials(patientName),
+      pid,
+      tooth:      updated.toothNumber  || '—',
+      date:       updated.date,
+      score:      updated.obturationScore ?? null,
+      length:     updated.lengthScore   ?? null,
+      density:    updated.densityScore  ?? null,
+      taper:      updated.taperScore    ?? null,
+      visit:      updated.visitType     || '—',
+      confidence: updated.aiConfidence  ?? null,
+      notes:      updated.notes         || '',
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -65,4 +118,5 @@ const deleteHistory = async (req, res) => {
   }
 };
 
-module.exports = { getHistory, createHistory, deleteHistory };
+module.exports = { getHistory, createHistory, updateHistory, deleteHistory };
+

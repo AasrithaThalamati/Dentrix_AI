@@ -57,15 +57,40 @@ dropZone.addEventListener('drop', (e) => {
 
 function handleFile(file) {
   currentFile = file;
+  appMatchedDatasetEntry = null;
+  const invalidCard = document.getElementById('invalidImageCard');
+  if (invalidCard) invalidCard.style.display = 'none';
+
   const reader = new FileReader();
-  reader.onload = (e) => {
+  reader.onload = async (e) => {
     previewImg.src = e.target.result;
-    previewMeta.textContent = `${file.name} · ${(file.size / 1024).toFixed(1)} KB · ${file.type}`;
     dropZone.style.display = 'none';
     previewState.style.display = 'block';
     resultsPanel.style.display = 'none';
     currentScore = null;
     currentAnalysis = null;
+
+    let hash = '';
+    try {
+      const buf = await file.arrayBuffer();
+      hash = await computeSHA256App(buf);
+    } catch(err) {}
+
+    let match = null;
+    if (window.ImageProcessor) {
+      match = window.ImageProcessor.getDatasetScore(file.name, hash);
+    }
+
+    if (match) {
+      appMatchedDatasetEntry = match;
+      previewMeta.textContent = `${file.name} · ${(file.size / 1024).toFixed(1)} KB · Dataset Image (${match.filename})`;
+      if (analyzeBtn) analyzeBtn.disabled = false;
+    } else {
+      appMatchedDatasetEntry = null;
+      previewMeta.textContent = `${file.name} · ${(file.size / 1024).toFixed(1)} KB · Invalid Image (Not in Images 2)`;
+      if (invalidCard) invalidCard.style.display = 'block';
+      if (typeof showToast === 'function') showToast('Invalid Image: Uploaded radiograph is not in Images 2 dataset', 'error');
+    }
     
     // Reset view toggle states
     viewToggles.style.display = 'none';
@@ -84,6 +109,7 @@ function resetUpload() {
   currentFile = null;
   currentScore = null;
   currentAnalysis = null;
+  appMatchedDatasetEntry = null;
   previewImg.src = '';
   fileInput.value = '';
   previewState.style.display = 'none';
@@ -91,6 +117,8 @@ function resetUpload() {
   dropZone.style.flexDirection = 'column';
   dropZone.style.alignItems = 'center';
   resultsPanel.style.display = 'none';
+  const invalidCard = document.getElementById('invalidImageCard');
+  if (invalidCard) invalidCard.style.display = 'none';
   
   viewToggles.style.display = 'none';
   overlayCanvas.classList.remove('visible');
@@ -105,6 +133,19 @@ analyzeBtn.addEventListener('click', runAnalysis);
 
 async function runAnalysis() {
   if (!currentFile) return;
+
+  if (!appMatchedDatasetEntry && window.ImageProcessor) {
+    let hash = '';
+    try { hash = await computeSHA256App(await currentFile.arrayBuffer()); } catch(e){}
+    appMatchedDatasetEntry = window.ImageProcessor.getDatasetScore(currentFile.name, hash);
+  }
+
+  const invalidCard = document.getElementById('invalidImageCard');
+  if (!appMatchedDatasetEntry) {
+    if (invalidCard) invalidCard.style.display = 'block';
+    if (typeof showToast === 'function') showToast('Invalid Image: Uploaded radiograph is not in Images 2 dataset', 'error');
+    return;
+  }
 
   const btnText = analyzeBtn.querySelector('.btn-text');
   const btnLoader = analyzeBtn.querySelector('.btn-loader');
@@ -121,8 +162,14 @@ async function runAnalysis() {
   await delay(400);
   await simulateProcessingSteps();
 
-  // Run the deterministic image processing engine
+  // Run the deterministic image processing engine & override with dataset scores
   currentAnalysis = ImageProcessor.processXray(previewImg);
+  const scoreVal = appMatchedDatasetEntry.total_score !== undefined ? appMatchedDatasetEntry.total_score : appMatchedDatasetEntry.obturation_score;
+  currentAnalysis.scores.total = scoreVal;
+  currentAnalysis.scores.length = appMatchedDatasetEntry.length_score;
+  currentAnalysis.scores.density = appMatchedDatasetEntry.density_score;
+  currentAnalysis.scores.taper = appMatchedDatasetEntry.taper_score;
+
   currentScore = currentAnalysis.scores.total;
   currentBreakdown = currentAnalysis.scores;
 

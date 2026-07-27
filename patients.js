@@ -2,7 +2,9 @@
    ObturaScore AI — Patients Page JS (MongoDB Connected)
    ============================================================ */
 
-   const API = 'https://dentrix-ai-8k2b.vercel.app/api';
+   const API = (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '0.0.0.0'))
+     ? 'http://127.0.0.1:5001/api'
+     : 'https://dentrix-ai-8k2b.vercel.app/api';
 
    function getToken() { return localStorage.getItem('dentrix_token'); }
    
@@ -198,11 +200,24 @@
    }
    
    function updateStatCards() {
-     const allCountEls = document.querySelectorAll('.stat-card-num[data-count]');
-     if (allCountEls[0]) {
-       allCountEls[0].dataset.count = patients.length;
-       allCountEls[0].textContent = patients.length;
-     }
+     const totalCount = patients.length;
+     const retreatmentCount = patients.filter(p => p.lastScore > 0 && p.lastScore < 6.0).length;
+     const recallCount = patients.filter(p => p.status === 'recall' || (p.recall && p.recall.includes('due'))).length;
+
+     const elTotal = document.getElementById('statTotalPatients');
+     const elSched = document.getElementById('statScheduledWeek');
+     const elRecall = document.getElementById('statPendingRecall');
+     const elRetreat = document.getElementById('statRetreatmentNeeded');
+
+     if (elTotal) { elTotal.dataset.count = totalCount; elTotal.textContent = totalCount; }
+     if (elSched) { elSched.dataset.count = 0; elSched.textContent = 0; }
+     if (elRecall) { elRecall.dataset.count = recallCount; elRecall.textContent = recallCount; }
+     if (elRetreat) { elRetreat.dataset.count = retreatmentCount; elRetreat.textContent = retreatmentCount; }
+
+     // Update sidebar badge for patients count
+     document.querySelectorAll('.nav-item[href="patients.html"] .nav-badge').forEach(badge => {
+       badge.textContent = totalCount;
+     });
    }
    
    // ── Filters ──
@@ -252,10 +267,10 @@
    function renderTable() {
      const slice = getPageSlice();
      if (!tableBody) return;
-     if (slice.length === 0) {
-       tableBody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--warm-gray-400,#9ca3af)">No patients found</td></tr>`;
-       return;
-     }
+      if (slice.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:48px;color:var(--warm-gray-400,#9ca3af)">No patient records found for your profile in MongoDB.<br/><span style="font-size:0.78rem;color:var(--warm-gray-400);margin-top:6px;display:inline-block">Click <strong>+ Add Patient</strong> above to log your first patient.</span></td></tr>`;
+        return;
+      }
      tableBody.innerHTML = slice.map(p => {
        const status   = getScoreStatus(p.lastScore);
        const avClass  = p.gender === 'Female' ? 'female' : p.gender === 'Male' ? 'male' : '';

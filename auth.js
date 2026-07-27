@@ -19,7 +19,9 @@ const ObturaAuth = (() => {
       token:    'dentrix_token',
     };
   
-    const BASE_URL = 'https://dentrix-ai-8k2b.vercel.app'; // change to production URL when deploying
+    const BASE_URL = (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '0.0.0.0'))
+      ? 'http://127.0.0.1:5001'
+      : 'https://dentrix-ai-8k2b.vercel.app';
   
     // ─── User Storage ────────────────────────────────────────────────
   
